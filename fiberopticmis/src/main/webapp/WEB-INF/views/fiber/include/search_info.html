@@ -1,0 +1,91 @@
+<meta charset="UTF-8">
+<div class="row clearfix">
+	<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+		<div class="ds-table">
+			<div class="ds-cell-control">
+				<div class="row clearfix">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding-right:10px;">
+					   <div class="ds-table">
+						<div class="ds-cell-addon p-r-10">{{'PLACEHOLDER_TITLE.PLACE_SELECTSTRATTIME'|translate}}</div>
+							<div class="input-append date" id="datetimepicker1">
+								<input type="text" id="startTime" class="form-control" style="font-size:12px !important" readonly="readonly" ng-model="searchObj.startTime"/>
+						        <span class="add-on">
+						          <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="fa fa-calendar"></i>
+						        </span>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 rel" style="padding-left:10px;padding-right:10px;">
+						 <div class="ds-table">
+						    <div class="ds-cell-addon p-r-10">{{'PLACEHOLDER_TITLE.PLACE_SELECTENDTIME'|translate}}</div>
+							<div  class="input-append date" id="datetimepicker2">
+								<input type="text" id="endTime" class="form-control"  style="font-size:12px !important"readonly="readonly" ng-model="searchObj.endTime"/>
+						        <span class="add-on">
+						          <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="fa fa-calendar"></i>
+						        </span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.col-6 -->
+	<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+		<div class="row clearfix">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p-l-0 p-r-10">
+			    <div class="ds-table">
+					<div class="ds-cell-addon p-r-10">{{'SEARCH_TITLE.TITLE_TYPES'|translate}}</div>
+					<div class="ds-cell-control">
+						<select class="form-control show-tick" ng-model="searchObj.orderType" style="font-size:12px !important" ng-options="orderType.id as orderType.name for orderType in orderTypeOptions">
+						</select>
+					</div>									
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 p-l-0">
+				<div class="ds-table">
+					<div class="ds-cell-control">
+						<select class="form-control show-tick" ng-model="searchObj.queryType"  style="font-size:12px !important" ng-options="queryType.id as queryType.name for queryType in queryTypeOptions">
+						</select>
+					</div>									
+				</div>
+			</div>
+			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 p-l-0 p-r-10">
+				<div class="ds-table">
+					<div class="ds-cell-control"><input type="text" class="form-control"  style="font-size:12px !important" ng-model="searchObj.numContent" /></div>
+					<div class="ds-cell-addon p-l-10"><button type="button"  style="font-size:12px !important" class="btn btn-primary waves-effect"    ng-click="serach();" >{{'BUTTON_NAME.BTN_SEARCH'|translate}}</button></div>									
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.col-6 -->
+</div>
+<script type="text/javascript">
+	//时间控件
+  	$(function() {
+  		var startDate=new Date();
+  		startDate.setMonth(startDate.getMonth()-12);
+  		console.log(startDate);
+	    $("#datetimepicker1").datetimepicker({
+	        autoclose: true,
+	        todayBtn: true,
+	        startDate:startDate,
+	        endDate:new Date(),
+	    }).on('changeDate',function(){
+	    	var startDateValue=$("#startTime").val();
+	    	startDateValue=new Date(startDateValue);
+	    	startDateValue.setDate(startDateValue.getDate()+2);
+	        $("#datetimepicker2").datetimepicker("setStartDate",startDateValue)
+	    });
+	    $("#datetimepicker2").datetimepicker({
+	        autoclose: true,
+	        todayBtn: true,
+	        startDate:startDate,//单子只能查询一年以内的
+	        endDate:new Date(),
+	    }).on('changeDate',function(){
+	    	var endDateValue=$("#endTime").val();
+	    	endDateValue=new Date(endDateValue);
+	        $("#datetimepicker1").datetimepicker("setEndDate",endDateValue)
+	    });
+	});
+</script>

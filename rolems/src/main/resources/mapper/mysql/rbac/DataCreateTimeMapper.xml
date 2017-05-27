@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xinwei.rbac.dao.DataCreateTimeMapper" >
+  <resultMap id="BaseResultMap" type="com.xinwei.rbac.entity.DataCreateTime" >
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="data_id" property="dataId" jdbcType="BIGINT" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xinwei.rbac.entity.DataCreateTime" >
+    insert into tb_data_createtime (create_time, data_id)
+    values (#{createTime,jdbcType=TIMESTAMP}, #{dataId,jdbcType=BIGINT})
+  </insert>
+  
+  <select id="countAll" resultType="java.lang.Long" >
+    select count(1) 
+    from tb_data_createtime
+  </select>
+  
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select create_time, data_id
+    from tb_data_createtime
+     order by data_id 
+	limit #{startRow},#{pageSize}
+  </select>
+  
+   <select id="countByRangeTime" resultType="java.lang.Long" >
+    select count(1) 
+    from tb_data_createtime
+  </select>
+
+    <select id="getByRangeTime" resultMap="BaseResultMap" >
+    select create_time, data_id
+    from tb_data_createtime
+    where
+      <if test="beginTime !=null and beginTime !='' ">
+        create_time &gt;=#{beginTime}
+    </if>
+	 <if test="endTime !=null and endTime!='' ">
+	    and create_time &lt;=#{endTime} 
+	</if>
+	 order by create_time 
+	limit #{startRow},#{pageSize}
+
+  </select>
+  
+  <update id="updateByPrimaryKey" parameterType="com.xinwei.rbac.entity.DataCreateTime" >
+    update tb_data_createtime
+    set create_time = #{createTime,jdbcType=TIMESTAMP}
+   where data_id = #{dataId,jdbcType=BIGINT}
+  </update>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from tb_data_createtime
+    where data_id = #{dataId,jdbcType=BIGINT}
+  </delete>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+     select create_time, data_id
+    from tb_data_createtime
+    where data_id = #{dataId,jdbcType=BIGINT}
+  </select>
+</mapper>

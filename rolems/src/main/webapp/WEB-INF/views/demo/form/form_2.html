@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="App">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Manager system</title>
+		
+		<!-- Plugin Css -->
+    	<link href="../../../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    	<link href="../../../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    	<link href="../../../plugins/material-design-preloader/md-preloader.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    	<link href="../../../plugins/node-waves/waves.min.css" rel="stylesheet" />
+   	 	<link href="../../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    	<link href="../../../plugins/animate-css/animate.css" rel="stylesheet" />
+    	
+	    <!-- Custom Css -->
+    	<link href="../../../css/custom.css" rel="stylesheet">
+	    <link href="../../../css/themes/default/skin.css" rel="stylesheet" type="text/css" title="default"/>
+	    
+	    <style>
+	    	.p-r-8 {
+	    		padding-right: 8px!important;
+	    	}
+	    	.p-l-8 {
+	    		padding-left: 8px!important;
+	    	}
+	    </style>
+	</head>
+	<body ng-controller="app">
+		<div class="page-loader-wrapper">
+		    <div class="loader">
+		        <div class="md-preloader pl-size-md">
+		            <svg viewbox="0 0 75 75">
+		                <circle cx="37.5" cy="37.5" r="33.5" class="pl-red" stroke-width="4" />
+		            </svg>
+		        </div>
+		        <p>加载中，请稍后...</p>
+		    </div>
+		</div>
+		<div class="overlay"></div>
+		<!-- Page Loader -->
+		<div id="wrapper">
+			<div class="header" ng-include="'../../include/header.html'"></div>
+			<div class="menus" ng-include="'../../include/leftMenu.html'"></div>
+			<div id="page-wrapper">
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">表单验证</h2>
+					</div>
+					<div class="panel-body">
+						<form action="#" method="post" id="theForm" class="form-column">
+							<div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 form-control-label">
+                                    <label>姓名:</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" placeholder="请输入用户姓名" name="userName" id="userName" data-error="用户名错误" data-tip="请输入用户姓名" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 form-control-label">
+                                    <label>密码:</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" class="form-control" placeholder="请输入密码" id="pwd" data-error="密码错误" data-tip="请输入密码" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 form-control-label">
+                                    <label>类型:</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <select class="form-control show-tick" id="userSel">
+			                                    <option value="">请选择类型</option>
+			                                    <option value="10">10</option>
+			                                    <option value="20">20</option>
+			                                    <option value="30">30</option>
+			                                    <option value="40">40</option>
+			                                    <option value="50">50</option>
+			                                </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 form-control-label">
+                                    <label>证件照片:</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                    <div class="form-group clearfix">
+                                    	<div class="form-line">
+	                                        <div class="file-preview m-r-15">
+        										<span class="thumbnail" id="showImg">
+        											<i class="fa fa-plus"></i>
+        										</span>
+        										<input type="file" name="filefield" id="uploadFile" class="form-control" onchange="uploadImage('uploadFile','showImg')" />
+        										<span id="uploadFile_delete" class="ds-block hide img-deleted">
+        											<i class="fa fa-minus-circle col-red" onclick="deleteImg('uploadFile','showImg')"></i>
+        										</span>
+        									</div>
+        									<div class="file-preview">
+        										<span class="thumbnail" id="showImg2">
+        											<i class="fa fa-plus"></i>
+        										</span>
+        										<input type="file" name="filefield"  id="uploadFile2" class="form-control" onchange="uploadImage('uploadFile2','showImg2')" />
+        										<span  id="uploadFile2_delete" class="ds-block hide  img-deleted">
+        											<i class="fa fa-minus-circle col-red" onclick="deleteImg('uploadFile2','showImg2')"></i>
+        										</span>
+        									</div>
+	                                    </div>
+	                                    <div class="input-tips">
+	                                    	<label class="error hidden">不能为空</label>
+	                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 form-control-label l-chk-rad">
+                                    <label>用户角色:</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                        	<div class="checkbox">
+                                        		<div class="checkbox-inline">
+                                        			<input type="checkbox" id="md_checkbox_01" class="filled-in chk-col-blue" name="hobby" value="sing" data-error="未勾选" />
+	                                            	<label for="md_checkbox_01">员工</label>
+                                        		</div>
+                                        		<div class="checkbox-inline">
+                                        			<input type="checkbox" id="md_checkbox_02" class="filled-in chk-col-blue" name="hobby" value="dance" data-error="未勾选" />
+	                                            	<label for="md_checkbox_02">管理员</label>
+                                        		</div>
+                                            </div>
+                                        </div>
+                                        <div class="input-tips">
+                    						<label class="error" id="checkboxError">请勾选</label>
+                						</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 form-control-label l-chk-rad">
+                                    <label>性别:</label>
+                                </div>
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                        	<div class="radio">
+                                        		<div class="radio-inline">
+                                        			<input type="radio" name="group5" id="radio_1" class="with-gap radio-col-blue" checked="checked" />
+	                                            	<label for="radio_1">男</label>
+                                        		</div>
+                                        		<div class="radio-inline">
+                                        			<input type="radio" name="group5" id="radio_2" class="with-gap radio-col-blue" />
+	                                            	<label for="radio_2">女</label>
+                                        		</div>
+                                            </div>
+                                        </div>
+                                        <div class="input-tips">
+                    						<label class="error"></label>
+                						</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                            	<div class="col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-0">
+                            		<button type="button" class="btn btn-success m-w-80 waves-effect" id="submitBtn" />提交</button>
+                            	</div>
+                            </div>
+						</form>
+					</div>
+				</div>
+				<!-- / .panel -->
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							表单设计元素
+							<small>此栏为表单元素的一种布局方式，有没有表单验证功能</small>
+						</h2>
+					</div>
+					<div class="panel-body">
+						<div class="form-column">
+							<div class="row clearfix">
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+									<div class="row clearfix">
+										<div class="col-sm-5 col-xs-12 form-control-label">
+		                                    <label>默认文本框：</label>
+		                                </div>
+		                                <div class="col-sm-7 col-xs-12">
+		                                    <div class="form-group">
+		                                        <div class="form-line">
+		                                            <input type="text" class="form-control" placeholder="默认文本框" />
+		                                        </div>
+		                                    </div>
+		                                </div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+									<div class="row clearfix">
+										<div class="col-sm-5 col-xs-12 form-control-label">
+		                                    <label>默认文本框：</label>
+		                                </div>
+		                                <div class="col-sm-7 col-xs-12">
+		                                    <div class="form-group">
+		                                        <div class="form-line">
+		                                            <input type="text" class="form-control" placeholder="默认文本框" />
+		                                        </div>
+		                                    </div>
+		                                </div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+									<div class="row clearfix">
+										<div class="col-sm-5 col-xs-12 form-control-label">
+		                                    <label>默认文本框：</label>
+		                                </div>
+		                                <div class="col-sm-7 col-xs-12">
+		                                    <div class="form-group">
+		                                        <div class="form-line">
+		                                            <input type="text" class="form-control" placeholder="默认文本框" />
+		                                        </div>
+		                                    </div>
+		                                </div>
+									</div>
+								</div>
+							</div>
+							<!-- / .row -->
+							<div class="row clearfix">
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+									<div class="row clearfix">
+										<div class="col-sm-5 col-xs-12 form-control-label">
+		                                    <label>默认下拉框：</label>
+		                                </div>
+		                                <div class="col-sm-7 col-xs-12">
+		                                    <div class="form-group">
+		                                        <div class="form-line">
+		                                        	<select class="form-control show-tick">
+					                                    <option value="">请选择类型...</option>
+					                                    <option value="10">10</option>
+					                                    <option value="20">20</option>
+					                                    <option value="30">30</option>
+					                                    <option value="40">40</option>
+					                                    <option value="50">50</option>
+					                                </select>
+		                                        </div>
+		                                    </div>
+		                                </div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+									<div class="row clearfix">
+										<div class="col-sm-5 col-xs-12 form-control-label">
+		                                    <label>默认下拉框：</label>
+		                                </div>
+		                                <div class="col-sm-7 col-xs-12">
+		                                    <div class="form-group">
+		                                        <div class="form-line">
+		                                        	<select class="form-control show-tick">
+					                                    <option value="">请选择类型...</option>
+					                                    <option value="10">10</option>
+					                                    <option value="20">20</option>
+					                                    <option value="30">30</option>
+					                                    <option value="40">40</option>
+					                                    <option value="50">50</option>
+					                                </select>
+		                                        </div>
+		                                    </div>
+		                                </div>
+									</div>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+									<div class="row clearfix">
+										<div class="col-sm-5 col-xs-12 form-control-label">
+		                                    <label>默认下拉框：</label>
+		                                </div>
+		                                <div class="col-sm-7 col-xs-12">
+		                                    <div class="form-group">
+		                                        <div class="form-line">
+		                                        	<select class="form-control show-tick">
+					                                    <option value="">请选择类型...</option>
+					                                    <option value="10">10</option>
+					                                    <option value="20">20</option>
+					                                    <option value="30">30</option>
+					                                    <option value="40">40</option>
+					                                    <option value="50">50</option>
+					                                </select>
+		                                        </div>
+		                                    </div>
+		                                </div>
+									</div>
+								</div>
+							</div>
+							<!-- / .row -->
+							<div class="row clearfix">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<div class="row clearfix">
+										<div class="col-sm-4 col-xs-12 form-control-label">
+		                                    <label>默认文本：</label>
+		                                </div>
+		                                <div class="col-sm-8 col-xs-12">
+		                                    <div class="form-group">
+		                                        <div class="form-line">
+		                                            <input type="text" class="form-control" placeholder="默认文本" />
+		                                        </div>
+		                                    </div>
+		                                </div>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+									<div class="row clearfix">
+										<div class="col-sm-4 col-xs-12 form-control-label">
+		                                    <label>选择时间：</label>
+		                                </div>
+		                                <div class="col-sm-8 col-xs-12">
+		                                    <div class="row clearfix">
+		                                    	<div class="col-sm-6 col-xs-6 p-r-8">
+		                                    		<div class="form-group">
+				                                        <div class="form-line">
+				                                        	<div id="datetimepicker1" class="input-append date">
+														        <input type="text" class="form-control" readonly="readonly" data-format="dd/MM/yyyy" placeholder="开始时间" />
+														        <span class="add-on">
+														          <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="fa fa-calendar"></i>
+														        </span>
+													      	</div>
+				                                        </div>
+				                                    </div>
+		                                    	</div>
+		                                    	<div class="col-sm-6 col-xs-6 p-l-8">
+		                                    		<div class="form-group">
+				                                        <div class="form-line">
+				                                        	<div id="datetimepicker2" class="input-append date">
+														        <input type="text" class="form-control" readonly="readonly" data-format="dd/MM/yyyy" placeholder="结束时间" />
+														        <span class="add-on">
+														          <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="fa fa-calendar"></i>
+														        </span>
+													      	</div>
+				                                        </div>
+				                                    </div>
+		                                    	</div>
+		                                    </div>
+		                                </div>
+									</div>
+								</div>
+								<!-- / .row -->
+								<hr />
+								<div class="row clearfix">
+	                            	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 align-center">
+	                            		<button type="button" class="btn btn-success waves-effect m-r-8 m-w-80" />确定</button>
+	                            		<button type="button" class="btn btn-primary waves-effect m-l-8 m-w-80" />取消</button>
+	                            	</div>
+	                            </div>
+								<!-- / .row -->
+							</div>
+							<!-- / .row -->
+						</div>
+						<!-- / .form-column -->
+					</div>
+					<!-- / .panel-body -->
+				</div>
+				<!-- / .panel -->
+			</div>
+			<!-- / #page-wrapper -->
+		</div>
+		<!-- / #wrapper -->
+	</body>
+	<!-- Plugin Js -->
+    <script src="../../../plugins/jquery/jquery-2.2.4.min.js"></script>
+    <script src="../../../plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../../plugins/angular/angular.min.js"></script>
+    <script src="../../../plugins/ocLazyLoad/ocLazyLoad.min.js"></script>
+    <script src="../../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="../../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="../../../plugins/bootstrap-notify/bootstrap-notify.js"></script>
+    <script src="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="../../../plugins/node-waves/waves.js"></script>
+    <script src="../../../plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="../../../js/ui/dialogs.js"></script>
+    <script src="../../../js/ui/modals.js"></script>
+    <script src="../../../js/ui/notifications.js"></script>
+    <script src="../../../js/ui/tooltips-popovers.js"></script>
+    <script src="../../../js/ui/load_resize.js"></script>
+    <script src="../../../plugins/angular/angular-translate.min.js"> </script>
+	<script src="../../../plugins/angular/angular-translate-loader-static-files.min.js"> </script>
+    <!-- Custom JS -->
+    <script src="../../../js/server/server.js" type="text/javascript"></script>
+	<script src="../../../js/cookie.js" type="text/javascript"></script>
+	<script src="../../../js/skin.js" type="text/javascript"></script>
+	<script src="../../../js/config/config_skin.js" type="text/javascript"></script>
+	<script src="../../../js/App.js" type="text/javascript"></script>
+	<script src="../../../js/home.js" type="text/javascript"></script>
+	
+	<!-- Forms JS-->
+	<script src="../../../js/formValidata/formValid_Inf.js" type="text/javascript"></script>
+	<script src="../../../js/formValidata/formValid_Rule.js" type="text/javascript"></script>
+	<script src="../../../js/formValidata/formValid.js" type="text/javascript"></script>
+	<script src="../../../js/formValidata/getFormData.js" type="text/javascript"></script>
+	
+	<!-- Script -->
+	<script type="text/javascript">
+	  	$(function() {
+		    $('#datetimepicker1').datetimepicker({
+		    	collapse: true
+		    });
+		    $('#datetimepicker2').datetimepicker({
+		    	collapse: true
+		    });
+		});
+	</script>
+	<!--上传插件-->
+	<script>
+		/**
+		 * 上传文件显示测试示例
+		 * ***/
+		function uploadImage(fileId,showId)
+		{
+			var fileObj=document.getElementById(fileId);
+		   	
+		    // 注意这里
+		    // fileObj.files[0];
+		    var fileName=fileObj.files[0].name;
+		    var fileType=fileObj.files[0].type;
+		    console.log(fileObj.files[0]);
+		     var src = window.URL.createObjectURL(fileObj.files[0]);
+		     var showBox=document.getElementById(showId);
+		     showBox.innerHTML="";
+			 var img = document.createElement('img');
+		    img.src = src;
+		    img.className = "img-thumbnail";
+		    showBox.appendChild(img);
+		    //显示删除按钮
+		    var imgDeleteBtn = document.getElementById(fileId+"_delete");
+		    imgDeleteBtn.setAttribute("class","ds-block img-deleted show ");
+		}
+		/***
+		 * 删除图片
+		 */
+		function deleteImg(fileId,showId){
+			//<i class="fa fa-plus"></i>
+			//清除input file框中的值
+			var fileObj=document.getElementById(fileId);
+			fileObj.value = '';
+			//剔除img标签
+			var showObj = document.getElementById(showId);
+		   	showObj.innerHTML = '<i class="fa fa-plus"></i>';
+		    	//隐藏删除按钮
+		   	 var imgDeleteBtn = document.getElementById(fileId+"_delete");
+		    imgDeleteBtn.setAttribute("class","ds-block img-deleted hide ");
+		}
+	</script>
+</html>

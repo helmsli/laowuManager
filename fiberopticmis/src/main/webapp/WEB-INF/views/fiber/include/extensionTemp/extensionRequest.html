@@ -1,0 +1,134 @@
+<meta charset="UTF-8">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel-inside-title">{{'EXTENSION_TITLE.TITLE_ORDERINFO.TITLE_ORDERINFO'|translate}}</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'EXTENSION_TITLE.TITLE_ORDERINFO.TITLE_ORDERNAME'|translate}}</div>
+				<div class="ds-cell-control">
+					<select class="form-control show-tick" ng-model="fiberDelayOrderInfo.productName" ng-options="productName for productName in productNameOptions">
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table ds-p15">
+				<div class="ds-cell-addon title">{{'EXTENSION_TITLE.TITLE_ORDERINFO.TITLE_ORDERPRICE'|translate}}</div>
+				<div class="ds-cell-control" ng-bind="fiberDelayOrderInfo.price"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'EXTENSION_TITLE.TITLE_ORDERINFO.TITLE_EFFECTIVETIME'|translate}}</div>
+				<div class="ds-cell-control" ng-bind="fiberDelayOrderInfo.effectiveDate"></div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'EXTENSION_TITLE.TITLE_ORDERINFO.TITLE_INVALIDTIME'|translate}}</div>
+				<div class="ds-cell-control" ng-bind="fiberDelayOrderInfo.expiryDate"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-21 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'EXTENSION_TITLE.TITLE_ORDERINFO.TITLE_ADJUSTEDDAYS'|translate}}</div>
+				<div class="ds-cell-control">
+					<div class="input-group">
+	                	<input id="adjustDays" type="tel" ng-model="fiberDelayOrderInfo.adjustDays" class="form-control" value="0">
+	                	<span class="input-group-addon">{{'EXTENSION_TITLE.TITLE_ORDERINFO.TITLE_ADJUSTED_DAYS'|translate}}</span>
+	                </div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'EXTENSION_TITLE.TITLE_ORDERINFO.TITLE_ADJUSTEDDATE'|translate}}</div>
+				<div class="ds-cell-control">
+					<div id="datetimepicker1" class="input-append date">
+						<input type="text" ng-model="fiberDelayOrderInfo.adjustTime" id="extendedPeriod" class="form-control" readonly="readonly"  placeholder="{{'PLACEHOLDER_TITLE.PLACE_SELECTTIME'|translate}}" />
+				        <span class="add-on">
+				          <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="fa fa-calendar"></i>
+				        </span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon addr"><i class="col-red">*</i>{{'EXTENSION_TITLE.TITLE_ORDERINFO.TITLE_REASON'|translate}}</div>
+				<div class="ds-cell-control"><textarea style="margin-bottom:0;" class="form-control no-resize" ng-model="fiberDelayOrderInfo.reason"></textarea></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<script type="text/javascript">
+	//时间控件
+  	$(function() {
+	   
+	});
+  	/*
+  	 * 得到失效日期，根据延期的时间得到，延期到的时间
+  	 */
+  	 $(function(){
+  		 var sope=getAngularScope("applyExtension");
+  		 $("#datetimepicker1").datetimepicker({
+  			initialDate:sope.expiryDateStart
+	        }).on('changeDate',function(){
+	        	console.log(sope.expiryDateStart);
+	        	var expiryDate=sope.fiberDelayOrderInfo.expiryDate;
+				//得到格式如07/12/2017格式的时间
+				expiryDate=expiryDate.replace(/-/g,"/");
+				expiryDate=new Date(expiryDate);
+	            var adjustTime=$("#extendedPeriod").val();
+	            adjustTime=new Date(adjustTime);
+	            var adjustDays = (adjustTime-expiryDate)/(1000*3600*24);//求出两个时间的时间差，这个是天数 
+	        	sope.$apply(function(){
+	        		sope.fiberDelayOrderInfo.adjustDays=adjustDays; 
+					})
+	        });
+  		 
+  		 $("#adjustDays").on("keyup",function(){
+  		       var adjustDays=$("#adjustDays").val();
+		       adjustDays=parseInt(adjustDays);
+  				if(adjustDays!=null&&isNaN(adjustDays)!=true){
+  					console.log(adjustDays);
+  					var expiryDate=sope.fiberDelayOrderInfo.expiryDate;
+  					//得到格式如07/12/2017格式的时间
+  					expiryDate=expiryDate.replace(/-/g,"/");
+  					expiryDate=new Date(expiryDate);
+  					expiryDate.setDate(expiryDate.getDate()+adjustDays);
+  					myYear=expiryDate.getFullYear();
+  					myMonth=expiryDate.getMonth()+1;
+  					myDay=expiryDate.getDate();			
+  					adjustTime=myMonth+"/"+myDay+"/"+myYear;
+  					sope.$apply(function(){
+  						sope.fiberDelayOrderInfo.adjustTime=adjustTime; 
+  					})
+  				}else{
+  					sope.$apply(function(){
+  						sope.fiberDelayOrderInfo.adjustTime=adjustDays; 
+  					})
+  				}
+  			}) 
+  	 })
+  	 
+</script>
+
+
+

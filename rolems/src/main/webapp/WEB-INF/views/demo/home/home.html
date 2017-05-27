@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html data-ng-app="App">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Manager system</title>
+		
+		<!-- Plugin Css -->
+    	<link href="../../../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    	<link href="../../../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    	<link href="../../../plugins/material-design-preloader/md-preloader.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    	<link href="../../../plugins/node-waves/waves.min.css" rel="stylesheet" />
+   	 	<link href="../../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    	<link href="../../../plugins/animate-css/animate.css" rel="stylesheet" />
+    	
+	    <!-- Custom Css -->
+    	<link href="../../../css/custom.css" rel="stylesheet">
+	    <link href="../../../css/themes/default/skin.css" rel="stylesheet" type="text/css" title="default"/>
+	    
+	    <script src="../../../plugins/jquery/jquery-2.2.4.min.js"></script>
+	    <script src="../../../plugins/bootstrap/js/bootstrap.min.js"></script>
+	    <script src="../../../plugins/angular/angular.min.js"></script>
+	    <script src="../../../plugins/ocLazyLoad/ocLazyLoad.min.js"></script>
+	    <script src="../../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+	    <script src="../../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+	    <script src="../../../plugins/bootstrap-notify/bootstrap-notify.js"></script>
+	    <script src="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+	    <script src="../../../plugins/node-waves/waves.js"></script>
+	    <script src="../../../plugins/sweetalert/sweetalert.min.js"></script>
+	    <script src="../../../js/ui/dialogs.js"></script>
+	    <script src="../../../js/ui/modals.js"></script>
+	    <script src="../../../js/ui/notifications.js"></script>
+	    <script src="../../../js/ui/tooltips-popovers.js"></script>
+	    <script src="../../../js/ui/load_resize.js"></script>
+	    <script src="../../../plugins/angular/angular-translate.min.js"> </script>
+		<script src="../../../plugins/angular/angular-translate-loader-static-files.min.js"> </script>
+	    <!-- Custom JS -->
+	    <script src="../../../js/server/server.js" type="text/javascript"></script>
+		<script src="../../../js/cookie.js" type="text/javascript"></script>
+		<script src="../../../js/skin.js" type="text/javascript"></script>
+		<script src="../../../js/config/config_skin.js" type="text/javascript"></script>
+		<script src="../../../js/App.js" type="text/javascript"></script>
+	
+		<!-- Home JS-->
+		<script src="../../../js/home.js" type="text/javascript"></script>
+	  <style type="text/css">
+	         /*  #leftMenu_navbar{
+	              width: 0;
+	          }
+	          @media(max-width:992px){
+	             #leftMenu_navbar {width:250px;} 
+	          } */
+	    </style>
+	</head>
+	<body ng-controller="app">
+		<div class="page-loader-wrapper" ng-include="'../../template/loading.html'"></div>
+		<div class="overlay"></div>
+		<!-- Page Loader -->
+		<div id="wrapper">
+			<div class="header" ng-include="'../../include/header.html'"></div>
+			<div class="menus" ng-include="'../../include/leftMenu.html'"  ></div>
+			<div id="page-wrapper" >
+                <div class="row home clearfix">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    	<a href="javascript:;">
+                    		<div class="info-box panel-red hover-expand-effect">
+                        		<div class="icon"><i class="fa fa-inbox fa-3x"></i></div>
+                        		<div class="content">
+                        			<div class="sub-title">最新邮件</div>
+                        			<div class="number">26</div>
+                        		</div>
+                        	</div>
+	                    </a>
+                    </div>
+                    <!-- / .col-lg-3 -->
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    	<a href="javascript:;">
+                    		<div class="info-box panel-yellow hover-expand-effect">
+                        		<div class="icon"><i class="fa fa-comments fa-3x"></i></div>
+                        		<div class="content">
+                        			<div class="sub-title">最新消息</div>
+                        			<div class="number">12</div>
+                        		</div>
+                        	</div>
+                        </a>
+                    </div>
+                    <!-- / .col-lg-3 -->
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    	<a href="javascript:;">
+                    		<div class="info-box panel-green hover-expand-effect">
+                        		<div class="icon"><i class="fa fa-tags fa-3x"></i></div>
+                        		<div class="content">
+                        			<div class="sub-title">推荐产品</div>
+                        			<div class="number">124</div>
+                        		</div>
+                        	</div>
+                       </a>
+                    </div>
+                    <!-- / .col-lg-3 -->
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    	<a href="javascript:;">
+                    		<div class="info-box panel-primary hover-expand-effect">
+                        		<div class="icon"><i class="fa fa-share-alt fa-3x"></i></div>
+                        		<div class="content">
+                        			<div class="sub-title">分享</div>
+                        			<div class="number">13</div>
+                        		</div>
+                        	</div>
+	                    </a>
+                    </div>
+                    <!-- / .col-lg-3 -->
+                </div>
+                <!-- /.row -->
+        		<div class="row home">
+        			<div class="col-lg-6">
+        				<div class="row">
+        					<div class="col-md-6 col-sm-6 col-xs-12">
+        						<div class="thumbnail product_gallery">
+		                            <div class="image view view-first">
+	            						<img src="../../../images/thumb-7.jpg">
+	            						<div class="mask">
+			                              	<div class="tools tools-bottom">
+				                                <a href="news_detail.html" title="查看详细"><i class="fa fa-search"></i></a>
+			                              	</div>
+			                            </div>
+	            					</div>
+		                            <div class="caption">
+		                                <h3>Bootstrap UI组件</h3>
+		                                <p>本系统提供的Bootstrap组件提供了表单、表格、菜单、步骤和其他丰富的UI组件，并结合Angularjs框架，开发出来的组件使用灵活，简单易用，快来尝试一下吧！</p>
+		                               
+		                            </div>
+		                        </div>
+        					</div>
+        					<div class="col-md-6 col-sm-6 col-xs-12">
+        						<div class="thumbnail product_gallery">
+		                            <div class="image view view-first">
+	            						<img src="../../../images/thumb-6.jpg">
+	            						<div class="mask">
+			                              	<div class="tools tools-bottom">
+				                                <a href="news_detail.html" title="查看详细"><i class="fa fa-search"></i></a>
+			                              	</div>
+			                            </div>
+	            					</div>
+		                            <div class="caption">
+		                                <h3>权限控制</h3>
+		                                <p>本系统实现了一套完整的权限控制管理解决方案。提供了用户管理、角色管理、组织管理三大基础模块。权限控制分为菜单权限控制和按钮权限控制。系统根据登录用户的角色对应权限分配菜单和页面按钮。同时控制层定义同一的拦截器，过滤所有请求，屏蔽掉无权限请求，最终达到统一权限管理的目的。</p>
+		                                <!-- <p><a class="btn btn-primary waves-effect" href="#">查看详细</a></p> -->
+		                            </div>
+		                        </div>
+        					</div> 
+        				</div>
+        			</div>
+        			<!-- / .col-lg-6 -->
+        			<div class="col-lg-6">
+    					<div class="panel">
+                        	<div class="panel-heading">
+                        		<h2 class="panel-title">新闻资讯</h2>
+                        		<div class="dropdown">
+									<a href="javascript:void(0);"class="dropdown-toggle" data-toggle="dropdown">
+										<i class="fa fa-ellipsis-v"></i>
+									</a>
+									<ul class="dropdown-menu pull-right" role="menu">
+										 <li><a href="product_list.html">发布信息</a></li>
+									    <li><a href="news_detail.html">查看更多</a></li>
+									</ul>
+								</div>
+                        	</div>
+                        	<div class="panel-body">
+                        		<div class="media">
+		                            <div class="media-left">
+		                                <a href="news_detail.html"><img class="media-object" src="../../../images/thumb-1.jpg" width="64" height="64"></a>
+		                            </div>
+		                            <div class="media-body">
+		                                <h4 class="media-heading"><a href="news_detail.html">冷空气继续影响中国大部地区 多地降温达12℃</a></h4>
+		                                                                                                中新网10月27日电 据中央气象台网站消息，昨天江苏上海等地部分地区出现强降雨，冷空气将给我国大部地区带来大风降温和雨雪天气，
+		                            </div>
+		                        </div>
+		                        <div class="media">
+		                            <div class="media-left">
+		                                <a href="news_detail.html"><img class="media-object" src="../../../images/thumb-2.jpg" width="64" height="64"></a>
+		                            </div>
+		                            <div class="media-body">
+		                                <h4 class="media-heading"><a href="news_detail.html">台媒：大陆渔船“越界”捕鱼 遭台方水炮射击</a></h4>
+		                            	中新网10月27日电 据中央气象台网站消息，昨天江苏上海等地部分地区出现强降雨，冷空气将给我国大部地区带来大风降温和雨雪天气，
+		                            </div>
+		                        </div>
+		                        <div class="media">
+		                            <div class="media-left">
+		                                <a href="#"><img class="media-object" src="../../../images/thumb-3.jpg" width="64" height="64"></a>
+		                            </div>
+		                            <div class="media-body">
+		                                <h4 class="media-heading"><a href="news_detail.html">养老金入市年内启动 首批规模或达4000亿元</a></h4>
+										中新网10月27日电 据中央气象台网站消息，昨天江苏上海等地部分地区出现强降雨，冷空气将给我国大部地区带来大风降温和雨雪天气，
+		                            </div>
+		                        </div>
+		                        <div class="media">
+		                            <div class="media-left">
+		                                <a href="news_detail.html"><img class="media-object" src="../../../images/thumb-4.jpg" width="64" height="64"></a>
+		                            </div>
+		                            <div class="media-body">
+		                                <h4 class="media-heading"><a href="news_detail.html">菲总统强调和平解决与华争端 日本称其反美亲日</a></h4>
+		                            	中新网10月27日电 据中央气象台网站消息，昨天江苏上海等地部分地区出现强降雨，冷空气将给我国大部地区带来大风降温和雨雪天气，
+		                            </div>
+		                        </div>
+					        </div>
+					        <!-- / .panel-body -->
+					    </div>
+					    <!-- / .panel -->
+        			</div>
+        			<!-- / .col-lg-6 -->
+        		</div>
+        		<!-- / row -->
+			</div>
+			<!-- / #page-wrapper -->
+		</div>
+		<!-- / #wrapper -->
+	</body>
+</html>

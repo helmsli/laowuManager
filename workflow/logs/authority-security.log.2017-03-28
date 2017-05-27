@@ -1,0 +1,49 @@
+2017-03-28 16:45:17,840 [main] INFO  [org.springframework.context.support.FileSystemXmlApplicationContext] - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@69c2ff33: startup date [Tue Mar 28 16:45:17 CST 2017]; root of context hierarchy
+2017-03-28 16:45:17,884 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-03-28 16:45:18,082 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_database.xml]
+2017-03-28 16:45:18,139 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_activiti.xml]
+2017-03-28 16:45:18,317 [main] INFO  [org.springframework.context.support.PropertySourcesPlaceholderConfigurer] - Loading properties file from file [E:\eclipseWorkspace\workflow\target\classes\config\db.properties]
+2017-03-28 16:45:20,569 [main] INFO  [org.activiti.engine.impl.ProcessEngineImpl] - ProcessEngine default created
+2017-03-28 16:45:20,570 [main] INFO  [org.activiti.engine.impl.jobexecutor.JobExecutor] - Starting up the JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor].
+2017-03-28 16:45:20,572 [Thread-3] INFO  [org.activiti.engine.impl.jobexecutor.AcquireJobsRunnableImpl] - JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor] starting to acquire jobs
+2017-03-28 16:45:20,620 [main] INFO  [org.activiti.engine.impl.bpmn.deployer.BpmnDeployer] - Processing resource E:\eclipseWorkspace\workflow\target\classes\deployments\fiberextension.bpmn20.xml
+2017-03-28 16:45:22,271 [main] DEBUG [com.xinwei.workflow.dao.CustomActivityNameMapper.insert] - ooo Using Connection [jdbc:mysql://localhost:3306/db_activiti?useUnicode=true&characterEncoding=utf-8, UserName=root@localhost, MySQL-AB JDBC Driver]
+2017-03-28 16:45:22,274 [main] DEBUG [com.xinwei.workflow.dao.CustomActivityNameMapper.insert] - ==>  Preparing: insert into custom_activity_name (process_def_key, activity_id, name ) values (?, ?, ? ) 
+2017-03-28 16:45:22,283 [main] DEBUG [com.xinwei.workflow.dao.CustomActivityNameMapper.insert] - ==> Parameters: fiberextension(String), fiberExtensionStart(String), 光纤延期申请开始(String)
+2017-03-28 17:39:11,168 [main] INFO  [org.springframework.context.support.FileSystemXmlApplicationContext] - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@216f1cbc: startup date [Tue Mar 28 17:39:11 CST 2017]; root of context hierarchy
+2017-03-28 17:39:11,222 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-03-28 17:39:11,432 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_database.xml]
+2017-03-28 17:39:11,489 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_activiti.xml]
+2017-03-28 17:39:11,633 [main] INFO  [org.springframework.context.support.PropertySourcesPlaceholderConfigurer] - Loading properties file from file [E:\eclipseWorkspace\workflow\target\classes\config\db.properties]
+2017-03-28 17:39:13,399 [main] INFO  [org.activiti.engine.impl.ProcessEngineImpl] - ProcessEngine default created
+2017-03-28 17:39:13,400 [main] INFO  [org.activiti.engine.impl.jobexecutor.JobExecutor] - Starting up the JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor].
+2017-03-28 17:39:13,402 [Thread-3] INFO  [org.activiti.engine.impl.jobexecutor.AcquireJobsRunnableImpl] - JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor] starting to acquire jobs
+2017-03-28 17:40:04,065 [main] INFO  [org.springframework.context.support.FileSystemXmlApplicationContext] - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@2d1bee74: startup date [Tue Mar 28 17:40:04 CST 2017]; root of context hierarchy
+2017-03-28 17:40:04,117 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-03-28 17:40:04,298 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_database.xml]
+2017-03-28 17:40:04,354 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_activiti.xml]
+2017-03-28 17:40:04,494 [main] INFO  [org.springframework.context.support.PropertySourcesPlaceholderConfigurer] - Loading properties file from file [E:\eclipseWorkspace\workflow\target\classes\config\db.properties]
+2017-03-28 17:40:06,216 [main] INFO  [org.activiti.engine.impl.ProcessEngineImpl] - ProcessEngine default created
+2017-03-28 17:40:06,217 [main] INFO  [org.activiti.engine.impl.jobexecutor.JobExecutor] - Starting up the JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor].
+2017-03-28 17:40:06,219 [Thread-3] INFO  [org.activiti.engine.impl.jobexecutor.AcquireJobsRunnableImpl] - JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor] starting to acquire jobs
+2017-03-28 17:41:00,483 [main] INFO  [org.springframework.context.support.FileSystemXmlApplicationContext] - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@6faa7dbc: startup date [Tue Mar 28 17:41:00 CST 2017]; root of context hierarchy
+2017-03-28 17:41:00,531 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-03-28 17:41:00,712 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_database.xml]
+2017-03-28 17:41:00,767 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_activiti.xml]
+2017-03-28 17:41:00,908 [main] INFO  [org.springframework.context.support.PropertySourcesPlaceholderConfigurer] - Loading properties file from file [E:\eclipseWorkspace\workflow\target\classes\config\db.properties]
+2017-03-28 17:41:02,635 [main] INFO  [org.activiti.engine.impl.ProcessEngineImpl] - ProcessEngine default created
+2017-03-28 17:41:02,635 [main] INFO  [org.activiti.engine.impl.jobexecutor.JobExecutor] - Starting up the JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor].
+2017-03-28 17:41:02,638 [Thread-3] INFO  [org.activiti.engine.impl.jobexecutor.AcquireJobsRunnableImpl] - JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor] starting to acquire jobs
+2017-03-28 17:41:02,878 [main] DEBUG [com.xinwei.workflow.dao.CustomActivityNameMapper.selectNameByProDefKeyAndActId] - ooo Using Connection [jdbc:mysql://localhost:3306/db_activiti?useUnicode=true&characterEncoding=utf-8, UserName=root@localhost, MySQL-AB JDBC Driver]
+2017-03-28 17:41:02,881 [main] DEBUG [com.xinwei.workflow.dao.CustomActivityNameMapper.selectNameByProDefKeyAndActId] - ==>  Preparing: select name from custom_activity_name where process_def_key = ? and activity_id = ? 
+2017-03-28 17:41:48,919 [main] INFO  [org.springframework.context.support.FileSystemXmlApplicationContext] - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@2224faea: startup date [Tue Mar 28 17:41:48 CST 2017]; root of context hierarchy
+2017-03-28 17:41:48,965 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-03-28 17:41:49,140 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_database.xml]
+2017-03-28 17:41:49,194 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_activiti.xml]
+2017-03-28 17:41:49,334 [main] INFO  [org.springframework.context.support.PropertySourcesPlaceholderConfigurer] - Loading properties file from file [E:\eclipseWorkspace\workflow\target\classes\config\db.properties]
+2017-03-28 17:41:51,077 [main] INFO  [org.activiti.engine.impl.ProcessEngineImpl] - ProcessEngine default created
+2017-03-28 17:41:51,078 [main] INFO  [org.activiti.engine.impl.jobexecutor.JobExecutor] - Starting up the JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor].
+2017-03-28 17:41:51,081 [Thread-3] INFO  [org.activiti.engine.impl.jobexecutor.AcquireJobsRunnableImpl] - JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor] starting to acquire jobs
+2017-03-28 17:41:51,325 [main] DEBUG [com.xinwei.workflow.dao.CustomActivityNameMapper.selectNameByProDefKeyAndActId] - ooo Using Connection [jdbc:mysql://localhost:3306/db_activiti?useUnicode=true&characterEncoding=utf-8, UserName=root@localhost, MySQL-AB JDBC Driver]
+2017-03-28 17:41:51,329 [main] DEBUG [com.xinwei.workflow.dao.CustomActivityNameMapper.selectNameByProDefKeyAndActId] - ==>  Preparing: select name from custom_activity_name where process_def_key = ? and activity_id = ? 
+2017-03-28 17:41:51,344 [main] DEBUG [com.xinwei.workflow.dao.CustomActivityNameMapper.selectNameByProDefKeyAndActId] - ==> Parameters: fiberextension(String), fiberExtensionStart(String)

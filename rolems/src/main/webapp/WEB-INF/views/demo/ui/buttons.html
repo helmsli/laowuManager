@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="App">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Manager system</title>
+		<!-- Plugin Css -->
+    	<link href="../../../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    	<link href="../../../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    	<link href="../../../plugins/material-design-preloader/md-preloader.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    	<link href="../../../plugins/node-waves/waves.min.css" rel="stylesheet" />
+   	 	<link href="../../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    	<link href="../../../plugins/animate-css/animate.css" rel="stylesheet" />
+    	
+	    <!-- Custom Css -->
+    	<link href="../../../css/custom.css" rel="stylesheet">
+	    <link href="../../../css/themes/default/skin.css" rel="stylesheet" type="text/css" title="default"/>
+	</head>
+	<body ng-controller="app">
+		<div class="page-loader-wrapper">
+		    <div class="loader">
+		        <div class="md-preloader pl-size-md">
+		            <svg viewbox="0 0 75 75">
+		                <circle cx="37.5" cy="37.5" r="33.5" class="pl-red" stroke-width="4" />
+		            </svg>
+		        </div>
+		        <p>加载中，请稍后...</p>
+		    </div>
+		</div>
+		<div class="overlay"></div>
+		<!-- Page Loader -->
+		<div id="wrapper">
+			<div class="header" ng-include="'../../include/header.html'"></div>
+			<div class="menus" ng-include="'../../include/leftMenu.html'"></div>
+			<div id="page-wrapper">
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							默认按钮
+							<small>使用任何可用的按钮类快速创建一个样式按钮</small>
+						</h2>
+						<div class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-ellipsis-v"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+							    <li><a href="javascript:void(0);">编辑</a></li>
+							    <li><a href="javascript:void(0);">查看详细</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="button-demo">
+							<button type="button" class="btn btn-default waves-effect">默认</button>
+	                        <button type="button" class="btn btn-primary waves-effect">主要</button>
+	                        <button type="button" class="btn btn-success waves-effect">成功</button>
+	                        <button type="button" class="btn btn-info waves-effect">信息</button>
+	                        <button type="button" class="btn btn-warning waves-effect">警告</button>
+	                        <button type="button" class="btn btn-danger waves-effect">危险</button>
+	                        <button type="button" class="btn btn-link waves-effect">链接</button>
+                        </div>
+					</div>
+				</div>
+				<!-- / .panel -->
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							材料设计按钮
+							<small>使用任何可用的按钮类快速创建一个样式按钮</small>
+						</h2>
+						<div class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-ellipsis-v"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+							    <li><a href="javascript:void(0);">编辑</a></li>
+							    <li><a href="javascript:void(0);">查看详细</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="button-demo">
+							<button type="button" class="btn bg-red waves-effect">红色</button>
+                            <button type="button" class="btn bg-pink waves-effect">粉红色</button>
+                            <button type="button" class="btn bg-purple waves-effect">紫色</button>
+                            <button type="button" class="btn bg-deep-purple waves-effect">深紫色</button>
+                            <button type="button" class="btn bg-indigo waves-effect">靛蓝色</button>
+                            <button type="button" class="btn bg-blue waves-effect">蓝色</button>
+                            <button type="button" class="btn bg-light-blue waves-effect">浅蓝色</button>
+                            <button type="button" class="btn bg-cyan waves-effect">青蓝色</button>
+                            <button type="button" class="btn bg-teal waves-effect">青色</button>
+                            <button type="button" class="btn bg-green waves-effect">绿色</button>
+                            <button type="button" class="btn bg-light-green waves-effect">浅绿色</button>
+                            <button type="button" class="btn bg-lime waves-effect">青柠色</button>
+                            <button type="button" class="btn bg-yellow waves-effect">黄色</button>
+                            <button type="button" class="btn bg-amber waves-effect">琥珀色</button>
+                            <button type="button" class="btn bg-orange waves-effect">橙色</button>
+                            <button type="button" class="btn bg-deep-orange waves-effect">深橙色</button>
+                            <button type="button" class="btn bg-brown waves-effect">褐色</button>
+                            <button type="button" class="btn bg-grey waves-effect">灰色</button>
+                            <button type="button" class="btn bg-blue-grey waves-effect">蓝灰色</button>
+                            <button type="button" class="btn bg-black waves-effect waves-light">黑色</button>
+                        </div>
+					</div>
+				</div>
+				<!-- / .panel -->
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							METARIAL设计按钮
+							<small>使用任何可用的按钮类快速创建一个样式按钮</small>
+						</h2>
+						<div class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-ellipsis-v"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+							    <li><a href="javascript:void(0);">编辑</a></li>
+							    <li><a href="javascript:void(0);">查看详细</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="demo-splite-button-dropdowns">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default waves-effect">默认</button>
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">其他操作</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary waves-effect">主要</button>
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">其他操作</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-success waves-effect">成功</button>
+                                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">其他操作</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-info waves-effect">信息</button>
+                                <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">其他操作</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-warning waves-effect">警告</button>
+                                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">其他操作</a></li>
+                                </ul>
+                            </div>
+	                        <h2 class="panel-inside-title">
+                                                                                                与材料设计的颜色
+                                <small>您可以使用材料设计色彩的例子 <code>.bg-pink</code>类</small>
+	                        </h2>
+	                        <!-- / . panel-inside-title-->
+                            <div class="btn-group">
+                                <button type="button" class="btn bg-pink waves-effect">粉红色</button>
+                                <button type="button" class="btn bg-pink dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">其他操作</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn bg-cyan waves-effect">青蓝色</button>
+                                <button type="button" class="btn bg-cyan dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">其他操作</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn bg-teal waves-effect">青色</button>
+                                <button type="button" class="btn bg-teal dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">其他操作</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn bg-orange waves-effect">橙色</button>
+                                <button type="button" class="btn bg-orange dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">其他操作</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group">
+                                <button type="button" class="btn bg-purple waves-effect">紫色</button>
+                                <button type="button" class="btn bg-purple dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">其他操作</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- / .demo-splite-button-dropdowns -->
+					</div>
+				</div>
+				<!-- / .panel -->
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							DROPUP变化的
+							<small>通过添加<code>.dropup</code>触发向上变化的下拉菜单元素。</small>
+						</h2>
+						<div class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-ellipsis-v"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+							    <li><a href="javascript:void(0);">编辑</a></li>
+							    <li><a href="javascript:void(0);">查看详细</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="demo-dropup">
+                            <div class="btn-group dropup">
+                                <button type="button" class="btn btn-default waves-effect">默认</button>
+                                <button type="button" class="btn btn-default waves-effect dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group dropup">
+                                <button type="button" class="btn btn-primary waves-effect">主要</button>
+                                <button type="button" class="btn btn-primary waves-effect dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group dropup">
+                                <button type="button" class="btn btn-success waves-effect">成功</button>
+                                <button type="button" class="btn btn-success waves-effect dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group dropup">
+                                <button type="button" class="btn btn-info waves-effect">信息</button>
+                                <button type="button" class="btn btn-info waves-effect dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group dropup">
+                                <button type="button" class="btn btn-warning waves-effect">警告</button>
+                                <button type="button" class="btn btn-warning waves-effect dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group dropup">
+                                <button type="button" class="btn btn-danger waves-effect">危险</button>
+                                <button type="button" class="btn btn-danger waves-effect dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                </ul>
+                            </div>
+                            <h2 class="panel-inside-title">
+                                                                                                与材料设计的颜色
+                                <small>您可以使用材料设计色彩的例子 <code>.bg-pink</code>类</small>
+	                        </h2>
+	                        <!-- / . panel-inside-title-->
+                            <div class="btn-group dropup">
+                                <button type="button" class="btn bg-pink waves-effect">粉红</button>
+                                <button type="button" class="btn bg-pink waves-effect dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group dropup">
+                                <button type="button" class="btn bg-cyan waves-effect">青蓝色</button>
+                                <button type="button" class="btn bg-cyan waves-effect dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group dropup">
+                                <button type="button" class="btn bg-teal waves-effect">青色</button>
+                                <button type="button" class="btn bg-teal waves-effect dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group dropup">
+                                <button type="button" class="btn bg-orange waves-effect">橙色</button>
+                                <button type="button" class="btn bg-orange waves-effect dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group dropup">
+                                <button type="button" class="btn bg-purple waves-effect">紫色</button>
+                                <button type="button" class="btn bg-purple waves-effect dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group dropup">
+                                <button type="button" class="btn bg-blue-grey waves-effect waves-light">蓝灰</button>
+                                <button type="button" class="btn bg-blue-grey waves-effect waves-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">切换下拉</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">编辑</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">查看详细</a></li>
+                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">更多操作在这里</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- / .demo-dropup -->
+					</div>
+				</div>
+				<!-- / .panel -->
+			</div>
+			<!-- / #page-wrapper -->
+		</div>
+		<!-- / #wrapper -->
+	</body>
+	<!-- Plugin Js -->
+    <script src="../../../plugins/jquery/jquery-2.2.4.min.js"></script>
+    <script src="../../../plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../../plugins/angular/angular.min.js"></script>
+    <script src="../../../plugins/ocLazyLoad/ocLazyLoad.min.js"></script>
+    <script src="../../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="../../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="../../../plugins/bootstrap-notify/bootstrap-notify.js"></script>
+    <script src="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="../../../plugins/node-waves/waves.js"></script>
+    <script src="../../../plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="../../../js/ui/dialogs.js"></script>
+    <script src="../../../js/ui/modals.js"></script>
+    <script src="../../../js/ui/notifications.js"></script>
+    <script src="../../../js/ui/tooltips-popovers.js"></script>
+    <script src="../../../js/ui/load_resize.js"></script>
+     <script src="../../../plugins/angular/angular-translate.min.js"> </script>
+	<script src="../../../plugins/angular/angular-translate-loader-static-files.min.js"> </script>
+    <!-- Custom JS -->
+    <script src="../../../js/server/server.js" type="text/javascript"></script>
+	<script src="../../../js/cookie.js" type="text/javascript"></script>
+	<script src="../../../js/skin.js" type="text/javascript"></script>
+	<script src="../../../js/config/config_skin.js" type="text/javascript"></script>
+	<script src="../../../js/App.js" type="text/javascript"></script>
+	
+	<!-- Home JS-->
+	<script src="../../../js/home.js" type="text/javascript"></script>
+</html>

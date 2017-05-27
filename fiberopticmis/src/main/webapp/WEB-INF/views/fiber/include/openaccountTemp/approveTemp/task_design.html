@@ -1,0 +1,138 @@
+<meta charset="UTF-8">
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_AUDITRESULT'|translate}}</div>
+				<div class="ds-cell-control">
+					<span class="radio-inline top--4">
+		         		<input type="radio" class="with-gap radio-col-blue" id="approve_01" name="approve" ng-model="designReport.reviewResult" value="0">
+		          		<label for="approve_01">{{'RADIO_TITLE.RADIO_APPROVE'|translate}}</label>
+		         	</span>
+		         	<span class="radio-inline top--4">
+		         		<input type="radio" class="with-gap radio-col-blue" id="approve_02" name="approve" value="1" ng-model="designReport.reviewResult">
+		          		<label for="approve_02">{{'RADIO_TITLE.RADIO_REJECT'|translate}}</label>
+		         	</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_DESIGN_TITLE.DESIGN_ACCESSBTSNO'|translate}}</div>
+				<div class="ds-cell-control"><input id="accessBTSNo" type="text" class="form-control" ng-model="designReport.accessBTSNo"/></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_DESIGN_TITLE.DESIGN_DISTANCE'|translate}}</div>
+				<div class="ds-cell-control">
+					<div class="ds-table">
+						<div  id="distance" class="ds-cell-control"><input type="text" class="form-control" ng-model="designReport.distance" /></div>
+						<div class="ds-cell-addon p-l-10">{{'TASK_DESIGN_TITLE.DESIGN_DISTANCEMETER'|translate}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_DESIGN_TITLE.DESIGN_FIBRENO'|translate}}</div>
+				<div class="ds-cell-control"><input id="fibreNo" type="text" class="form-control"  ng-model="designReport.fibreNo"/></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_DESIGN_TITLE.DESIGN_INSTALLATIONCOSTESTIMATED'|translate}}</div>
+				<div class="ds-cell-control"><input type="text" class="form-control" ng-model="designReport.installationCostEstimated" /></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_DESIGN_TITLE.DESIGN_SELECTFILE'|translate}}</div>
+				<div class="ds-cell-control">
+					<div class="ds-table">
+						<div class="ds-cell-control">
+							<div class="file-group">
+								<input type="text" name="select" id="select" class="form-control" placeholder="{{'PLACEHOLDER_TITLE.PLACE_SELECTFILE'|translate}}">
+								<button type="button" class="btn btn-primary waves-effect">{{'BUTTON_NAME.BTN_BROWSE'|translate}}</button>
+								<input type="file" name="fileUpload" id="fileUpload" onchange="document.getElementById('select').value=this.value">
+							</div>
+						</div>
+						<div class="ds-cell-addon p-l-10"><button type="button" class="btn btn-primary waves-effect" onclick="uploadButtonSubmit('fileUpload')">{{'BUTTON_NAME.BTN_UPLOAD'|translate}}</button></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="ds-table">
+		<div class="ds-cell-addon title">{{'TASK_DESIGN_TITLE.DESIGN_ATTATCHMENT'|translate}}</div>
+		<div class="ds-cell-control" ng-repeat="data in designReport.attachmentList track by $index">
+			<ul class="chosen m-r-5">
+			<span class="fa fa-times-circle-o" ng-click="deletAttachment($index)"></span>
+			<a style="cursor:pointer" ng-bind="data.originalFilename" ng-click="fileDownLoad(data.attachmentName);"></a>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title top">{{'TASK_DESIGN_TITLE.DESIGN_REMARKS'|translate}}</div>
+				<div class="ds-cell-control"><textarea style="margin-bottom:0;" class="form-control no-resize" ng-model="designReport.notes"></textarea></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-t-20 align-center">
+	<button type="button" id="submitButtonFlag" class="btn btn-primary waves-effect m-r-8"   onclick="submitApproval();">{{'BUTTON_NAME.BTN_SUBMIT'|translate}}</button>
+	<button type="button"  class="btn btn-primary waves-effect"   onclick="history.go(-1);">{{'BUTTON_NAME.BTN_BACK'|translate}}</button>
+</div>
+<!-- /.col-12 -->
+<script>
+//g_state由系统定义，确定办理的步骤
+var scope=getAngularScope("projectModel");
+globalRegisterHtml(scope.gloablParm.state);
+$("#distance").on("keydown",function(e){
+	 var _this=$(this);
+	return digitInputNumber($(this), e);  
+});
+
+$("#fibreNo").on("keydown",function(e){
+	 var _this=$(this);
+	return digitInputInt($(this), e);  
+});
+
+$("#accessBTSNo").on("keydown",function(e){
+	 var _this=$(this);
+	return digitInputInt($(this), e);  
+});
+</script>

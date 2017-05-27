@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xinwei.fiber.dao.ApplicationInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.xinwei.fiber.entity.ApplicationInfo" >
+    <result column="form_no" property="formNo" jdbcType="VARCHAR" />
+    <result column="data_id" property="dataId" jdbcType="VARCHAR" />
+    <result column="IDNO" property="IDNO" jdbcType="VARCHAR" />
+    <result column="customer_name" property="customerName" jdbcType="VARCHAR" />
+    <result column="tel_no" property="telNo" jdbcType="VARCHAR" />
+    <result column="installation_address" property="installationAddress" jdbcType="VARCHAR" />
+    <result column="applicant" property="applicant" jdbcType="BIGINT" />
+    <result column="apply_date" property="applyDate" jdbcType="TIMESTAMP" />
+    <result column="apply_service" property="applyService" jdbcType="VARCHAR" />
+    <result column="proc_inst_id" property="procInstId" jdbcType="VARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xinwei.fiber.entity.ApplicationInfo" >
+    insert into applicationinfo (form_no, data_id, IDNO, 
+      customer_name, tel_no, installation_address, 
+      applicant, apply_date, apply_service, 
+      proc_inst_id)
+    values (#{formNo,jdbcType=VARCHAR}, #{dataId,jdbcType=VARCHAR}, #{IDNO,jdbcType=VARCHAR}, 
+      #{customerName,jdbcType=VARCHAR}, #{telNo,jdbcType=VARCHAR}, #{installationAddress,jdbcType=VARCHAR}, 
+      #{applicant,jdbcType=BIGINT}, #{applyDate,jdbcType=TIMESTAMP}, #{applyService,jdbcType=VARCHAR}, 
+      #{procInstId,jdbcType=VARCHAR})
+  </insert>
+  <select id="selectByDataId" resultMap="BaseResultMap" >
+    select form_no, data_id, IDNO, customer_name, tel_no, installation_address, applicant, apply_date, 
+    apply_service, proc_inst_id
+    from applicationinfo
+    where data_id = #{dataId,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="countByCondition" resultType="java.lang.Long" >
+    select count(1)
+    from applicationinfo
+    where 1=1 <include refid="queryString" />
+  </select>
+  
+   <select id="selectByCondition" resultMap="BaseResultMap" >
+    select form_no, data_id, IDNO, customer_name, tel_no, installation_address, applicant, apply_date, 
+    apply_service, proc_inst_id
+    from applicationinfo
+    where 1=1 <include refid="queryString" />
+    order by data_id desc
+    limit #{startRow},#{pageSize}
+  </select>
+  
+  <select id="selectProcInstIdByCondition" resultType="java.lang.String" >
+    select proc_inst_id
+    from applicationinfo
+    where 1=1 <include refid="queryString" />
+  </select>
+  <delete id="deleteByCondition" >
+    delete from applicationinfo
+    where 1=1 <include refid="queryString" />
+  </delete>
+  
+  <sql id="queryString">
+  
+         <if test="applicant != null and applicant !=0">
+			 	and applicant = #{applicant,jdbcType=BIGINT}  
+	 	 </if>
+   	     <if test="formNo != null and formNo !=''">
+			 	and form_no = #{formNo,jdbcType=VARCHAR}  
+	 	 </if> 
+	 	 <if test="IDNO != null and IDNO !=''">
+			 	and IDNO = #{IDNO,jdbcType=VARCHAR}
+	 	 </if> 
+	 	 <if test="telNo != null and telNo !=''">
+			 	 and tel_no = #{telNo,jdbcType=VARCHAR}
+	 	 </if>
+	 	 <if test="applyService != null and applyService !=''">
+			 	 and apply_service = #{applyService,jdbcType=VARCHAR}
+	 	 </if>
+	 	 <if test="installationAddress != null and installationAddress !=''">
+			 	and installation_address like CONCAT('%',#{installationAddress},'%')
+	 	 </if> 
+	 	 <if test="startTime != null and endTime != null">
+			 	and DATE_FORMAT(apply_date,'%m-%d-%Y')
+			 	    between DATE_FORMAT(#{startTime,jdbcType=VARCHAR},'%m-%d-%Y') 
+			 	    and DATE_FORMAT(#{endTime,jdbcType=VARCHAR},'%m-%d-%Y') 
+	 	 </if>
+  	</sql>
+</mapper>

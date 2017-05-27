@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xinwei.rbac.dao.CommonBizMapper" >
+  <resultMap id="BaseResultMap" type="com.xinwei.rbac.entity.CommonBiz" >
+    <id column="data_id" property="dataId" jdbcType="BIGINT" />
+    <result column="data_category" property="dataCategory" jdbcType="VARCHAR" />
+    <result column="service_type" property="serviceType" jdbcType="VARCHAR" />
+    <result column="group_id" property="groupId" jdbcType="VARCHAR" />
+    <result column="group_name" property="groupName" jdbcType="VARCHAR" />
+    <result column="create_person_id" property="createPersonId" jdbcType="VARCHAR" />
+    <result column="create_person_name" property="createPersonName" jdbcType="VARCHAR" />
+    <result column="create_person_telno" property="createPersonTelno" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_person" property="updatePerson" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="result" property="result" jdbcType="VARCHAR" />
+    <result column="result_ext" property="resultExt" jdbcType="VARCHAR" />
+    <result column="service_owner" property="serviceOwner" jdbcType="VARCHAR" />
+    <result column="process_instance_id" property="processInstanceId" jdbcType="VARCHAR" />
+    <result column="task_id" property="taskId" jdbcType="VARCHAR" />
+    <result column="ext_activiti_info" property="extActivitiInfo" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="ext_status" property="extStatus" jdbcType="VARCHAR" />
+    <result column="data1" property="data1" jdbcType="VARCHAR" />
+    <result column="data2" property="data2" jdbcType="VARCHAR" />
+    <result column="data3" property="data3" jdbcType="VARCHAR" />
+    <result column="data4" property="data4" jdbcType="VARCHAR" />
+    <result column="data5" property="data5" jdbcType="VARCHAR" />
+    <result column="data6" property="data6" jdbcType="VARCHAR" />
+    <result column="data7" property="data7" jdbcType="VARCHAR" />
+    <result column="data8" property="data8" jdbcType="VARCHAR" />
+    <result column="data9" property="data9" jdbcType="VARCHAR" />
+    <result column="data10" property="data10" jdbcType="VARCHAR" />
+  </resultMap>
+ 
+  <insert id="insert" parameterType="com.xinwei.rbac.entity.CommonBiz" >
+    insert into tb_common_biz (data_id, data_category, service_type, 
+      group_id, group_name, create_person_id, 
+      create_person_name, create_person_telno, create_time, 
+      update_person, update_time, result, 
+      result_ext, service_owner, process_instance_id, 
+      task_id, ext_activiti_info, status, 
+      ext_status, data1, data2, 
+      data3, data4, data5, 
+      data6, data7, data8, 
+      data9, data10)
+    values (#{dataId,jdbcType=VARCHAR}, #{dataCategory,jdbcType=VARCHAR}, #{serviceType,jdbcType=VARCHAR}, 
+      #{groupId,jdbcType=VARCHAR}, #{groupName,jdbcType=VARCHAR}, #{createPersonId,jdbcType=VARCHAR}, 
+      #{createPersonName,jdbcType=VARCHAR}, #{createPersonTelno,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updatePerson,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, #{result,jdbcType=VARCHAR}, 
+      #{resultExt,jdbcType=VARCHAR}, #{serviceOwner,jdbcType=VARCHAR}, #{processInstanceId,jdbcType=VARCHAR}, 
+      #{taskId,jdbcType=VARCHAR}, #{extActivitiInfo,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{extStatus,jdbcType=VARCHAR}, #{data1,jdbcType=VARCHAR}, #{data2,jdbcType=VARCHAR}, 
+      #{data3,jdbcType=VARCHAR}, #{data4,jdbcType=VARCHAR}, #{data5,jdbcType=VARCHAR}, 
+      #{data6,jdbcType=VARCHAR}, #{data7,jdbcType=VARCHAR}, #{data8,jdbcType=VARCHAR}, 
+      #{data9,jdbcType=VARCHAR}, #{data10,jdbcType=VARCHAR})
+  </insert>
+  
+   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from tb_common_biz
+    where data_id = #{dataId,jdbcType=BIGINT}
+  </delete>
+  
+  <update id="updateProcessIdByDataId" parameterType="com.xinwei.rbac.entity.CommonBiz" >
+    update tb_common_biz
+    set process_instance_id = #{processInstanceId,jdbcType=VARCHAR}
+    where data_id = #{dataId,jdbcType=BIGINT}
+  </update>
+  
+    <update id="updateStatusByDataId" parameterType="com.xinwei.rbac.entity.CommonBiz" >
+    update tb_common_biz
+    set status = #{status,jdbcType=VARCHAR}
+    where data_id = #{dataId,jdbcType=BIGINT}
+  </update>
+  
+  <update id="updateByPrimaryKey" parameterType="com.xinwei.rbac.entity.CommonBiz" >
+    update tb_common_biz
+    set data_category = #{dataCategory,jdbcType=VARCHAR},
+      service_type = #{serviceType,jdbcType=VARCHAR},
+      group_id = #{groupId,jdbcType=VARCHAR},
+      group_name = #{groupName,jdbcType=VARCHAR},
+      create_person_id = #{createPersonId,jdbcType=VARCHAR},
+      create_person_name = #{createPersonName,jdbcType=VARCHAR},
+      create_person_telno = #{createPersonTelno,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_person = #{updatePerson,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      result = #{result,jdbcType=VARCHAR},
+      result_ext = #{resultExt,jdbcType=VARCHAR},
+      service_owner = #{serviceOwner,jdbcType=VARCHAR},
+      process_instance_id = #{processInstanceId,jdbcType=VARCHAR},
+      task_id = #{taskId,jdbcType=VARCHAR},
+      ext_activiti_info = #{extActivitiInfo,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      ext_status = #{extStatus,jdbcType=VARCHAR},
+      data1 = #{data1,jdbcType=VARCHAR},
+      data2 = #{data2,jdbcType=VARCHAR},
+      data3 = #{data3,jdbcType=VARCHAR},
+      data4 = #{data4,jdbcType=VARCHAR},
+      data5 = #{data5,jdbcType=VARCHAR},
+      data6 = #{data6,jdbcType=VARCHAR},
+      data7 = #{data7,jdbcType=VARCHAR},
+      data8 = #{data8,jdbcType=VARCHAR},
+      data9 = #{data9,jdbcType=VARCHAR},
+      data10 = #{data10,jdbcType=VARCHAR}
+    where data_id = #{dataId,jdbcType=BIGINT}
+  </update>
+
+    <select id="countByConditions" resultType="java.lang.Long" >
+    select count(1) 
+    from tb_common_biz
+    where 1=1
+    <include refid="queryConditions"></include>
+  </select>
+  
+   <select id="countAll" resultType="java.lang.Long" >
+    select count(1) 
+    from tb_common_biz
+  </select>
+  
+  <select id="getByDataId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select data_id, data_category, service_type, group_id, group_name, create_person_id, 
+    create_person_name, create_person_telno, create_time, update_person, update_time, 
+    result, result_ext, service_owner, process_instance_id, task_id, ext_activiti_info, 
+    status, ext_status, data1, data2, data3, data4, data5, data6, data7, data8, data9, 
+    data10
+    from tb_common_biz
+    where data_id = #{dataId,jdbcType=BIGINT}
+  </select>
+  
+    <select id="getByGroupId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select data_id, data_category, service_type, group_id, group_name, create_person_id, 
+    create_person_name, create_person_telno, create_time, update_person, update_time, 
+    result, result_ext, service_owner, process_instance_id, task_id, ext_activiti_info, 
+    status, ext_status, data1, data2, data3, data4, data5, data6, data7, data8, data9, 
+    data10
+    from tb_common_biz
+    where group_id = #{groupId,jdbcType=VARCHAR}
+    order by create_time desc
+  </select>
+  
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select data_id, data_category, service_type, group_id, group_name, create_person_id, 
+    create_person_name, create_person_telno, create_time, update_person, update_time, 
+    result, result_ext, service_owner, process_instance_id, task_id, ext_activiti_info, 
+    status, ext_status, data1, data2, data3, data4, data5, data6, data7, data8, data9, 
+    data10
+    from tb_common_biz
+    order by data_id
+	limit #{startRow},#{pageSize}
+  </select>
+
+   <select id="getCommonBizByGIdAndServiceType" resultMap="BaseResultMap" >
+    select data_id, data_category, service_type, group_id, group_name, create_person_id, 
+    create_person_name, create_person_telno, create_time, update_person, update_time, 
+    result, result_ext, service_owner, process_instance_id, task_id, ext_activiti_info, 
+    status, ext_status, data1, data2, data3, data4, data5, data6, data7, data8, data9, 
+    data10
+    from tb_common_biz
+    where 1=1
+    <include refid="queryConditions"></include>
+  </select>
+  
+  <select id="getBizListByGIdAndServiceType" resultMap="BaseResultMap" >
+    select data_id, data_category, service_type, group_id, group_name, create_person_id, 
+    create_person_name, create_person_telno, create_time, update_person, update_time, 
+    result, result_ext, service_owner, process_instance_id, task_id, ext_activiti_info, 
+    status, ext_status, data1, data2, data3, data4, data5, data6, data7, data8, data9, 
+    data10
+    from tb_common_biz
+    where 1=1
+    <include refid="queryBizList"></include>
+  </select>
+  
+   <select id="getBizListByCommonCondition" resultMap="BaseResultMap" >
+    select data_id, data_category, service_type, group_id, group_name, create_person_id, 
+    create_person_name, create_person_telno, create_time, update_person, update_time, 
+    result, result_ext, service_owner, process_instance_id, task_id, ext_activiti_info, 
+    status, ext_status, data1, data2, data3, data4, data5, data6, data7, data8, data9, 
+    data10
+    from tb_common_biz
+    where 1=1
+    <include refid="queryBizListByCommonCondition"></include>
+  </select>
+  
+  
+    <select id="getLatestBizByGroupId" resultMap="BaseResultMap" >
+	   select * FROM  
+	  (select * FROM tb_common_biz    
+	  where group_id = #{groupId,jdbcType=VARCHAR}
+	   order by  create_time DESC) AS T     
+	   group BY  T.service_type 
+	  
+  </select>
+  
+  
+    <select id="getLatestBizByGroupIdAndStatus" resultMap="BaseResultMap" >
+	   select * FROM  
+	  (select * FROM tb_common_biz    
+	  where group_id = #{groupId,jdbcType=VARCHAR}
+	  and  status =#{status,jdbcType=VARCHAR}
+	   order by  create_time DESC) AS T     
+	   group BY  T.service_type 
+    </select>
+  
+  
+  
+ <sql id="queryConditions">
+      <if test="serviceType !=null and serviceType !='' ">
+      and  service_type =#{serviceType}
+      </if> 
+	  
+	  <if test="groupId !=null and groupId !='' ">
+      and  group_id =#{groupId}
+      </if> 
+       order by create_time
+	limit #{startRow},#{pageSize}
+  	</sql>
+  	
+  	<sql id="queryBizList">
+      <if test="serviceType !=null and serviceType !='' ">
+      and  service_type =#{serviceType}
+      </if> 
+	  
+	  <if test="groupId !=null and groupId !='' ">
+      and  group_id =#{groupId}
+      </if> 
+       order by create_time
+  	</sql>
+  	
+
+  	<sql id="queryBizListByCommonCondition">
+  	 <if test="dataId !=null and dataId !='' ">
+      and  data_id =#{dataId}
+      </if> 
+      
+      <if test="serviceType !=null and serviceType !='' ">
+      and  service_type =#{serviceType}
+      </if> 
+	  
+	  <if test="groupId !=null and groupId !='' ">
+      and  group_id =#{groupId}
+      </if> 
+      
+      <if test="status !=null and status !='' ">
+      and  status =#{status}
+      </if> 
+      
+      <if test="result !=null and result !='' ">
+      and  result =#{result}
+      </if> 
+       order by create_time desc
+  	</sql>
+  	
+</mapper>

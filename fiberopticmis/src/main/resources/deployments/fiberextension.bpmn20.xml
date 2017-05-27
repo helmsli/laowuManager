@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://activiti.org/test">
+  <collaboration id="Collaboration">
+    <participant id="fiber_extension_pool" name="Fiber Extension Pool" processRef="fiber_extension"></participant>
+  </collaboration>
+  <process id="fiber_extension" name="Fiber Extension" isExecutable="true">
+    <laneSet id="laneSet_fiber_extension">
+      <lane id="financeAdmin" name="Finance Admin">
+        <flowNodeRef>to_extension_financeAdmin_review_result</flowNodeRef>
+        <flowNodeRef>to_extension_financeAdmin_review</flowNodeRef>
+        <flowNodeRef>fiber_extension_start</flowNodeRef>
+        <flowNodeRef>extension_financeAdmin_review</flowNodeRef>
+      </lane>
+      <lane id="seller" name="Seller">
+        <flowNodeRef>financeAdmin_pass</flowNodeRef>
+        <flowNodeRef>financeAdmin_reject</flowNodeRef>
+        <flowNodeRef>to_extension_seller_modify_result</flowNodeRef>
+        <flowNodeRef>financeAdmin_trans</flowNodeRef>
+        <flowNodeRef>seller_agree</flowNodeRef>
+        <flowNodeRef>seller_notagree</flowNodeRef>
+        <flowNodeRef>extension_financeAdmin_review_result</flowNodeRef>
+        <flowNodeRef>extension_seller_modify</flowNodeRef>
+        <flowNodeRef>extension_seller_modify_result</flowNodeRef>
+      </lane>
+      <lane id="networkAdmin" name="Network Admin">
+        <flowNodeRef>to_networkAdmin_review_result</flowNodeRef>
+        <flowNodeRef>networkAdmin_reject</flowNodeRef>
+        <flowNodeRef>networkAdmin_pass</flowNodeRef>
+        <flowNodeRef>fiber_extension_end</flowNodeRef>
+        <flowNodeRef>networkAdmin_review</flowNodeRef>
+        <flowNodeRef>networkAdmin_review_result</flowNodeRef>
+      </lane>
+    </laneSet>
+    <startEvent id="fiber_extension_start" name="Fiber Extension Start"></startEvent>
+    <userTask id="extension_financeAdmin_review" name="FinanceAdmin Review" activiti:assignee="${financeAdmin}" activiti:candidateGroups="${financeAdminGroup}"></userTask>
+    <userTask id="extension_seller_modify" name="Seller Modify" activiti:assignee="${seller}" activiti:candidateGroups="${sellerGroup}"></userTask>
+    <exclusiveGateway id="extension_seller_modify_result" name="extension_seller_modify_result"></exclusiveGateway>
+    <exclusiveGateway id="extension_financeAdmin_review_result" name="extension_financeAdmin_review_result"></exclusiveGateway>
+    <endEvent id="fiber_extension_end" name="Fiber Extension End">
+      <extensionElements>
+        <activiti:executionListener event="start" delegateExpression="${endEventListener}"></activiti:executionListener>
+      </extensionElements>
+    </endEvent>
+    <userTask id="networkAdmin_review" name="NetworkAdmin Review" activiti:assignee="${networkAdmin}" activiti:candidateGroups="${networkAdminGroup}"></userTask>
+    <exclusiveGateway id="networkAdmin_review_result" name="networkAdmin_review_result"></exclusiveGateway>
+    <sequenceFlow id="to_extension_financeAdmin_review_result" sourceRef="extension_financeAdmin_review" targetRef="extension_financeAdmin_review_result"></sequenceFlow>
+    <sequenceFlow id="financeAdmin_pass" name="FinanceAdmin Pass" sourceRef="extension_financeAdmin_review_result" targetRef="fiber_extension_end">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${extension_financeAdmin_review_result eq 'pass'}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="financeAdmin_reject" name="FinanceAdmin Reject" sourceRef="extension_financeAdmin_review_result" targetRef="extension_seller_modify">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${extension_financeAdmin_review_result eq 'reject'}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="to_extension_seller_modify_result" sourceRef="extension_seller_modify" targetRef="extension_seller_modify_result"></sequenceFlow>
+    <sequenceFlow id="financeAdmin_trans" name="FinanceAdmin Trans" sourceRef="extension_financeAdmin_review_result" targetRef="networkAdmin_review">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${extension_financeAdmin_review_result eq 'trans'}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="to_networkAdmin_review_result" sourceRef="networkAdmin_review" targetRef="networkAdmin_review_result"></sequenceFlow>
+    <sequenceFlow id="networkAdmin_reject" name="NetworkAdmin Reject" sourceRef="networkAdmin_review_result" targetRef="extension_seller_modify">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${networkAdmin_review_result eq 'reject'}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="networkAdmin_pass" name="NetworkAdmin Pass" sourceRef="networkAdmin_review_result" targetRef="fiber_extension_end">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${networkAdmin_review_result eq 'pass'}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="seller_agree" name="Seller Agree" sourceRef="extension_seller_modify_result" targetRef="extension_financeAdmin_review">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${extension_seller_modify_result eq 'pass'}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="seller_notagree" name="Seller Not Agree" sourceRef="extension_seller_modify_result" targetRef="fiber_extension_end">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${extension_seller_modify_result eq 'reject'}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="to_extension_financeAdmin_review" sourceRef="fiber_extension_start" targetRef="extension_financeAdmin_review"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_Collaboration">
+    <bpmndi:BPMNPlane bpmnElement="Collaboration" id="BPMNPlane_Collaboration">
+      <bpmndi:BPMNShape bpmnElement="fiber_extension_pool" id="BPMNShape_fiber_extension_pool">
+        <omgdc:Bounds height="618.0" width="811.0" x="10.0" y="40.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="financeAdmin" id="BPMNShape_financeAdmin">
+        <omgdc:Bounds height="206.0" width="781.0" x="40.0" y="40.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="seller" id="BPMNShape_seller">
+        <omgdc:Bounds height="206.0" width="781.0" x="40.0" y="246.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="networkAdmin" id="BPMNShape_networkAdmin">
+        <omgdc:Bounds height="206.0" width="781.0" x="40.0" y="452.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="fiber_extension_start" id="BPMNShape_fiber_extension_start">
+        <omgdc:Bounds height="35.0" width="35.0" x="455.0" y="45.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="extension_financeAdmin_review" id="BPMNShape_extension_financeAdmin_review">
+        <omgdc:Bounds height="75.0" width="115.0" x="415.0" y="120.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="extension_seller_modify" id="BPMNShape_extension_seller_modify">
+        <omgdc:Bounds height="55.0" width="105.0" x="270.0" y="320.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="extension_seller_modify_result" id="BPMNShape_extension_seller_modify_result">
+        <omgdc:Bounds height="40.0" width="40.0" x="180.0" y="329.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="extension_financeAdmin_review_result" id="BPMNShape_extension_financeAdmin_review_result">
+        <omgdc:Bounds height="40.0" width="40.0" x="452.0" y="327.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="fiber_extension_end" id="BPMNShape_fiber_extension_end">
+        <omgdc:Bounds height="35.0" width="35.0" x="306.0" y="610.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="networkAdmin_review" id="BPMNShape_networkAdmin_review">
+        <omgdc:Bounds height="61.0" width="105.0" x="420.0" y="500.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="networkAdmin_review_result" id="BPMNShape_networkAdmin_review_result">
+        <omgdc:Bounds height="40.0" width="40.0" x="303.0" y="510.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="to_extension_financeAdmin_review_result" id="BPMNEdge_to_extension_financeAdmin_review_result">
+        <omgdi:waypoint x="472.0" y="195.0"></omgdi:waypoint>
+        <omgdi:waypoint x="472.0" y="327.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="financeAdmin_pass" id="BPMNEdge_financeAdmin_pass">
+        <omgdi:waypoint x="492.0" y="347.0"></omgdi:waypoint>
+        <omgdi:waypoint x="656.0" y="347.0"></omgdi:waypoint>
+        <omgdi:waypoint x="656.0" y="624.0"></omgdi:waypoint>
+        <omgdi:waypoint x="341.0" y="627.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="100.0" x="502.0" y="309.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="financeAdmin_reject" id="BPMNEdge_financeAdmin_reject">
+        <omgdi:waypoint x="452.0" y="347.0"></omgdi:waypoint>
+        <omgdi:waypoint x="375.0" y="347.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="42.0" width="100.0" x="370.0" y="300.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="to_extension_seller_modify_result" id="BPMNEdge_to_extension_seller_modify_result">
+        <omgdi:waypoint x="270.0" y="347.0"></omgdi:waypoint>
+        <omgdi:waypoint x="220.0" y="349.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="financeAdmin_trans" id="BPMNEdge_financeAdmin_trans">
+        <omgdi:waypoint x="472.0" y="367.0"></omgdi:waypoint>
+        <omgdi:waypoint x="472.0" y="500.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="42.0" width="100.0" x="499.0" y="430.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="to_networkAdmin_review_result" id="BPMNEdge_to_networkAdmin_review_result">
+        <omgdi:waypoint x="420.0" y="530.0"></omgdi:waypoint>
+        <omgdi:waypoint x="343.0" y="530.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="networkAdmin_reject" id="BPMNEdge_networkAdmin_reject">
+        <omgdi:waypoint x="323.0" y="510.0"></omgdi:waypoint>
+        <omgdi:waypoint x="322.0" y="375.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="42.0" width="100.0" x="237.0" y="440.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="networkAdmin_pass" id="BPMNEdge_networkAdmin_pass">
+        <omgdi:waypoint x="323.0" y="550.0"></omgdi:waypoint>
+        <omgdi:waypoint x="323.0" y="610.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="98.0" x="219.0" y="569.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="seller_agree" id="BPMNEdge_seller_agree">
+        <omgdi:waypoint x="200.0" y="329.0"></omgdi:waypoint>
+        <omgdi:waypoint x="200.0" y="157.0"></omgdi:waypoint>
+        <omgdi:waypoint x="415.0" y="157.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="100.0" x="195.0" y="230.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="seller_notagree" id="BPMNEdge_seller_notagree">
+        <omgdi:waypoint x="200.0" y="369.0"></omgdi:waypoint>
+        <omgdi:waypoint x="200.0" y="624.0"></omgdi:waypoint>
+        <omgdi:waypoint x="306.0" y="627.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="100.0" x="209.0" y="400.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="to_extension_financeAdmin_review" id="BPMNEdge_to_extension_financeAdmin_review">
+        <omgdi:waypoint x="472.0" y="80.0"></omgdi:waypoint>
+        <omgdi:waypoint x="472.0" y="120.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

@@ -1,0 +1,88 @@
+<meta charset="UTF-8">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_QUOTATION_TITLE.QUOTATION_CUSTOMERNAME'|translate}}</div>
+				<div class="ds-cell-control grayColor" ng-bind="applicantInfo.customerName"></div>
+			</div>
+		</div>
+		<!-- /.col-4 -->
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_QUOTATION_TITLE.QUOTATION_CONTACTSNAME'|translate}}</div>
+				<div class="ds-cell-control grayColor"  ng-bind="applicantInfo.contactName"></div>
+			</div>
+		</div>
+		<!-- /.col-4 -->
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_QUOTATION_TITLE.QUOTATION_CONTACTNUMBER'|translate}}</div>
+				<div class="ds-cell-control grayColor"  ng-bind="applicantInfo.contactNumber"></div>
+			</div>
+		</div>
+		<!-- /.col-4 -->
+	</div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<!-- /.col-12 -->
+<div class="row clearfix">
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+	<div class="ds-table">
+		<div class="ds-cell-addon title">{{'TASK_QUOTATION_TITLE.QUOTATION_CONTACTID'|translate}}</div>
+		<div class="ds-cell-control grayColor"  ng-bind="applicantInfo.IDNO"></div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+	<div class="ds-table">
+		<div class="ds-cell-addon title">{{'TASK_QUOTATION_TITLE.QUOTATION_EXPECTEDBANDWIDTH'|translate}}</div>
+		<div class="ds-cell-control grayColor">
+		  <span ng-bind="applicantInfo.expectedBandwidth"> </span>
+		  <span class="p-l-5">Mbps</span>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="ds-table">
+		<div class="ds-cell-addon title top">{{'TASK_QUOTATION_TITLE.QUOTATION_INSTALLADD'|translate}}</div>
+		<div class="ds-cell-control grayColor"  ng-bind="applicantInfo.installationAddress"></div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_QUOTATION_TITLE.QUOTATION_CUSTOMERTYPE'|translate}}</div>
+				<div class="ds-cell-control grayColor"  ng-bind="applicantInfo.customerType"></div>
+			</div>
+		</div>
+		<!-- /.col-4 -->
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_QUOTATION_TITLE.QUOTATION_INSTALLAREA'|translate}}</div>
+				<div class="ds-cell-control grayColor"  ng-bind="applicantInfo.installationArea"></div>
+			</div>
+		</div>
+		<!-- /.col-4 -->
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_QUOTATION_TITLE.QUOTATION_FIBRETYPE'|translate}}</div>
+				<div class="ds-cell-control grayColor"  ng-bind="applicantInfo.fibreType"></div>
+			</div>
+		</div>
+		<!-- /.col-4 -->
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="ds-table">
+		<div class="ds-cell-addon title top">{{'TASK_QUOTATION_TITLE.QUOTATION_REMARKS'|translate}}</div>
+		<div class="ds-cell-control grayColor text-word"  ng-bind="applicantInfo.notes"></div>
+	</div>
+</div>
+<!-- /.col-12 -->

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xinwei.rbac.dao.DataPrivilegeMapper" >
+  <resultMap id="BaseResultMap" type="com.xinwei.rbac.entity.DataPrivilege" >
+    <id column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <id column="privilege_person" property="privilegePerson" jdbcType="INTEGER" />
+    <result column="person_or_role" property="personOrRole" jdbcType="INTEGER" />
+    <result column="is_creator" property="isCreator" jdbcType="INTEGER" />
+    <result column="data_id" property="dataId" jdbcType="BIGINT" />
+  </resultMap>
+  
+  <insert id="insert" parameterType="com.xinwei.rbac.entity.DataPrivilege" >
+    insert into tb_data_privilege (create_time, privilege_person, person_or_role, 
+      is_creator, data_id)
+    values (#{createTime,jdbcType=TIMESTAMP}, #{privilegePerson,jdbcType=INTEGER}, #{personOrRole,jdbcType=INTEGER}, 
+      #{isCreator,jdbcType=INTEGER}, #{dataId,jdbcType=VARCHAR})
+  </insert>
+  
+   <delete id="deleteByCondition" parameterType="map" >
+    delete from tb_data_privilege
+     where 1=1 <include refid="delConditions" />
+  </delete>
+  
+  <update id="updateByCondition" parameterType="com.xinwei.rbac.entity.DataPrivilege" >
+    update tb_data_privilege
+    set person_or_role = #{personOrRole,jdbcType=INTEGER},
+    is_creator = #{isCreator,jdbcType=INTEGER},
+    data_id = #{dataId,jdbcType=BIGINT}
+   where 1=1 <include refid="updateConditions" />
+  </update>
+  
+  <select id="countByConditions" resultType="java.lang.Long" >
+    select count(1) 
+    from tb_data_privilege
+    where 1=1 <include refid="queryConditions" />
+  </select>
+  
+  <select id="selectByCondition" resultMap="BaseResultMap" parameterType="map" >
+    select create_time, privilege_person, person_or_role, is_creator, data_id
+    from tb_data_privilege
+    where 1=1 <include refid="queryConditions" />
+   
+  </select>
+  
+   <select id="countAll" resultType="java.lang.Long" >
+    select count(1) 
+    from tb_data_privilege
+  </select>
+  
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select create_time, privilege_person, person_or_role, is_creator, data_id
+    from tb_data_privilege
+    order by create_time
+	 limit #{startRow},#{pageSize}
+    
+  </select>
+  
+   <select id="selectPrivilegePersonIdsByCreateTime" resultMap="BaseResultMap" >
+    select create_time, privilege_person, person_or_role, is_creator, data_id
+    from tb_data_privilege
+    where create_time =#{createTime,jdbcType=TIMESTAMP}
+  </select>
+  
+  	<sql id="queryConditions">
+   	 <if test="beginTime !=null and beginTime !='' ">
+      and  create_time &gt;=#{beginTime}
+    </if>
+	 <if test="endTime !=null and endTime!='' ">
+	  and create_time &lt;=#{endTime} 
+	</if>
+ 
+    and privilege_person in (
+  	  	<foreach collection="privilegePersons" item="privilegePersonId" separator="," >
+				#{privilegePersonId}
+	 	</foreach>
+	 )
+	
+	order by create_time
+	limit #{startRow},#{pageSize}
+	
+  	</sql>
+  	
+  	
+  	<sql id="updateConditions">
+   	 <if test="createTime !=null and createTime !='' ">
+      and  create_time =#{createTime}
+    </if>
+    
+     <if test="privilegePerson !=null and privilegePerson !='' ">
+      and  privilege_person =#{privilegePerson}
+    </if>
+  	</sql>
+  	
+  	
+  	 <sql id="delConditions">
+   	 <if test="createTime !=null and createTime !='' ">
+      and  create_time =#{createTime}
+    </if>
+ 
+    and privilege_person in (
+  	  	<foreach collection="privilegePersons" item="privilegePersonId" separator="," >
+				#{privilegePersonId}
+	 	</foreach>
+	 )
+  	</sql>
+  
+</mapper>

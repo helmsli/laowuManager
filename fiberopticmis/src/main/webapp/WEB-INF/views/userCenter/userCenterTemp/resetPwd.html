@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+<div class="modal-dialog" ng-controller="resetPwdCon">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">{{'MODIFY_PASSWORD.RESET_PASSWORD'|translate}}</h4>
+        </div>
+        <div class="modal-body">       	
+        	<form action="#" method="post" id="resetPwdForm" class="form-custom">
+				<div class="form-group">
+					<label class="form-label">{{'MODIFY_PASSWORD.NEWPASSWORD'|translate}}</label>
+					<input type="password" class="form-control" ng-model="user.newPassword" name="newPassword" id="newPassword"   data-error="新密码输入有误" data-tip="请输入新密码" />
+				</div>
+				<!-- / User Name -->
+				<div class="form-group">
+					<label class="form-label">{{'MODIFY_PASSWORD.CONFIRM_NEW_PASSWORD'|translate}}</label>
+					<input type="password" class="form-control" ng-model="user.rePassword" name="rePassword" id="rePassword"   data-error="重复新密码不正确" data-tip="请重新输入新密码"  />
+				</div>
+			</form>     	
+        </div>
+        <div class="modal-footer">
+            <button type="button"  class="btn btn-primary waves-effect m-r-8" ng-click="toResetPwd();" data-permission="UserManage:resetpassword">{{'MODIFY_PASSWORD.SUBMITBUTTON'|translate}}</button>
+            <button type="button"  class="btn btn-primary waves-effect" data-dismiss="modal">{{'MODIFY_PASSWORD.CLOSED'|translate}}</button>
+        </div>
+    </div>
+</div>

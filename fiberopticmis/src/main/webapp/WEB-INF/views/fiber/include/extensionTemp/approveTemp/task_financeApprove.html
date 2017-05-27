@@ -1,0 +1,76 @@
+<meta charset="UTF-8">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon addr"></div>
+				<div class="ds-cell-control">
+					<!-- 审核时有两种状态，如果是财务待审核状态时，显示“转网管审核，并选择指定相关审核人员”，如果是网管待审核时，只显示“同意”或“驳回” -->
+					<span class="radio-inline">
+		         		<input type="radio" class="with-gap radio-col-blue" id="che_01" name="hobby" ng-model="extensionReview.reviewResult" value="0">
+		          		<label for="che_01">{{'BUTTON_NAME.BTN_AGREE'|translate}}</label>
+		         	</span>
+		         	<span class="radio-inline">
+		         		<input type="radio" class="with-gap radio-col-blue" id="che_02" name="hobby" ng-model="extensionReview.reviewResult"  value="1">
+		          		<label for="che_02">{{'BUTTON_NAME.BTN_REJECT'|translate}}</label>
+		         	</span>
+		         	<span class="radio-inline" ng-show="netWorkRadio">
+		         		<input type="radio" class="with-gap radio-col-blue" id="che_03" name="hobby" ng-model="extensionReview.reviewResult"  value="3">
+		          		<label for="che_03">{{'BUTTON_NAME.BTN_TURNNETWORK'|translate}}</label>
+		         	</span>
+		         	<!-- 当选择转网管审核时，显示以下信息，并能指定相关审核人员列表，(此处类似于指定三级部门经理) -->
+		         	<span class="radio-inline" ng-show="netWorkFlag">
+		         		<i class="show" data-toggle="modal" onclick="initThreeLeader()" data-target="#selectedModal">+</i>
+		         	</span>
+		         	<span class="radio-inline" ng-show="netWorkFlag">
+		         		<input type="text"  class="form-control" style="margin:0px 0px 0px 10px;text-align:center;" readonly="readonly" ng-model="extensionReview.netWorkPerson">
+		         	</span>
+				</div>
+			</div>
+		</div>
+		<!-- /.col-12 -->
+		<div class="row clearfix" style="margin:50px 0px 0px 10px;">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<div class="ds-table">
+					<div class="ds-cell-addon addr">{{'EXTENSION_TITLE.TASK_PROCESS_TITLE.PROCESS_REMARKS'|translate}}：</div>
+					<div class="ds-cell-control"><textarea style="margin-bottom:0;" class="form-control no-resize" ng-model="extensionReview.notes" ></textarea></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<!-- 指定网管相关审核人员 -->
+<div class="modal fade" id="selectedModal"  data-backdrop="static">
+   	<div class="modal-dialog" ng-include="'include/extensionTemp/approveTemp/appoint_auditor.html'"></div>
+</div>
+<script>
+var scope=getAngularScope("projectModel");
+globalRegisterHtml(scope.gloablParm.state);
+$(function(){
+	$("input[name='hobby']").on('change',function(){
+		var checkFlag=$("#che_03").is(':checked');
+		var scope=getAngularScope("projectModel");
+		if(checkFlag){
+		    scope.$apply(function(){
+		    	 scope.netWorkFlag=true;	
+		    });
+		}else{
+			  scope.$apply(function(){
+			    	 scope.netWorkFlag=false;	
+			    });
+		}
+	});
+	
+		var bodyHei=$("body").height();
+		var windowHeight=$(window).height();
+		console.log(bodyHei+"==="+windowHeight);
+		$(document).scrollTop(bodyHei-windowHeight);
+	
+
+})
+
+</script>
+
+
+

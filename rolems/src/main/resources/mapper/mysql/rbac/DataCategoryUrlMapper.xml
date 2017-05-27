@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xinwei.rbac.dao.DataCategoryUrlMapper" >
+  <resultMap id="BaseResultMap" type="com.xinwei.rbac.entity.DataCategoryUrl" >
+    <result column="data_category" property="dataCategory" jdbcType="VARCHAR" />
+    <result column="service_type" property="serviceType" jdbcType="VARCHAR" />
+    <result column="call_interface_type" property="callInterfaceType" jdbcType="VARCHAR" />
+    <result column="call_url" property="callUrl" jdbcType="VARCHAR" />
+    <result column="call_back_url" property="callBackUrl" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <insert id="insert" parameterType="com.xinwei.rbac.entity.DataCategoryUrl" >
+    insert into data_category_url (data_category, service_type, call_interface_type, 
+      call_url, call_back_url)
+    values (#{dataCategory,jdbcType=VARCHAR}, #{serviceType,jdbcType=VARCHAR}, #{callInterfaceType,jdbcType=VARCHAR}, 
+      #{callUrl,jdbcType=VARCHAR}, #{callBackUrl,jdbcType=VARCHAR})
+  </insert>
+  
+    <delete id="deleteByPrimaryKey" >
+    delete from data_category_url
+     where data_category = #{dataCategory,jdbcType=VARCHAR}
+    and service_type = #{serviceType,jdbcType=VARCHAR}
+  </delete>
+  
+   <update id="updateByPrimaryKey" parameterType="com.xinwei.rbac.entity.DataCategoryUrl" >
+    update data_category_url
+    set call_interface_type = #{callInterfaceType,jdbcType=VARCHAR},
+    call_url = #{callUrl,jdbcType=VARCHAR},
+    call_back_url = #{callBackUrl,jdbcType=VARCHAR}
+    where data_category = #{dataCategory,jdbcType=VARCHAR}
+    and service_type = #{serviceType,jdbcType=VARCHAR}
+  </update>
+  
+   <select id="countAll" resultType="java.lang.Long" >
+    select count(1) 
+    from data_category_url
+  </select>
+  
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select data_category, service_type, call_interface_type, call_url, call_back_url
+    from data_category_url
+    order by data_category 
+	limit #{startRow},#{pageSize}
+  </select>
+  
+   <select id="countByConditions" resultType="java.lang.Long" >
+    select count(1) 
+    from data_category_url
+    where 1=1 <include refid="queryConditions" />
+  </select>
+  
+  <select id="selectByCategoryAndServiceType" resultMap="BaseResultMap" parameterType="map" >
+    select  data_category, service_type, call_interface_type, call_url, call_back_url
+    from data_category_url
+    where 1=1 <include refid="queryConditions" />
+  </select>
+  
+  	<sql id="queryConditions">
+   	
+   	 <if test="dataCategory !=null and dataCategory !='' ">
+      and  data_category = #{dataCategory,jdbcType=VARCHAR}
+    </if>
+    
+	 <if test="serviceType !=null and serviceType'' ">
+	  and service_type = #{serviceType,jdbcType=VARCHAR}
+	</if>
+     order by data_category 
+	limit #{startRow},#{pageSize}
+  	</sql>
+</mapper>

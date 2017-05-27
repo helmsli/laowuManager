@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="App">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Manager system</title>
+		
+		<!-- Plugin Css -->
+    	<link href="../../../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    	<link href="../../../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    	<link href="../../../plugins/material-design-preloader/md-preloader.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    	<link href="../../../plugins/node-waves/waves.min.css" rel="stylesheet" />
+   	 	<link href="../../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    	<link href="../../../plugins/animate-css/animate.css" rel="stylesheet" />
+    	
+	    <!-- Custom Css -->
+    	<link href="../../../css/custom.css" rel="stylesheet">
+	    <link href="../../../css/themes/default/skin.css" rel="stylesheet" type="text/css" title="default"/>
+	</head>
+	<body ng-controller="app">
+		<div class="page-loader-wrapper">
+		    <div class="loader">
+		        <div class="md-preloader pl-size-md">
+		            <svg viewbox="0 0 75 75">
+		                <circle cx="37.5" cy="37.5" r="33.5" class="pl-red" stroke-width="4" />
+		            </svg>
+		        </div>
+		        <p>加载中，请稍后...</p>
+		    </div>
+		</div>
+		<div class="overlay"></div>
+		<!-- Page Loader -->
+		<div id="wrapper">
+			<div class="header" ng-include="'../../include/header.html'"></div>
+			<div class="menus" ng-include="'../../include/leftMenu.html'"></div>
+			<div id="page-wrapper" ng-controller="reportExportCtrl">
+				<div class="panel">
+					<div class="panel-body">
+						<div id="wizard_verticle" class="form_wizard wizard_verticle p-t-50">
+	                      	<ul class="list-unstyled wizard_steps">
+	                        	<li>
+	                          		<a href="#step-1">
+			                            <span class="step_no">1</span>
+	                          		</a>
+	                        	</li>
+		                        <li>
+		                        	<a href="#step-2">
+			                            <span class="step_no">2</span>
+		                          	</a>
+		                        </li>
+	                       		<li>
+		                            <a href="#step-3">
+		                          		<span class="step_no">3</span>
+		                          	</a>
+	                        	</li>
+		                        <li>
+		                          	<a href="#step-4">
+			                            <span class="step_no">4</span>
+		                          	</a>
+		                        </li>
+	                      	</ul>
+	                      	<div class="content p-t-40" id="step-1">
+								<div class="row clearfix">
+		                    		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 m-t-25">
+		                    			<form action="#" method="post" id="theForm" class="form-column">
+											<div class="row clearfix">
+										        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 form-control-label">
+										            <label for="email_address_2">姓名:</label>
+										        </div>
+										        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+										            <div class="form-group">
+										                <div class="form-line">
+										                    <input type="text" class="form-control" placeholder="请输入用户名称" name="userName" id="userName" data-error="UserName error" data-tip="Please enter the user name" />
+										                </div>
+										            </div>
+										        </div>
+										    </div>
+										    <div class="row clearfix">
+										        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 form-control-label">
+										            <label for="email_address_2">真是姓名:</label>
+										        </div>
+										        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+										            <div class="form-group">
+										                <div class="form-line">
+										                    <input type="text" class="form-control" placeholder="请输入真实姓名" name="userName" id="pwd" data-error="UserName error" data-tip="Please enter the user name" />
+										                </div>
+										            </div>
+										        </div>
+										    </div>
+										    <div class="row clearfix">
+										        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 form-control-label">
+										            <label for="email_address_2">密码:</label>
+										        </div>
+										        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+										            <div class="form-group">
+										                <div class="form-line">
+										                    <input type="text" class="form-control" placeholder="请输入密码" name="userName" id="email" data-error="UserName error" data-tip="Please enter the user name" />
+										                </div>
+										            </div>
+										        </div>
+										    </div>
+										    <div class="row clearfix">
+										        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 form-control-label">
+										            <label for="email_address_2">确认密码:</label>
+										        </div>
+										        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+										            <div class="form-group">
+										                <div class="form-line">
+										                    <input type="text" class="form-control" placeholder="请再次输入密码" name="userName" id="myNum" data-error="UserName error" data-tip="Please enter the user name" />
+										                </div>
+										            </div>
+										        </div>
+										    </div>
+										    <div class="row clearfix">
+										        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 form-control-label l-chk-rad">
+										            <label for="email_address_2">性别:</label>
+										        </div>
+										        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-9">
+										            <div class="form-group">
+										                <div class="form-line ds-inline">
+										                	<div class="radio">
+										                		<div class="radio-inline">
+										                			<input type="radio" id="radio_1" class="with-gap radio-col-blue" name="hobby" value="sing" data-error="未勾选" />
+										                        	<label for="radio_1">男</label>
+										                		</div>
+										                		<div class="radio-inline">
+										                			<input type="radio" id="radio_2" class="with-gap radio-col-blue" name="hobby" value="dance" data-error="未勾选" />
+										                        	<label for="radio_2">女</label>
+										                		</div>
+										                    </div>
+										                </div>
+										                <div class="input-tips hide">
+															<label class="error" id="checkboxError">请勾选</label>
+														</div>
+										            </div>
+										        </div>
+										    </div>
+										</form>
+		                    		</div>
+		                    	</div>
+	                      	</div>
+		                    <div class="content p-t-10" id="step-2">
+                    			<h2 class="panel-inside-title font-bold">提拉米苏</h2>
+								<p>一个意大利士兵即将开赴战场，可是家里已经什么也没有了，爱他的妻子为了给他准备干粮，把家里所有能吃的饼干、面包全做进了一个糕点里，意为带我走，那个糕点就叫提拉米苏。每当这个士兵在战场上吃到提拉米苏就会想起他的家，想起家中的爱人。在意大利文里，提拉米苏有 “ 带我走 ” 的含义，带走的不只是美味，还有爱和幸福。</p>
+                    			<p>一个叫Fvan（繁）的男生爱上了一个叫Jane（珍）的女生。男生坚信名称与Tianned相似之处的“提拉米苏”蛋糕会为他带来好运。于是他用了许多个日夜，自己照着提拉米苏的制作方法，做出了一个非常精致的蛋糕，并将这个蛋糕命名为“提拉米苏的爱”。女孩吃到了这个蛋糕，感受到了浓浓的爱意后嫁给了男孩。之后这个故事便在乡镇上广为流传。提拉米苏蛋糕便成了爱与情的代名词。</p>
+                    			<p>据说提拉米苏（Tiramisu）原来叫公爵的甜羹（zuppa del duca），因为这道甜点是为Grand Duke Cosimo III de'Medici（Medici公爵三世）发明，而且深得公爵喜欢，随之开始风靡宫廷。但“公爵的甜羹”如何演变成Tiramisu，则出现解释上的断层。</p>
+                    			<P>提拉米苏（Tiramisu）作为意大利甜点的代表，是风靡各大咖啡厅、烘焙门市及西餐厅的时髦甜点。 这一甜点自20世纪80年代中期走红。它的配方中具创新意义的是咖啡风味的起士奶蛋液，这一新口味亦为蛋糕、布丁等其它形式的冷热甜点所吸收。</P>
+                    			<p>它以香醇浓沉的口感，将Espresso（特浓意大利咖啡）的苦、蛋与糖的润、甜酒的醇、巧克力的馥郁、手指饼干的绵密、乳酪和鲜奶油的稠香、可可粉的干爽，揉合在一起。只用了不到十种材料，把“甜”以及甜所能唤起的种种错综复杂的体验，交糅着，一层层演绎到极致。</p>
+                    			<p>提拉米苏（Tiramisu）吃到嘴里香、滑、甜、腻、柔和中带有质感的变化，味道并不是一味的甜，因为有了可可粉，所以略微有一点苦涩，这正好与卡布奇诺相配。</p>
+		                    </div>
+		                    <div class="content p-t-10" id="step-3">
+                    			<h2 class="panel-inside-title font-bold">休斯顿-火箭</h2>
+								<p>只是火箭的防守始终有够糜烂，时常被小牛轻松突入内线。巴里亚与德隆连续罚球命中，帮助主队反超。之后场上出现了有趣的一幕，博古特、内内与阿里扎三人如同多米诺骨牌似的发生连环追尾，裁判判罚博古特犯规，这令小牛球迷乃至卡莱尔非常不满。身背3犯的博古特只好带着抱怨被替换下场，这也是没办法的事。</p>
+                    			<p>德隆该节如有神助，他在底线三分命中后，半场已经拿到13分。小戈登立马外线还以颜色，鲍威尔抢到前场篮板送出勾手，哈登最后关头在被封盖的情况下自己抢到前场篮板，完成上篮还造马修斯犯规，这令马修斯非常不满，结果吃到技术犯规，哈登2罚1中后，火箭带着2分的领先进入下半场。</p>
+                    			<p>次节双方替补对战，恩尼斯与卡佩拉完成空接后，德克尔一头撞上对手，这一下撞得着实不轻，还差点受伤。布鲁尔上篮造对手干扰球后，小戈登站上罚球线两罚全中，火箭以34-28领先。</p>
+                    			<p>安德森三分命中，潜伏在底线的阿里扎同样外线得手。不过随后小牛连得5分，将分差追近。首节还剩4分22秒，前6投全部不中的登哥终于外线三分开张，紧跟着他又中距离跳投命中，手感似乎有所恢复。</p>
+                    			<p>诺维茨基因病缺阵，卡莱尔干脆排出一大四小的阵容，巴里亚与德隆-威廉姆斯领衔后场。阿里扎与小戈登连续三分命中，巴恩斯跳投还以颜色，紧跟着巴里亚突破上篮得手，8-6。阿里扎底线制造犯规3罚全中，火箭继续领先。</p>
+                    			<p>巴恩斯连得5分，小库里上篮得手，小牛立即将比分迎头赶上。季前赛的铁神巴恩斯，常规赛里状态相当了得，随后又是连得5分，帮助小牛重新领先，布鲁尔之后接内内助攻投中远射，追平。首节比赛巴恩斯8投5中，单枪匹马拿到12分，当真是挑起了领袖的重任。</p>
+		                    </div>
+	                      	<div class="content p-t-10" id="step-4">
+                    			<h2 class="panel-inside-title font-bold">卡布奇诺(一种意大利咖啡)</h2>
+								<p>卡布奇诺咖啡的味道很好，但它的名称来历却更有学问，一直是欧美研究文字变迁的最佳体材。 Cappuccino此字的历史，足以说明一个字常常会因为看来像某样东西，最后被引申成其它字义，远远超出造字者原先用意。听来似乎蛮复杂的。创设于一五二五年以后的圣芳济教会(Capuchin)的修士都穿著褐色道袍，头戴一顶尖尖帽子，圣芳济教会传到意大利时，当地人觉得修士服饰很特殊，就给他们取个Cappuccino的名字，此字的意大利文是指僧侣所穿宽松长袍和小尖帽，源自意大利文“头巾”即Cappuccino。</p>
+								<p>然而，老人爱喝咖啡，发觉浓缩咖啡、牛奶和奶泡混合后，颜色就像是修士所穿的深褐色道袍，于是灵机一动，就给牛奶加咖啡又有尖尖奶泡的饮料，取名为卡布奇诺(Cappuccino)。英文最早使用此字的时间在一九四八年，当时旧金山一篇报导率先介绍卡布奇诺饮料，一直到1990年以后，才成为世人耳熟能详的咖啡饮料。应该可以这么说Cappuccino咖啡这个字，源自圣芳济教会(Capuchin)和意大利文头巾(Cappucio)，相信Cappuccino的原始造字者，做梦也没料到僧侣的道袍最后会变成一种咖啡饮料名称。</p>
+								<p>卡布奇诺咖啡是意大利咖啡的一种变化，即在偏浓的咖啡上，倒入以蒸汽发泡的牛奶，此时咖啡的颜色就像卡布奇诺教会修士深褐色外衣上覆的头巾一样，咖啡因此得名。</p>
+								<p>卡布奇诺也和一种猴名有关。非洲有一种小猴子，头顶上有一撮黑色的锥状毛发，很像方济各会道袍上的小尖帽，这种小猴子也因此被取名为Capuchin，此一猴名最早被英国人使用的时间在1785年。</p>
+								<p>卡布奇诺分为干和湿两种。所谓干卡布奇诺(Dry Cappuccino)是指奶泡较多，牛奶较少的调理法，喝起来咖啡味浓过奶香，适合重口味者饮用。至于湿卡布奇诺(Wet Cappuccino)则指奶泡较少，牛奶量较多的做法，奶香盖过浓呛的咖啡味，适合口味清淡者。湿卡布奇诺的风味和时下流行的拿铁差不多。一般而言，卡布奇诺的口味比拿铁来得重，如果您是重口味不妨点卡布奇诺或干卡布奇诺，您如果不习惯浓呛的咖啡味，可以点拿铁或湿卡布奇诺。</p>
+	                      	</div>
+	                    </div>
+	                    <!-- End SmartWizard Content -->
+						
+					</div>
+				</div>
+			</div>
+			<!-- / #page-wrapper -->
+		</div>
+		<!-- / #wrapper -->
+	</body>
+	<!-- Plugin Js -->
+    <script src="../../../plugins/jquery/jquery-2.2.4.min.js"></script>
+    <script src="../../../plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../../plugins/angular/angular.min.js"></script>
+    <script src="../../../plugins/ocLazyLoad/ocLazyLoad.min.js"></script>
+    <script src="../../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="../../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="../../../plugins/bootstrap-notify/bootstrap-notify.js"></script>
+    <script src="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="../../../plugins/node-waves/waves.js"></script>
+    <script src="../../../plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="../../../plugins/jQuery-Smart-Wizard/jquery.smartWizard.js"></script>
+    <script src="../../../js/ui/dialogs.js"></script>
+    <script src="../../../js/ui/modals.js"></script>
+    <script src="../../../js/ui/notifications.js"></script>
+    <script src="../../../js/ui/tooltips-popovers.js"></script>
+    <script src="../../../js/ui/load_resize.js"></script>
+     <script src="../../../plugins/angular/angular-translate.min.js"> </script>
+	<script src="../../../plugins/angular/angular-translate-loader-static-files.min.js"> </script>
+    <!-- Custom JS -->
+    <script src="../../../js/server/server.js" type="text/javascript"></script>
+	<script src="../../../js/cookie.js" type="text/javascript"></script>
+	<script src="../../../js/skin.js" type="text/javascript"></script>
+	<script src="../../../js/config/config_skin.js" type="text/javascript"></script>
+	<script src="../../../js/App.js" type="text/javascript"></script>
+	<script src="../../../js/home.js" type="text/javascript"></script>
+	
+	<!--Forms JS -->
+	<script src="../../../js/formValidata/formValid_Inf.js" type="text/javascript"></script>
+	<script src="../../../js/formValidata/formValid_Rule.js" type="text/javascript"></script>
+	<script src="../../../js/formValidata/formValid.js" type="text/javascript"></script>
+	
+	<!-- Step JS -->
+	<script src="js/step_1.js" type="text/javascript"></script>
+	
+	<script>
+		//jquery.smartWizard
+    	$(document).ready(function() {
+	        $('#wizard').smartWizard();
+	
+	        $('#wizard_verticle').smartWizard({
+	        	transitionEffect: 'slide',
+	        	labelNext:'下一步',
+			    labelPrevious:'上一步',
+			    labelFinish:'完成'
+	        });
+	        
+	        $('.buttonNext').addClass('btn btn-success waves-effect');
+	        $('.buttonPrevious').addClass('btn btn-primary waves-effect');
+	        $('.buttonFinish').addClass('btn btn-default waves-effect');
+    	});
+    </script>
+</html>

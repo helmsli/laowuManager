@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="App">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Manager system</title>
+		<!-- Plugin Css -->
+    	<link href="../../../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    	<link href="../../../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    	<link href="../../../plugins/material-design-preloader/md-preloader.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    	<link href="../../../plugins/node-waves/waves.min.css" rel="stylesheet" />
+   	 	<link href="../../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    	<link href="../../../plugins/animate-css/animate.css" rel="stylesheet" />
+    	
+	    <!-- Custom Css -->
+    	<link href="../../../css/custom.css" rel="stylesheet">
+	    <link href="../../../css/themes/default/skin.css" rel="stylesheet" type="text/css" title="default"/>
+		<style>
+	    	.m-l-10 {
+	    		margin-left: 10px!important;
+	    	}
+	    </style>
+	</head>
+	<body ng-controller="app">
+		<div class="page-loader-wrapper">
+		    <div class="loader">
+		        <div class="md-preloader pl-size-md">
+		            <svg viewbox="0 0 75 75">
+		                <circle cx="37.5" cy="37.5" r="33.5" class="pl-red" stroke-width="4" />
+		            </svg>
+		        </div>
+		        <p>加载中，请稍后...</p>
+		    </div>
+		</div>
+		<div class="overlay"></div>
+		<!-- Page Loader -->
+		<div id="wrapper">
+			<div class="header" ng-include="'../../include/header.html'"></div>
+			<div class="menus" ng-include="'../../include/leftMenu.html'"></div>
+			<div id="page-wrapper">
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							文本框组合
+                            <small>不同的大小和宽度</small>
+						</h2>
+						<div class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-ellipsis-v"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+							    <li><a href="javascript:void(0);">编辑</a></li>
+							    <li><a href="javascript:void(0);">查看详细</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel-body">
+						<h2 class="panel-inside-title">默认文本框</h2>
+						<div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" placeholder="请输入用户名称" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="password" class="form-control" placeholder="请输入密码" />
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+						<div class="row clearfix">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" placeholder="请输入用户名称" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" placeholder="请输入用户名称" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <hr />
+                        <h2 class="panel-inside-title">两列布局</h2>
+                        <form class="form-horizontal">
+                            <div class="row clearfix">
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                    <label for="email_address_2">邮件地址：</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="text" id="email_address_2" class="form-control" placeholder="请输入邮件地址">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                    <label for="password_2">密码：</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="password" id="password_2" class="form-control" placeholder="请输入密码">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5 p-l-15">
+                                	<div class="checkbox-inline">
+                                		<input type="checkbox" id="remember_me_3" class="filled-in">
+                                    	<label for="remember_me_3">记住我</label>
+                                	</div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-4 col-xs-offset-5 p-l-15">
+                                    <button type="button" class="btn btn-primary m-t-15 waves-effect">登录</button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <hr />
+                        <h2 class="panel-inside-title">多列布局</h2>
+                        <div class="row clearfix">
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" placeholder="请输入邮件地址">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-6">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="password" class="form-control" placeholder="请输入密码">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                            	<div class="checkbox-inline">
+                            		<input type="checkbox" id="remember_me_5" class="filled-in">
+                                	<label for="remember_me_5">记住我</label>
+                            	</div>
+                                <button type="button" class="btn btn-primary btn-lg m-l-15 waves-effect">登录</button>
+                            </div>
+                        </div>
+                        
+                         <hr />
+                        <h2 class="panel-inside-title">单行表单布局</h2>
+                        <form class="form-horizontal">
+                            <div class="row clearfix">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+	                                	<label>用户名:</label>
+	                                    <div class="form-line">
+	                                        <input type="text" class="form-control" placeholder="请输入用户名" />
+	                                    </div>
+	                                </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+	                                	<label>密码:</label>
+	                                    <div class="form-line">
+	                                        <input type="text" class="form-control" placeholder="请输入密码" />
+	                                    </div>
+	                                </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-12">
+                                	<div class="checkbox-inline">
+                                		<input type="checkbox" id="remember_me_4" class="filled-in">
+                                    	<label for="remember_me_4">记住我</label>
+                                	</div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-lg-12">
+                                    <button type="button" class="btn btn-primary m-t-15 waves-effect">登录</button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <hr />
+                        <h2 class="panel-inside-title">搜索框布局</h2>
+                        <div class="row clearfix">
+                            <div class="col-sm-4 col-xs-6">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="search" class="form-control" placeholder="请输入...">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-6">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                    	<div class="search-group">
+                                    		<div class="search-inline">
+	                                    		<input type="search" class="form-control" placeholder="请输入...">
+	                                        	<span class="btn-group"><button type="button" class="btn btn-primary waves-effect">搜索</button></span>
+	                                    	</div>
+                                    	</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-12">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                    	<div class="search-group">
+                                    		<div class="search-block">
+	                                    		<input type="search" class="form-control" placeholder="请输入...">
+	                                        	<span class="btn-group"><button type="button" class="btn btn-primary waves-effect">搜索</button></span>
+	                                    	</div>
+                                    	</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+					</div>
+				</div>
+				<!-- / .panel -->
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							下拉选择框
+                           	<small>采用 <a href="https://silviomoreto.github.io/bootstrap-select/" target="_blank">silviomoreto.github.io/bootstrap-select</a></small>
+						</h2>
+						<div class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-ellipsis-v"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+							    <li><a href="javascript:void(0);">编辑</a></li>
+							    <li><a href="javascript:void(0);">查看详细</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="row clearfix">
+                            <div class="col-sm-6">
+                                <select class="form-control show-tick">
+                                    <option value="">默认的选择框</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">40</option>
+                                    <option value="50">50</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6">
+                                <select class="form-control" disabled="disabled">
+                                    <option value="">不可用的选择框</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">40</option>
+                                    <option value="50">50</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-12"><hr /></div>
+                            <div class="col-sm-6">
+                            	<div class="form-group">
+									<div class="form-line">
+										<input type="text" class="form-control tab-select-left" placeholder="配合文本框的下拉选择框" id="myNum" data-error="password error" data-tip="Please enter your password" />
+										<div class="tab-select-group">
+											<select class="form-control show-tick">
+												<option value="0">USD</option>
+												<option value="1">KHR</option>
+											</select>
+										</div>
+									</div>
+								</div>
+                            </div>
+                            <div class="col-sm-6">
+                            	<div class="form-group">
+									<div class="form-line">
+										<input type="text" class="form-control tab-select-right" placeholder="配合文本框的下拉选择框" id="myNum" data-error="password error" data-tip="Please enter your password" />
+										<div class="tab-select-group">
+											<select class="form-control show-tick">
+												<option value="0">USD</option>
+												<option value="1">KHR</option>
+											</select>
+										</div>
+									</div>
+								</div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+				<!-- / .panel -->
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">证件/文件预览、上传</h2>
+						<div class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-ellipsis-v"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+							    <li><a href="javascript:void(0);">编辑</a></li>
+							    <li><a href="javascript:void(0);">查看详细</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="row clearfix">
+                            <div class="col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                	<label>证件照:</label>
+                                	<div class="form-line">
+                                		<div class="file-preview m-r-15">
+    										<span class="thumbnail" id="showImg">
+    											<i class="fa fa-plus"></i>
+    										</span>
+    										<input type="file" name="filefield" id="uploadFile" class="form-control" onchange="uploadImage('uploadFile','showImg')" />
+    										<span id="uploadFile_delete" class="ds-block hide img-deleted">
+    											<i class="fa fa-minus-circle col-red" onclick="deleteImg('uploadFile','showImg')"></i>
+    										</span>
+    									</div>
+    									<div class="file-preview">
+    										<span class="thumbnail" id="showImg2">
+    											<i class="fa fa-plus"></i>
+    										</span>
+    										<input type="file" name="filefield"  id="uploadFile2" class="form-control" onchange="uploadImage('uploadFile2','showImg2')" />
+    										<span  id="uploadFile2_delete" class="ds-block hide  img-deleted">
+    											<i class="fa fa-minus-circle col-red" onclick="deleteImg('uploadFile2','showImg2')"></i>
+    										</span>
+    									</div>
+                                   </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-xs-12">
+                            	<div class="form-group">
+                            		<label>文件:</label>
+                                    <div class="form-line">
+                                        <div class="file-group">
+        									<input type="text" name="fileName" id="fileName" class="form-control" placeholder="选择文件..." />
+            								<input type="button" value="选择文件" class="btn btn-primary"/>
+            								<input type="file" name="filefield" id="uploadFile" onchange="document.getElementById('fileName').value=this.value" />
+            							</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+				<!-- / .panel -->
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">多行文本框</h2>
+						<div class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-ellipsis-v"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+							    <li><a href="javascript:void(0);">编辑</a></li>
+							    <li><a href="javascript:void(0);">查看详细</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="row clearfix">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <textarea rows="4" class="form-control no-resize" placeholder="请输入您想要的..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+				<!-- / .panel -->
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							多项选择框
+                           	<small>采用 <a href="http://materializecss.com/" target="_blank">materializecss.com</a></small>
+						</h2>
+						<div class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-ellipsis-v"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+							    <li><a href="javascript:void(0);">编辑</a></li>
+							    <li><a href="javascript:void(0);">查看详细</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel-body">
+						 <h2 class="panel-inside-title">基础示例</h2>
+                        <div class="demo-checkbox">
+                    		<div class="checkbox-inline m-l-10">
+                        		<input type="checkbox" id="basic_checkbox_1" checked />
+                            	<label for="basic_checkbox_1">默认</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="basic_checkbox_2" class="filled-in" checked />
+                            	<label for="basic_checkbox_2">填充</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="basic_checkbox_3" checked disabled />
+                            	<label for="basic_checkbox_3">默认不可用</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="basic_checkbox_4" class="filled-in" checked disabled />
+                            	<label for="basic_checkbox_4">填充不可用</label>
+                        	</div>
+                        </div>
+                        
+                        <h2 class="panel-inside-title">多种设计颜色</h2>
+                        <div class="demo-checkbox">
+                    		<div class="checkbox-inline m-l-10">
+                        		<input type="checkbox" id="md_checkbox_1" class="chk-col-red" checked="">
+                            	<label for="md_checkbox_1">红色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_2" class="chk-col-pink" checked="">
+                            	<label for="md_checkbox_2">粉红色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_3" class="chk-col-purple" checked="">
+                            	<label for="md_checkbox_3">紫色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_4" class="chk-col-deep-purple" checked="">
+                            	<label for="md_checkbox_4">深紫色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_5" class="chk-col-indigo" checked="">
+                            	<label for="md_checkbox_5">靛蓝色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_6" class="chk-col-blue" checked="">
+                            	<label for="md_checkbox_6">蓝色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_7" class="chk-col-light-blue" checked="">
+                            	<label for="md_checkbox_7">浅蓝色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_8" class="chk-col-cyan" checked="">
+                            	<label for="md_checkbox_8">青蓝色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_9" class="chk-col-teal" checked="">
+                            	<label for="md_checkbox_9">青色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_10" class="chk-col-green" checked="">
+                            	<label for="md_checkbox_10">绿色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_11" class="chk-col-light-green" checked="">
+                            	<label for="md_checkbox_11">浅绿色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_12" class="chk-col-lime" checked="">
+                            	<label for="md_checkbox_12">青柠色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_13" class="chk-col-yellow" checked="">
+                            	<label for="md_checkbox_13">黄色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_14" class="chk-col-amber" checked="">
+                            	<label for="md_checkbox_14">琥珀色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_15" class="chk-col-orange" checked="">
+                            	<label for="md_checkbox_15">橙色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_16" class="chk-col-deep-orange" checked="">
+                            	<label for="md_checkbox_16">深橙色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_17" class="chk-col-brown" checked="">
+                            	<label for="md_checkbox_17">咖啡色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_18" class="chk-col-grey" checked="">
+                            	<label for="md_checkbox_18">灰色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_19" class="chk-col-blue-grey" checked="">
+                            	<label for="md_checkbox_19">蓝色 灰色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_20" class="chk-col-black" checked="">
+                            	<label for="md_checkbox_20">黑色</label>
+                        	</div>
+                        </div>
+                        
+                        <h2 class="panel-inside-title">多种设计颜色-填充</h2>
+                        <div class="demo-checkbox">
+                        	<div class="checkbox-inline m-l-10">
+                        		<input type="checkbox" id="md_checkbox_21" class="filled-in chk-col-red" checked="">
+                            	<label for="md_checkbox_21">红色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_22" class="filled-in chk-col-pink" checked="">
+                            	<label for="md_checkbox_22">粉红色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_23" class="filled-in chk-col-purple" checked="">
+                           		<label for="md_checkbox_23">紫色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_24" class="filled-in chk-col-deep-purple" checked="">
+                            	<label for="md_checkbox_24">深紫色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_25" class="filled-in chk-col-indigo" checked="">
+                            	<label for="md_checkbox_25">靛蓝</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_26" class="filled-in chk-col-blue" checked="">
+                            	<label for="md_checkbox_26">蓝色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_27" class="filled-in chk-col-light-blue" checked="">
+                            	<label for="md_checkbox_27">浅蓝色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_28" class="filled-in chk-col-cyan" checked="">
+                            	<label for="md_checkbox_28">青蓝色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_29" class="filled-in chk-col-teal" checked="">
+                            	<label for="md_checkbox_29">青色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_30" class="filled-in chk-col-green" checked="">
+                            	<label for="md_checkbox_30">绿色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_31" class="filled-in chk-col-light-green" checked="">
+                            	<label for="md_checkbox_31">浅绿色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_32" class="filled-in chk-col-lime" checked="">
+                            	<label for="md_checkbox_32">青柠色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_33" class="filled-in chk-col-yellow" checked="">
+                            	<label for="md_checkbox_33">黄色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_34" class="filled-in chk-col-amber" checked="">
+                            	<label for="md_checkbox_34">琥珀色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_35" class="filled-in chk-col-orange" checked="">
+                            	<label for="md_checkbox_35">橙色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_36" class="filled-in chk-col-deep-orange" checked="">
+                            	<label for="md_checkbox_36">深橙色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_37" class="filled-in chk-col-brown" checked="">
+                            	<label for="md_checkbox_37">咖啡色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_38" class="filled-in chk-col-grey" checked="">
+                            	<label for="md_checkbox_38">灰色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_39" class="filled-in chk-col-blue-grey" checked="">
+                            	<label for="md_checkbox_39">蓝灰色</label>
+                        	</div>
+                        	<div class="checkbox-inline">
+                        		<input type="checkbox" id="md_checkbox_40" class="filled-in chk-col-black" checked="">
+                            	<label for="md_checkbox_40">黑色</label>
+                        	</div>
+                        </div>
+                        
+					</div>
+				</div>
+				<!-- / .panel -->
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							单项选择框
+                            <small>采用 <a href="http://materializecss.com/" target="_blank">materializecss.com</a></small>
+						</h2>
+						<div class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-ellipsis-v"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+							    <li><a href="javascript:void(0);">编辑</a></li>
+							    <li><a href="javascript:void(0);">查看详细</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel-body">
+						<h2 class="panel-inside-title">基础示例</h2>
+						<div class="demo-radio-button">
+							<div class="radio-inline m-l-10">
+								<input name="group1" type="radio" id="radio_1" checked="">
+                            	<label for="radio_1">单选 - 填充</label>
+							</div>
+							<div class="radio-inline">
+								<input name="group1" type="radio" id="radio_2">
+                            	<label for="radio_2">单选 - 填充</label>
+							</div>
+							<div class="radio-inline">
+								<input name="group1" type="radio" class="with-gap" id="radio_3">
+                            	<label for="radio_3">单选 - 距离</label>
+							</div>
+							<div class="radio-inline">
+								<input name="group1" type="radio" id="radio_4" class="with-gap">
+                            	<label for="radio_4">单选 - 距离</label>
+							</div><div class="radio-inline">
+								<input name="group2" type="radio" id="radio_5" checked="" disabled="">
+                            	<label for="radio_5">单选 - 填充禁用</label>
+							</div>
+							<div class="radio-inline">
+								<input name="group3" type="radio" id="radio_6" class="with-gap" checked="" disabled="">
+                            	<label for="radio_6">单选 - 距离禁用</label>
+							</div>
+                        </div>
+                        
+                        <h2 class="panel-inside-title">
+                        	多种设计颜色
+                        	<small>您可以使用多种设计颜色的例子<code>radio-col-pink .radio-col-cyan</code>类</small>
+                        </h2>
+                        <div class="demo-radio-button">
+                        	<div class="radio-inline m-l-10">
+                        		<input name="group4" type="radio" id="radio_7" class="radio-col-red" checked="">
+                            	<label for="radio_7">红色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group4" type="radio" id="radio_8" class="radio-col-pink">
+                            	<label for="radio_8">粉红色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group4" type="radio" id="radio_9" class="radio-col-purple">
+                            	<label for="radio_9">紫色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group4" type="radio" id="radio_10" class="radio-col-deep-purple">
+                            	<label for="radio_10">深紫色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group4" type="radio" id="radio_11" class="radio-col-indigo">
+                            	<label for="radio_11">靛蓝色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group4" type="radio" id="radio_12" class="radio-col-blue">
+                            	<label for="radio_12">蓝色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group4" type="radio" id="radio_13" class="radio-col-light-blue">
+                            	<label for="radio_13">浅蓝色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group4" type="radio" id="radio_14" class="radio-col-cyan">
+                            	<label for="radio_14">青蓝色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group4" type="radio" id="radio_15" class="radio-col-teal">
+                            	<label for="radio_15">青色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group4" type="radio" id="radio_16" class="radio-col-green">
+                            	<label for="radio_16">绿色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group4" type="radio" id="radio_17" class="radio-col-light-green">
+                            	<label for="radio_17">浅绿色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group4" type="radio" id="radio_18" class="radio-col-lime">
+                            	<label for="radio_18">青柠色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group4" type="radio" id="radio_19" class="radio-col-yellow">
+                            	<label for="radio_19">黄色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group4" type="radio" id="radio_20" class="radio-col-amber">
+                            	<label for="radio_20">琥珀色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group4" type="radio" id="radio_21" class="radio-col-orange">
+                            	<label for="radio_21">橙色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group4" type="radio" id="radio_22" class="radio-col-deep-orange">
+                            	<label for="radio_22">深橙色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group4" type="radio" id="radio_23" class="radio-col-brown">
+                            	<label for="radio_23">咖啡色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group4" type="radio" id="radio_24" class="radio-col-grey">
+                            	<label for="radio_24">灰色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group4" type="radio" id="radio_25" class="radio-col-blue-grey">
+                            	<label for="radio_25">蓝色 灰色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group4" type="radio" id="radio_26" class="radio-col-black">
+                            	<label for="radio_26">黑色</label>
+                        	</div>
+                        </div>
+                        
+                        <h2 class="panel-inside-title">
+                        	多种设计颜色 - 有距离的
+                        	<small>增加了 <code>.with-gap</code>类</small>
+                        </h2>
+                        <div class="demo-radio-button">
+                        	<div class="radio-inline m-l-10">
+                        		<input name="group5" type="radio" id="radio_30" class="with-gap radio-col-red" checked="">
+                            	<label for="radio_30">红色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group5" type="radio" id="radio_31" class="with-gap radio-col-pink">
+                            	<label for="radio_31">粉红色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group5" type="radio" id="radio_32" class="with-gap radio-col-purple">
+                            	<label for="radio_32">紫色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group5" type="radio" id="radio_33" class="with-gap radio-col-deep-purple">
+                            	<label for="radio_33">深紫色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group5" type="radio" id="radio_34" class="with-gap radio-col-indigo">
+                            	<label for="radio_34">靛蓝色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group5" type="radio" id="radio_35" class="with-gap radio-col-blue">
+                            	<label for="radio_35">蓝色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group5" type="radio" id="radio_36" class="with-gap radio-col-light-blue">
+                            	<label for="radio_36">浅蓝色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group5" type="radio" id="radio_37" class="with-gap radio-col-cyan">
+                            	<label for="radio_37">青蓝色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group5" type="radio" id="radio_38" class="with-gap radio-col-teal">
+                            	<label for="radio_38">青色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group5" type="radio" id="radio_39" class="with-gap radio-col-green">
+                            	<label for="radio_39">绿色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group5" type="radio" id="radio_40" class="with-gap radio-col-light-green">
+                            	<label for="radio_40">浅绿色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group5" type="radio" id="radio_41" class="with-gap radio-col-lime">
+                            	<label for="radio_41">青柠色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group5" type="radio" id="radio_42" class="with-gap radio-col-yellow">
+                            	<label for="radio_42">黄色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group5" type="radio" id="radio_43" class="with-gap radio-col-amber">
+                            	<label for="radio_43">琥珀色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group5" type="radio" id="radio_44" class="with-gap radio-col-orange">
+                            	<label for="radio_44">橙色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group5" type="radio" id="radio_45" class="with-gap radio-col-deep-orange">
+                            	<label for="radio_45">深橙色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group5" type="radio" id="radio_46" class="with-gap radio-col-brown">
+                            	<label for="radio_46">咖啡色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group5" type="radio" id="radio_47" class="with-gap radio-col-grey">
+                            	<label for="radio_47">灰色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group5" type="radio" id="radio_48" class="with-gap radio-col-blue-grey">
+                            	<label for="radio_48">蓝灰色</label>
+                        	</div>
+                        	<div class="radio-inline">
+                        		<input name="group5" type="radio" id="radio_49" class="with-gap radio-col-black">
+                            	<label for="radio_49">黑色</label>
+                        	</div>
+                        </div>
+                        
+					</div>
+				</div>
+				<!-- / .panel -->
+			</div>
+			<!-- / #page-wrapper -->
+		</div>
+		<!-- / #wrapper -->
+	</body>
+	<!-- Plugin Js -->
+    <script src="../../../plugins/jquery/jquery-2.2.4.min.js"></script>
+    <script src="../../../plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../../plugins/angular/angular.min.js"></script>
+    <script src="../../../plugins/ocLazyLoad/ocLazyLoad.min.js"></script>
+    <script src="../../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="../../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="../../../plugins/bootstrap-notify/bootstrap-notify.js"></script>
+    <script src="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="../../../plugins/node-waves/waves.js"></script>
+    <script src="../../../plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="../../../js/ui/dialogs.js"></script>
+    <script src="../../../js/ui/modals.js"></script>
+    <script src="../../../js/ui/notifications.js"></script>
+    <script src="../../../js/ui/tooltips-popovers.js"></script>
+    <script src="../../../js/ui/load_resize.js"></script>
+     <script src="../../../plugins/angular/angular-translate.min.js"> </script>
+	<script src="../../../plugins/angular/angular-translate-loader-static-files.min.js"> </script>
+    <!-- Custom JS -->
+    <script src="../../../js/server/server.js" type="text/javascript"></script>
+	<script src="../../../js/cookie.js" type="text/javascript"></script>
+	<script src="../../../js/skin.js" type="text/javascript"></script>
+	<script src="../../../js/config/config_skin.js" type="text/javascript"></script>
+	<script src="../../../js/App.js" type="text/javascript"></script>
+	
+	<!-- Home JS-->
+	<script src="../../../js/home.js" type="text/javascript"></script>
+	
+	<script>
+		
+	/**
+	 * 上传文件显示测试示例
+	 * ***/
+
+	
+	function uploadImage(fileId,showId)
+	{
+		var fileObj=document.getElementById(fileId);
+	   	
+	    // 注意这里
+	    // fileObj.files[0];
+	    var fileName=fileObj.files[0].name;
+	    var fileType=fileObj.files[0].type;
+	    console.log(fileObj.files[0]);
+	     var src = window.URL.createObjectURL(fileObj.files[0]);
+	     var showBox=document.getElementById(showId);
+	     showBox.innerHTML="";
+		 var img = document.createElement('img');
+	    img.src = src;
+	    img.className = "img-thumbnail";
+	    showBox.appendChild(img);
+	    //显示删除按钮
+	    var imgDeleteBtn = document.getElementById(fileId+"_delete");
+	    imgDeleteBtn.setAttribute("class","ds-block img-deleted show ");
+	}
+	/***
+	 * 删除图片
+	 */
+	function deleteImg(fileId,showId){
+		//<i class="fa fa-plus"></i>
+		//清除input file框中的值
+		var fileObj=document.getElementById(fileId);
+		fileObj.value = '';
+		//剔除img标签
+		var showObj = document.getElementById(showId);
+	   	showObj.innerHTML = '<i class="fa fa-plus"></i>';
+	    	//隐藏删除按钮
+	   	 var imgDeleteBtn = document.getElementById(fileId+"_delete");
+	    imgDeleteBtn.setAttribute("class","ds-block img-deleted hide ");
+	}
+	</script>
+</html>

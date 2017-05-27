@@ -1,0 +1,420 @@
+<meta charset="UTF-8">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_AUDITRESULT'|translate}}</div>
+				<div class="ds-cell-control">
+					<span class="radio-inline top--4">
+		         		<input type="radio" class="with-gap radio-col-blue" id="approve_01" name="approve" ng-model="customerInfo.reviewResult" value="0">
+		          		<label for="approve_01">{{'RADIO_TITLE.RADIO_APPROVE'|translate}}</label>
+		         	</span>
+		         	<span class="radio-inline top--4">
+		         		<input type="radio" class="with-gap radio-col-blue" id="approve_02" name="approve" value="1" ng-model="customerInfo.reviewResult">
+		          		<label for="approve_02">{{'RADIO_TITLE.RADIO_REJECT'|translate}}</label>
+		         	</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_CUSTOMERNAME'|translate}}</div>
+				<div class="ds-cell-control"><input type="text" class="form-control" ng-model="customerInfo.customerName" /></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_COMPANYTYPE'|translate}}</div>
+				<div class="ds-cell-control">
+					<span class="radio-inline top--4">
+		         		<input type="radio" class="with-gap radio-col-blue" id="payType_01" name="payType"  value="1" ng-model="customerInfo.companyType">
+		          		<label for="payType_01">{{'RADIO_TITLE.RADIO_IVAREGISTERED'|translate}}</label>
+		         	</span>
+		         	<span class="radio-inline top--4">
+		         		<input type="radio" class="with-gap radio-col-blue" id="payType_02" name="payType" value="2" ng-model="customerInfo.companyType">
+		          		<label for="payType_02">{{'RADIO_TITLE.RADIO_IVANON'|translate}}</label>
+		         	</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 p-t-5">
+	<div class="ds-table p-t p-b">
+		<div class="ds-cell-addon title" style="margin-right:20px;">{{'TASK_CUSTOMER_TITLE.CUSTOMER_RUCNO'|translate}}</div>
+		<div class="ds-cell-control"><input id="RCNNo" type="text" class="form-control" ng-model="customerInfo.RCNNo" /></div>
+	</div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-t-5">
+	<div class="row clearfix">
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title top">{{'TASK_CUSTOMER_TITLE.CUSTOMER_INVOICEADDRESS'|translate}}</div>
+				<div class="ds-cell-control"><textarea class="form-control no-resize" ng-model="customerInfo.invoiceAddress"></textarea></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="ds-table">
+		<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_INVOICEPERIOD'|translate}}</div>
+		<div class="ds-cell-control">
+			<span class="radio-inline">
+         		<input type="radio" class="with-gap radio-col-blue" id="Period_01" name="Period" value=1 ng-model="customerInfo.invoicePeriod"/>
+          		<label for="Period_01" class="ng-binding">{{'RADIO_TITLE.RADIO_MONTHLY'|translate}}</label>
+         	</span>
+         	<span class="radio-inline">
+         		<input type="radio" class="with-gap radio-col-blue" id="Period_02" name="Period" value=3 ng-model="customerInfo.invoicePeriod"/>
+          		<label for="Period_02" class="ng-binding">3<span class="p-l-5">{{'RADIO_TITLE.RADIO_MONTHS'|translate}}</span></label>
+         	</span>
+         	<span class="radio-inline">
+         		<input type="radio" class="with-gap radio-col-blue" id="Period_03" name="Period" value=6  ng-model="customerInfo.invoicePeriod"/>
+          		<label for="Period_03" class="ng-binding">6<span class="p-l-5">{{'RADIO_TITLE.RADIO_MONTHS'|translate}}</span></label>
+         	</span>
+         	<span class="radio-inline">
+         		<input type="radio" class="with-gap radio-col-blue" id="Period_04" name="Period" value=12 ng-model="customerInfo.invoicePeriod"/>
+          		<label for="Period_04" class="ng-binding">12<span class="p-l-5">{{'RADIO_TITLE.RADIO_MONTHS'|translate}}</span></label>
+         	</span>
+         	<span class="radio-inline">
+         		<input type="radio" class="with-gap radio-col-blue" id="Period_05" name="Period" value=24 ng-model="customerInfo.invoicePeriod"/>
+          		<label for="Period_05" class="ng-binding">24<span class="p-l-5">{{'RADIO_TITLE.RADIO_MONTHS'|translate}}</span></label>
+         	</span>
+         	<span class="radio-inline">
+         		<input type="radio" class="with-gap radio-col-blue" id="Period_06" name="Period" value="PeriodOther" ng-model="customerInfo.invoicePeriod" >
+          		<label for="Period_06" class="ng-binding">{{'RADIO_TITLE.RADIO_OTHER'|translate}}</label>
+         	</span>
+         	<span class="radio-inline-input" ng-show="PeriodOtherFlag">
+				<span class="input-group">
+	               	<input type="tel" class="form-control"  ng-model="customerInfo.invoicePeriodOther"/>
+	               	<span class="input-group-addon">{{'RADIO_TITLE.RADIO_MONTHS'|translate}}</span>
+                </span>
+             </span>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="ds-table">
+		<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_CONTRACTPERIOD'|translate}}</div>
+		<div class="ds-cell-control">
+			<span class="radio-inline">
+         		<input type="radio" class="with-gap radio-col-blue" id="Duration_01" name="Duration" value=12 ng-model="customerInfo.contractPeriod"/>
+          		<label for="Duration_01">12<span class="p-l-5">{{'RADIO_TITLE.RADIO_MONTHS'|translate}}</span></label>
+         	</span>
+         	<span class="radio-inline">
+         		<input type="radio" class="with-gap radio-col-blue" id="Duration_02" name="Duration" value=18 ng-model="customerInfo.contractPeriod"/>
+          		<label for="Duration_02">18<span class="p-l-5">{{'RADIO_TITLE.RADIO_MONTHS'|translate}}</span></label>
+         	</span>
+         	<span class="radio-inline">
+         		<input type="radio" class="with-gap radio-col-blue" id="Duration_03" name="Duration" value=24 ng-model="customerInfo.contractPeriod"/>
+          		<label for="Duration_03">24<span class="p-l-5">{{'RADIO_TITLE.RADIO_MONTHS'|translate}}</span></label>
+         	</span>
+         	<span class="radio-inline">
+         		<input type="radio" class="with-gap radio-col-blue" id="Duration_04" name="Duration" value="DurationOther" ng-model="customerInfo.contractPeriod"/>
+          		<label for="Duration_04">{{'RADIO_TITLE.RADIO_OTHER'|translate}}</label>
+         	</span>
+         	<span class="radio-inline-input" ng-show="otherDurationFlag">
+				<span class="input-group">
+	               	<input type="tel" class="form-control" ng-model="customerInfo.contractOtherPeriod" />
+	               	<span class="input-group-addon">{{'RADIO_TITLE.RADIO_MONTHS'|translate}}</span>
+                </span>
+             </span>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-t-5">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_CONTACTNAME'|translate}}</div>
+				<div class="ds-cell-control"><input type="text" class="form-control" ng-model="customerInfo.contactName"/></div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_CONTACTTELNO'|translate}}</div>
+				<div class="ds-cell-control"><input id="contactTelNo" type="text" class="form-control" ng-model="customerInfo.contactTelNo"/></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-t-5">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_FIBREOPTICASBANDWIDTH'|translate}}</div>
+				<div class="ds-cell-control">
+					<div class="ds-table">
+						<div class="ds-cell-control"><input id="fibreOpticsBandwidth"  type="text" class="form-control" ng-model="customerInfo.fibreOpticsBandwidth"/></div>
+						<div class="ds-cell-addon p-l-10">{{'RADIO_TITLE.RADIO_MBPS'|translate}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_PRICECHARGE'|translate}}</div>
+				<div class="ds-cell-control">
+					<div class="ds-table">
+						<div class="ds-cell-control"><input id="priceCharge" type="text" class="form-control" ng-model="customerInfo.priceCharge" /></div>
+						<div class="ds-cell-addon p-l-10">{{'RADIO_TITLE.RADIO_DOLLARMONTH'|translate}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-t-5">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_IPADDRESS'|translate}}</div>
+				<div class="ds-cell-control">
+					<span class="radio-inline">
+		         		<input type="radio" class="with-gap radio-col-blue" id="ipadd_01" name="iPAddress" value="1" ng-model="customerInfo.iPAddress">
+		          		<label for="ipadd_01">{{'RADIO_TITLE.RADIO_NO'|translate}}</label>
+		         	</span>
+		         	<span class="radio-inline">
+		         		<input type="radio" class="with-gap radio-col-blue" id="ipadd_02" name="iPAddress" value="have" ng-model="customerInfo.iPAddress">
+		          		<label for="ipadd_02">{{'RADIO_TITLE.RADIO_YES'|translate}}</label>
+		         	</span>
+		         	<span class="radio-inline-input max140">
+						<span class="input-group"  ng-show="otheriPAddressFlag" >
+			               	<input type="tel" id="iPAddressValue" class="form-control" ng-model="customerInfo.iPAddressOther" />
+			               	<span class="input-group-addon">{{'RADIO_TITLE.RADIO_UNIT'|translate}}</span>
+		                </span>
+		             </span>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_IPADDRESSFEE'|translate}}</div>
+				<div class="ds-cell-control">
+					<div class="ds-table">
+						<div class="ds-cell-control"><input type="text" class="form-control" ng-model="customerInfo.iPAddressFee"/></div>
+						<div class="ds-cell-addon p-l-10">{{'RADIO_TITLE.RADIO_DOLLARMONTH'|translate}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-t-5">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table ds-p15">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_CUSTOMERTYPE'|translate}}</div>
+				<div class="ds-cell-control">
+					<span class="radio-inline">
+		         		<input type="radio" class="with-gap radio-col-blue" id="custtype_01" name="custtype" value="0" ng-model="customerInfo.customerType">
+		          		<label for="custtype_01">{{'RADIO_TITLE.RADIO_HOME'|translate}}</label>
+		         	</span>
+		         	<span class="radio-inline">
+		         		<input type="radio" class="with-gap radio-col-blue" id="custtype_02" name="custtype" value="1" ng-model="customerInfo.customerType">
+		          		<label for="custtype_02">{{'RADIO_TITLE.RADIO_CORPORATION'|translate}}</label>
+		         	</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_INSTALLATIONFEE'|translate}}</div>
+				<div class="ds-cell-control">
+					<span class="radio-inline">
+		         		<input type="radio" class="with-gap radio-col-blue" id="install_01" name="install" value="no" ng-model="customerInfo.installationFee">
+		          		<label for="install_01">{{'RADIO_TITLE.RADIO_NO'|translate}}</label>
+		         	</span>
+		         	<span class="radio-inline">
+		         		<input type="radio" class="with-gap radio-col-blue" id="install_02" name="install" value="have" ng-model="customerInfo.installationFee">
+		          		<label for="install_02">{{'RADIO_TITLE.RADIO_YES'|translate}}</label>
+		         	</span>
+		         	<span class="radio-inline-input max100" >
+						<span class="input-group" ng-show="otherInstallFlag">
+			               	<input type="tel" class="form-control" id="installOtherFee" ng-model="customerInfo.installationFeeOther"/>
+			               	<span class="input-group-addon">{{'RADIO_TITLE.RADIO_DOLLAR'|translate}}</span>
+		                </span>
+		             </span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-t-5">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_COOTELTOPUP'|translate}}</div>
+				<div id="cooTelTopupPhoneNo" class="ds-cell-control"><input type="text" class="form-control" ng-model="customerInfo.cooTelTopupPhoneNo" onblur="checkNum();"/></div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_QUOTATION_TITLE.QUOTATION_INSTALLAREA'|translate}}</div>
+				<div class="ds-cell-control">
+					<select class="form-control show-tick"  ng-model="customerInfo.installationArea" ng-options="installationArea for installationArea in installationAreaOptions">
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-t-5">
+	<div class="row clearfix">
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_SELECTFILE'|translate}}</div>
+				<div class="ds-cell-control">
+					<div class="ds-table">
+						<div class="ds-cell-control">
+							<div class="file-group">
+								<input type="text" name="select" id="select" class="form-control" placeholder="{{'PLACEHOLDER_TITLE.PLACE_SELECTFILE'|translate}}">
+								<button type="button" class="btn btn-primary waves-effect ">{{'BUTTON_NAME.BTN_BROWSE'|translate}}</button>
+								<input type="file" name="fileUpload" id="fileUpload" onchange="document.getElementById('select').value=this.value;">
+							</div>
+						</div>
+						<div class="ds-cell-addon p-l-10"><button type="button"  class="btn btn-primary waves-effect" onclick="uploadButtonSubmit('fileUpload');">{{'BUTTON_NAME.BTN_UPLOAD'|translate}}</button></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="ds-table">
+		<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_ATTATCHMENT'|translate}}</div>
+		<div class="ds-cell-control" ng-repeat="data in customerInfo.attachmentList track by $index">
+			<ul class="chosen m-r-5">
+			<span class="fa fa-times-circle-o" ng-click="deletAttachment($index)"></span>
+		    <a style="cursor:pointer" ng-bind="data.originalFilename" ng-click="fileDownLoad(data.attachmentName);"></a>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title top">{{'TASK_CUSTOMER_TITLE.CUSTOMER_REMARK'|translate}}</div>
+				<div class="ds-cell-control"><textarea style="margin-bottom:0;" class="form-control no-resize" ng-model="customerInfo.notes"></textarea></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-t-20 align-center">
+	<button type="button"  class="btn btn-primary waves-effect m-r-8"   id="submitButtonFlag" onclick="submitApproval();">{{'BUTTON_NAME.BTN_SUBMIT'|translate}}</button>
+	<button type="button" class="btn btn-primary waves-effect"   onclick="history.go(-1);">{{'BUTTON_NAME.BTN_BACK'|translate}}</button>
+</div>
+<!-- /.col-12 -->
+<script>
+//g_state由系统定义，确定办理的步骤
+var scope=getAngularScope("projectModel");
+globalRegisterHtml(scope.gloablParm.state);
+//当点击最后的radio时弹出来一个input
+
+$(function(){
+	var scope=getAngularScope("projectModel");
+	$("input[name='iPAddress']").on('change',function(){
+		var checkFlag=$("#ipadd_02").is(':checked');
+		if(checkFlag){
+		    scope.$apply(function(){
+		    	 scope.otheriPAddressFlag=true;	
+		    	 //scope.customerInfo.iPAddressValue=$("#iPAddressValue").val();
+		    	
+		    });
+		}else{
+			 scope.$apply(function(){
+				 scope.otheriPAddressFlag=false;
+				 //scope.customerInfo.iPAddressValue="";
+		    });
+		}
+	});
+	
+	$("input[name='Period']").on('change',function(){
+		var checkFlag=$("#Period_06").is(':checked');
+		if(checkFlag){
+		    scope.$apply(function(){
+		    	 scope.PeriodOtherFlag=true;	
+		    	// scope.customerInfo.invoicePeriod=$("#PeriodOtherValue").val();
+		    	
+		    });
+		}else{
+			 scope.$apply(function(){
+				 scope.PeriodOtherFlag=false;
+				 //scope.customerInfo.invoicePeriod="";
+		    });
+		}
+	});
+	
+	$("input[name='Duration']").on('change',function(){
+		var checkFlag=$("#Duration_04").is(':checked');
+		if(checkFlag){
+		    scope.$apply(function(){
+		    	 scope.otherDurationFlag=true;	
+		    	// scope.customerInfo.contractPeriod=$("#iPAddressValue").val();
+		    	
+		    });
+		}else{
+			 scope.$apply(function(){
+				 scope.otherDurationFlag=false;
+				 //scope.customerInfo.contractPeriod="";
+		    });
+		}
+	});
+	$("input[name='install']").on('change',function(){
+		var checkFlag=$("#install_02").is(':checked');
+		if(checkFlag){
+		    scope.$apply(function(){
+		    	 scope.otherInstallFlag=true;	
+		    	 //scope.customerInfo.installationFee=$("#installOtherFee").val();
+		    	
+		    });
+		}else{
+			 scope.$apply(function(){
+				 scope.otherInstallFlag=false;
+				 //scope.customerInfo.installationFee="";
+		    });
+		}
+	});
+	 $("#RCNNo").on("keydown",function(e){
+		 var _this=$(this);
+		return digitInputInt($(this), e);  
+	 });
+	 
+	 $("#contactTelNo").on("keydown",function(e){
+		 var _this=$(this);
+		return digitInputInt($(this), e);  
+	 });
+	 
+	 $("#fibreOpticsBandwidth").on("keydown",function(e){
+		 var _this=$(this);
+		return digitInputInt($(this), e);  
+	 });
+	 
+	 $("#priceCharge").on("keydown",function(e){
+		 var _this=$(this);
+		return digitInputInt($(this), e);  
+	 });
+})
+
+</script>

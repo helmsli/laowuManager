@@ -1,0 +1,2717 @@
+<!DOCTYPE html>
+<html data-ng-app="App">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Manager system</title>
+		<!-- Plugin Css -->
+    	<link href="../../../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    	<link href="../../../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    	<link href="../../../plugins/material-design-preloader/md-preloader.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    	<link href="../../../plugins/node-waves/waves.min.css" rel="stylesheet" />
+   	 	<link href="../../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    	<link href="../../../plugins/animate-css/animate.css" rel="stylesheet" />
+    	
+	    <!-- Custom Css -->
+    	<link href="../../../css/custom.css" rel="stylesheet">
+	    <link href="../../../css/themes/default/skin.css" rel="stylesheet" type="text/css" title="default"/>
+
+	</head>
+	<body ng-controller="app">
+		<div class="page-loader-wrapper">
+		    <div class="loader">
+		        <div class="md-preloader pl-size-md">
+		            <svg viewbox="0 0 75 75">
+		                <circle cx="37.5" cy="37.5" r="33.5" class="pl-red" stroke-width="4" />
+		            </svg>
+		        </div>
+		        <p>加载中，请稍后...</p>
+		    </div>
+		</div>
+		<div class="overlay"></div>
+		<!-- Page Loader -->
+		<div id="wrapper">
+			<div class="header" ng-include="'../../include/header.html'"></div>
+			<div class="menus" ng-include="'../../include/leftMenu.html'"></div>
+			<div id="page-wrapper">
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							字体小图标
+							<small>采用 Font-Awesome字体库( <a href="https://github.com/FortAwesome/Font-Awesome/" target="_blank">github.com/FortAwesome/Font-Awesome</a>)例：<code>.fa .fa-user</code><code>.fa</code>是之前调用</small>
+						</h2>
+						<div class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-ellipsis-v"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+							    <li><a href="javascript:void(0);">编辑</a></li>
+							    <li><a href="javascript:void(0);">查看详细</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="bs-awesome">
+							<ul class="bs-awesome-list clearfix">
+								<li>
+		                            <i class="fa fa-adjust"></i>
+		                            <span class="awesome-class">fa fa-adjust</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-adn"></i>
+		                            <span class="awesome-class">fa fa-adn</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-align-center"></i>
+		                            <span class="awesome-class">fa fa-align-center</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-align-justify"></i>
+		                            <span class="awesome-class">fa fa-align-justify</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-align-left"></i>
+		                            <span class="awesome-class">fa fa-align-left</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-align-right"></i>
+		                            <span class="awesome-class">fa fa-align-right</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-amazon"></i>
+		                            <span class="awesome-class">fa fa-amazon</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-ambulance"></i>
+		                            <span class="awesome-class">fa fa-ambulance</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-anchor"></i>
+		                            <span class="awesome-class">fa fa-anchor</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-android"></i>
+		                            <span class="awesome-class">fa fa-android</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-angellist"></i>
+		                            <span class="awesome-class">fa fa-angellist</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-angle-double-down"></i>
+		                            <span class="awesome-class">fa fa-angle-double-down</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-angle-double-left"></i>
+		                            <span class="awesome-class">fa fa-angle-double-left</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-angle-double-right"></i>
+		                            <span class="awesome-class">fa fa-angle-double-right</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-angle-double-up"></i>
+		                            <span class="awesome-class">fa fa-angle-double-up</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-angle-down"></i>
+		                            <span class="awesome-class">fa fa-angle-down</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-angle-left"></i>
+		                            <span class="awesome-class">fa fa-angle-left</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-angle-right"></i>
+		                            <span class="awesome-class">fa fa-angle-right</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-angle-up"></i>
+		                            <span class="awesome-class">fa fa-angle-up</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-apple"></i>
+		                            <span class="awesome-class">fa fa-apple</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-archive"></i>
+		                            <span class="awesome-class">fa fa-archive</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-area-chart"></i>
+		                            <span class="awesome-class">fa fa-area-chart</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-arrow-circle-up"></i>
+		                            <span class="awesome-class">fa fa-arrow-circle-up</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-arrow-circle-right"></i>
+		                            <span class="awesome-class">fa fa-arrow-circle-right</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-arrow-circle-down"></i>
+		                            <span class="awesome-class">fa fa-arrow-circle-down</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-arrow-circle-left"></i>
+		                            <span class="awesome-class">fa fa-arrow-circle-left</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-arrow-circle-o-down"></i>
+		                            <span class="awesome-class">fa fa-arrow-circle-o-down</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-arrow-circle-o-left"></i>
+		                            <span class="awesome-class">fa fa-arrow-circle-o-left</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-arrow-circle-o-right"></i>
+		                            <span class="awesome-class">fa fa-arrow-circle-o-right</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-arrow-circle-o-up"></i>
+		                            <span class="awesome-class">fa fa-arrow-circle-o-up</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-arrow-down"></i>
+		                            <span class="awesome-class">fa fa-arrow-down</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-arrow-left"></i>
+		                            <span class="awesome-class">fa fa-arrow-left</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-arrow-right"></i>
+		                            <span class="awesome-class">fa fa-arrow-right</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-arrow-up"></i>
+		                            <span class="awesome-class">fa fa-arrow-up</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-arrows"></i>
+		                            <span class="awesome-class">fa fa-arrows</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-arrows-alt"></i>
+		                            <span class="awesome-class">fa fa-arrows-alt</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-arrows-h"></i>
+		                            <span class="awesome-class">fa fa-arrows-h</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-arrows-v"></i>
+		                            <span class="awesome-class">fa fa-arrows-v</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-asl-interpreting"></i>
+		                            <span class="awesome-class">fa fa-asl-interpreting</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-assistive-listening-systems"></i>
+		                            <span class="awesome-class">fa fa-assistive-listening-systems</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-asterisk"></i>
+		                            <span class="awesome-class">fa fa-asterisk</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-at"></i>
+		                            <span class="awesome-class">fa fa-at</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-audio-description"></i>
+		                            <span class="awesome-class">fa fa-audio-description</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-backward"></i>
+		                            <span class="awesome-class">fa fa-backward</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-forward"></i>
+		                            <span class="awesome-class">fa fa-forward</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-balance-scale"></i>
+		                            <span class="awesome-class">fa fa-balance-scale</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-ban"></i>
+		                            <span class="awesome-class">fa fa-ban</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bank"></i>
+		                            <span class="awesome-class">fa fa-bank</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bar-chart"></i>
+		                            <span class="awesome-class">fa fa-bar-chart</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-barcode"></i>
+		                            <span class="awesome-class">fa fa-barcode</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bars"></i>
+		                            <span class="awesome-class">fa fa-bars</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-battery-empty"></i>
+		                            <span class="awesome-class">fa fa-battery-empty</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-battery-full"></i>
+		                            <span class="awesome-class">fa fa-battery-full</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-battery-half"></i>
+		                            <span class="awesome-class">fa fa-battery-half</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-battery-quarter"></i>
+		                            <span class="awesome-class">fa fa-battery-quarter</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-battery-three-quarters"></i>
+		                            <span class="awesome-class">fa fa-battery-three-quarters</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bed"></i>
+		                            <span class="awesome-class">fa fa-bed</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-beer"></i>
+		                            <span class="awesome-class">fa fa-beer</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-behance"></i>
+		                            <span class="awesome-class">fa fa-behance</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-behance-square"></i>
+		                            <span class="awesome-class">fa fa-behance-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bell"></i>
+		                            <span class="awesome-class">fa fa-bell</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bell-o"></i>
+		                            <span class="awesome-class">fa fa-bell-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bell-slash"></i>
+		                            <span class="awesome-class">fa fa-bell-slash</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bell-slash-o"></i>
+		                            <span class="awesome-class">fa fa-bell-slash-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bicycle"></i>
+		                            <span class="awesome-class">fa fa-bicycle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-binoculars"></i>
+		                            <span class="awesome-class">fa fa-binoculars</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-birthday-cake"></i>
+		                            <span class="awesome-class">fa fa-birthday-cake</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bitbucket"></i>
+		                            <span class="awesome-class">fa fa-bitbucket</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bitbucket-square"></i>
+		                            <span class="awesome-class">fa fa-bitbucket-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bitcoin"></i>
+		                            <span class="awesome-class">fa fa-bitcoin</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-black-tie"></i>
+		                            <span class="awesome-class">fa fa-black-tie</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-blind"></i>
+		                            <span class="awesome-class">fa fa-blind</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bluetooth"></i>
+		                            <span class="awesome-class">fa fa-bluetooth</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bluetooth-b"></i>
+		                            <span class="awesome-class">fa fa-bluetooth-b</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bold"></i>
+		                            <span class="awesome-class">fa fa-bold</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bolt"></i>
+		                            <span class="awesome-class">fa fa-bolt</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bomb"></i>
+		                            <span class="awesome-class">fa fa-bomb</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-book"></i>
+		                            <span class="awesome-class">fa fa-book</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bookmark"></i>
+		                            <span class="awesome-class">fa fa-bookmark</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bookmark-o"></i>
+		                            <span class="awesome-class">fa fa-bookmark-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-braille"></i>
+		                            <span class="awesome-class">fa fa-braille</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-briefcase"></i>
+		                            <span class="awesome-class">fa fa-briefcase</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-btc"></i>
+		                            <span class="awesome-class">fa fa-btc</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bug"></i>
+		                            <span class="awesome-class">fa fa-bug</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-building"></i>
+		                            <span class="awesome-class">fa fa-building</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-building-o"></i>
+		                            <span class="awesome-class">fa fa-building-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bullhorn"></i>
+		                            <span class="awesome-class">fa fa-bullhorn</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bullseye"></i>
+		                            <span class="awesome-class">fa fa-bullseye</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-bus"></i>
+		                            <span class="awesome-class">fa fa-bus</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-buysellads"></i>
+		                            <span class="awesome-class">fa fa-buysellads</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-cab"></i>
+		                            <span class="awesome-class">fa fa-cab</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-calculator"></i>
+		                            <span class="awesome-class">fa fa-calculator</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-calendar"></i>
+		                            <span class="awesome-class">fa fa-calendar</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-calendar-check-o"></i>
+		                            <span class="awesome-class">fa fa-calendar-check-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-calendar-minus-o"></i>
+		                            <span class="awesome-class">fa fa-calendar-minus-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-calendar-o"></i>
+		                            <span class="awesome-class">fa fa-calendar-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-calendar-plus-o"></i>
+		                            <span class="awesome-class">fa fa-calendar-plus-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-calendar-times-o"></i>
+		                            <span class="awesome-class">fa fa-calendar-times-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-camera"></i>
+		                            <span class="awesome-class">fa fa-camera</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-camera-retro"></i>
+		                            <span class="awesome-class">fa fa-camera-retro</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-car"></i>
+		                            <span class="awesome-class">fa fa-car</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-caret-down"></i>
+		                            <span class="awesome-class">fa fa-caret-down</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-caret-left"></i>
+		                            <span class="awesome-class">fa fa-caret-left</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-caret-right"></i>
+		                            <span class="awesome-class">fa fa-caret-right</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-caret-up"></i>
+		                            <span class="awesome-class">fa fa-caret-up</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-caret-square-o-down"></i>
+		                            <span class="awesome-class">fa fa-caret-square-o-down</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-caret-square-o-left"></i>
+		                            <span class="awesome-class">fa fa-caret-square-o-left</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-caret-square-o-right"></i>
+		                            <span class="awesome-class">fa fa-caret-square-o-right</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-caret-square-o-up"></i>
+		                            <span class="awesome-class">fa fa-caret-square-o-up</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-cart-arrow-down"></i>
+		                            <span class="awesome-class">fa fa-cart-arrow-down</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-cart-plus"></i>
+		                            <span class="awesome-class">fa fa-cart-plus</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-cc"></i>
+		                            <span class="awesome-class">fa fa-cc</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-cc-amex"></i>
+		                            <span class="awesome-class">fa fa-cc-amex</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-cc-diners-club"></i>
+		                            <span class="awesome-class">fa fa-cc-diners-club</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-cc-discover"></i>
+		                            <span class="awesome-class">fa fa-cc-discover</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-cc-jcb"></i>
+		                            <span class="awesome-class">fa fa-cc-jcb</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-cc-mastercard"></i>
+		                            <span class="awesome-class">fa fa-cc-mastercard</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-cc-paypal"></i>
+		                            <span class="awesome-class">fa fa-cc-paypal</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-cc-stripe"></i>
+		                            <span class="awesome-class">fa fa-cc-stripe</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-cc-visa"></i>
+		                            <span class="awesome-class">fa fa-cc-visa</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-certificate"></i>
+		                            <span class="awesome-class">fa fa-certificate</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-chain"></i>
+		                            <span class="awesome-class">fa fa-chain</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-chain-broken"></i>
+		                            <span class="awesome-class">fa fa-chain-broken</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-check"></i>
+		                            <span class="awesome-class">fa fa-check</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-check-circle"></i>
+		                            <span class="awesome-class">fa fa-check-circle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-check-circle-o"></i>
+		                            <span class="awesome-class">fa fa-check-circle-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-check-square"></i>
+		                            <span class="awesome-class">fa fa-check-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-check-square-o"></i>
+		                            <span class="awesome-class">fa fa-check-square-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-chevron-circle-down"></i>
+		                            <span class="awesome-class">fa fa-chevron-circle-down</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-chevron-circle-left"></i>
+		                            <span class="awesome-class">fa fa-chevron-circle-left</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-chevron-circle-right"></i>
+		                            <span class="awesome-class">fa fa-chevron-circle-right</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-chevron-circle-up"></i>
+		                            <span class="awesome-class">fa fa-chevron-circle-up</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-chevron-down"></i>
+		                            <span class="awesome-class">fa fa-chevron-down</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-chevron-left"></i>
+		                            <span class="awesome-class">fa fa-chevron-left</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-chevron-right"></i>
+		                            <span class="awesome-class">fa fa-chevron-right</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-chevron-up"></i>
+		                            <span class="awesome-class">fa fa-chevron-up</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-child"></i>
+		                            <span class="awesome-class">fa fa-child</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-chrome"></i>
+		                            <span class="awesome-class">fa fa-chrome</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-circle"></i>
+		                            <span class="awesome-class">fa fa-circle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-circle-o"></i>
+		                            <span class="awesome-class">fa fa-circle-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-circle-o-notch"></i>
+		                            <span class="awesome-class">fa fa-circle-o-notch</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-circle-thin"></i>
+		                            <span class="awesome-class">fa fa-circle-thin</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-clipboard"></i>
+		                            <span class="awesome-class">fa fa-clipboard</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-clock-o"></i>
+		                            <span class="awesome-class">fa fa-clock-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-clone"></i>
+		                            <span class="awesome-class">fa fa-clone</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-close"></i>
+		                            <span class="awesome-class">fa fa-close</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-cloud"></i>
+		                            <span class="awesome-class">fa fa-cloud</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-cloud-download"></i>
+		                            <span class="awesome-class">fa fa-cloud-download</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-cloud-upload"></i>
+		                            <span class="awesome-class">fa fa-cloud-upload</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-cny"></i>
+		                            <span class="awesome-class">fa fa-cny</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-code"></i>
+		                            <span class="awesome-class">fa fa-code</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-code-fork"></i>
+		                            <span class="awesome-class">fa fa-code-fork</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-codepen"></i>
+		                            <span class="awesome-class">fa fa-codepen</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-codiepie"></i>
+		                            <span class="awesome-class">fa fa-codiepie</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-coffee"></i>
+		                            <span class="awesome-class">fa fa-coffee</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-columns"></i>
+		                            <span class="awesome-class">fa fa-columns</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-comment"></i>
+		                            <span class="awesome-class">fa fa-comment</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-comment-o"></i>
+		                            <span class="awesome-class">fa fa-comment-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-commenting"></i>
+		                            <span class="awesome-class">fa fa-commenting</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-commenting-o"></i>
+		                            <span class="awesome-class">fa fa-commenting-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-comments"></i>
+		                            <span class="awesome-class">fa fa-comments</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-comments-o"></i>
+		                            <span class="awesome-class">fa fa-comments-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-compass"></i>
+		                            <span class="awesome-class">fa fa-compass</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-compress"></i>
+		                            <span class="awesome-class">fa fa-compress</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-connectdevelop"></i>
+		                            <span class="awesome-class">fa fa-connectdevelop</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-contao"></i>
+		                            <span class="awesome-class">fa fa-contao</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-copy"></i>
+		                            <span class="awesome-class">fa fa-copy</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-copyright"></i>
+		                            <span class="awesome-class">fa fa-copyright</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-creative-commons"></i>
+		                            <span class="awesome-class">fa fa-creative-commons</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-credit-card"></i>
+		                            <span class="awesome-class">fa fa-credit-card</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-credit-card-alt"></i>
+		                            <span class="awesome-class">fa fa-credit-card-alt</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-crop"></i>
+		                            <span class="awesome-class">fa fa-crop</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-crosshairs"></i>
+		                            <span class="awesome-class">fa fa-crosshairs</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-css3"></i>
+		                            <span class="awesome-class">fa fa-css3</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-cube"></i>
+		                            <span class="awesome-class">fa fa-cube</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-cubes"></i>
+		                            <span class="awesome-class">fa fa-cubes</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-cut"></i>
+		                            <span class="awesome-class">fa fa-cut</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-cutlery"></i>
+		                            <span class="awesome-class">fa fa-cutlery</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-dashboard"></i>
+		                            <span class="awesome-class">fa fa-dashboard</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-dashcube"></i>
+		                            <span class="awesome-class">fa fa-dashcube</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-database"></i>
+		                            <span class="awesome-class">fa fa-database</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-deaf"></i>
+		                            <span class="awesome-class">fa fa-deaf</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-dedent"></i>
+		                            <span class="awesome-class">fa fa-dedent</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-delicious"></i>
+		                            <span class="awesome-class">fa fa-delicious</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-desktop"></i>
+		                            <span class="awesome-class">fa fa-desktop</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-deviantart"></i>
+		                            <span class="awesome-class">fa fa-deviantart</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-diamond"></i>
+		                            <span class="awesome-class">fa fa-diamond</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-digg"></i>
+		                            <span class="awesome-class">fa fa-digg</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-dollar"></i>
+		                            <span class="awesome-class">fa fa-dollar</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-dot-circle-o"></i>
+		                            <span class="awesome-class">fa fa-dot-circle-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-download"></i>
+		                            <span class="awesome-class">fa fa-download</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-dribbble"></i>
+		                            <span class="awesome-class">fa fa-dribbble</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-dropbox"></i>
+		                            <span class="awesome-class">fa fa-dropbox</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-drupal"></i>
+		                            <span class="awesome-class">fa fa-drupal</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-edge"></i>
+		                            <span class="awesome-class">fa fa-edge</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-edit"></i>
+		                            <span class="awesome-class">fa fa-edit</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-eject"></i>
+		                            <span class="awesome-class">fa fa-eject</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-ellipsis-h"></i>
+		                            <span class="awesome-class">fa fa-ellipsis-h</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-ellipsis-v"></i>
+		                            <span class="awesome-class">fa fa-ellipsis-v</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-empire"></i>
+		                            <span class="awesome-class">fa fa-empire</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-envelope"></i>
+		                            <span class="awesome-class">fa fa-envelope</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-envelope-o"></i>
+		                            <span class="awesome-class">fa fa-envelope-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-envelope-square"></i>
+		                            <span class="awesome-class">fa fa-envelope-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-envira"></i>
+		                            <span class="awesome-class">fa fa-envira</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-eraser"></i>
+		                            <span class="awesome-class">fa fa-eraser</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-eur"></i>
+		                            <span class="awesome-class">fa fa-eur</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-exchange"></i>
+		                            <span class="awesome-class">fa fa-exchange</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-exclamation"></i>
+		                            <span class="awesome-class">fa fa-exclamation</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-exclamation-circle"></i>
+		                            <span class="awesome-class">fa fa-exclamation-circle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-exclamation-triangle"></i>
+		                            <span class="awesome-class">fa fa-exclamation-triangle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-expand"></i>
+		                            <span class="awesome-class">fa fa-expand</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-expeditedssl"></i>
+		                            <span class="awesome-class">fa fa-expeditedssl</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-external-link"></i>
+		                            <span class="awesome-class">fa fa-external-link</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-external-link-square"></i>
+		                            <span class="awesome-class">fa fa-external-link-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-eye"></i>
+		                            <span class="awesome-class">fa fa-eye</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-eye-slash"></i>
+		                            <span class="awesome-class">fa fa-eye-slash</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-eyedropper"></i>
+		                            <span class="awesome-class">fa fa-eyedropper</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-fa"></i>
+		                            <span class="awesome-class">fa fa-fa</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-facebook"></i>
+		                            <span class="awesome-class">fa fa-facebook</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-facebook-official"></i>
+		                            <span class="awesome-class">fa fa-facebook-official</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-facebook-square"></i>
+		                            <span class="awesome-class">fa fa-facebook-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-fast-backward"></i>
+		                            <span class="awesome-class">fa fa-fast-backward</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-fast-forward"></i>
+		                            <span class="awesome-class">fa fa-fast-forward</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-fax"></i>
+		                            <span class="awesome-class">fa fa-fax</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-feed"></i>
+		                            <span class="awesome-class">fa fa-feed</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-female"></i>
+		                            <span class="awesome-class">fa fa-female</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-fighter-jet"></i>
+		                            <span class="awesome-class">fa fa-fighter-jet</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-file"></i>
+		                            <span class="awesome-class">fa fa-file</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-file-archive-o"></i>
+		                            <span class="awesome-class">fa fa-file-archive-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-file-audio-o"></i>
+		                            <span class="awesome-class">fa fa-file-audio-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-file-code-o"></i>
+		                            <span class="awesome-class">fa fa-file-code-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-file-excel-o"></i>
+		                            <span class="awesome-class">fa fa-file-excel-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-file-image-o"></i>
+		                            <span class="awesome-class">fa fa-file-image-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-file-movie-o"></i>
+		                            <span class="awesome-class">fa fa-file-movie-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-file-o"></i>
+		                            <span class="awesome-class">fa fa-file-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-file-pdf-o"></i>
+		                            <span class="awesome-class">fa fa-file-pdf-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-file-text-o"></i>
+		                            <span class="awesome-class">fa fa-file-text-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-file-word-o"></i>
+		                            <span class="awesome-class">fa fa-file-word-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-files-o"></i>
+		                            <span class="awesome-class">fa fa-files-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-film"></i>
+		                            <span class="awesome-class">fa fa-film</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-filter"></i>
+		                            <span class="awesome-class">fa fa-filter</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-fire"></i>
+		                            <span class="awesome-class">fa fa-fire</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-fire-extinguisher"></i>
+		                            <span class="awesome-class">fa fa-fire-extinguisher</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-firefox"></i>
+		                            <span class="awesome-class">fa fa-firefox</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-first-order"></i>
+		                            <span class="awesome-class">fa fa-first-order</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-flag"></i>
+		                            <span class="awesome-class">fa fa-flag</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-flag-checkered"></i>
+		                            <span class="awesome-class">fa fa-flag-checkered</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-flag-o"></i>
+		                            <span class="awesome-class">fa fa-flag-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-flask"></i>
+		                            <span class="awesome-class">fa fa-flask</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-flickr"></i>
+		                            <span class="awesome-class">fa fa-flickr</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-floppy-o"></i>
+		                            <span class="awesome-class">fa fa-floppy-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-folder"></i>
+		                            <span class="awesome-class">fa fa-folder</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-folder-o"></i>
+		                            <span class="awesome-class">fa fa-folder-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-folder-open"></i>
+		                            <span class="awesome-class">fa fa-folder-open</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-folder-open-o"></i>
+		                            <span class="awesome-class">fa fa-folder-open-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-font"></i>
+		                            <span class="awesome-class">fa fa-font</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-font-awesome"></i>
+		                            <span class="awesome-class">fa fa-font-awesome</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-fonticons"></i>
+		                            <span class="awesome-class">fa fa-fonticons</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-fort-awesome"></i>
+		                            <span class="awesome-class">fa fa-fort-awesome</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-forumbee"></i>
+		                            <span class="awesome-class">fa fa-forumbee</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-foursquare"></i>
+		                            <span class="awesome-class">fa fa-foursquare</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-frown-o"></i>
+		                            <span class="awesome-class">fa fa-frown-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-smile-o"></i>
+		                            <span class="awesome-class">fa fa-smile-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-futbol-o"></i>
+		                            <span class="awesome-class">fa fa-futbol-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-gamepad"></i>
+		                            <span class="awesome-class">fa fa-gamepad</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-gavel"></i>
+		                            <span class="awesome-class">fa fa-gavel</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-gbp"></i>
+		                            <span class="awesome-class">fa fa-gbp</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-ge"></i>
+		                            <span class="awesome-class">fa fa-ge</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-gear"></i>
+		                            <span class="awesome-class">fa fa-gear</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-get-pocket"></i>
+		                            <span class="awesome-class">fa fa-get-pocket</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-gears"></i>
+		                            <span class="awesome-class">fa fa-gears</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-gg"></i>
+		                            <span class="awesome-class">fa fa-gg</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-gg-circle"></i>
+		                            <span class="awesome-class">fa fa-gg-circle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-gift"></i>
+		                            <span class="awesome-class">fa fa-gift</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-git"></i>
+		                            <span class="awesome-class">fa fa-git</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-git-square"></i>
+		                            <span class="awesome-class">fa fa-git-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-github"></i>
+		                            <span class="awesome-class">fa fa-github</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-github-alt"></i>
+		                            <span class="awesome-class">fa fa-github-alt</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-github-square"></i>
+		                            <span class="awesome-class">fa fa-github-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-gitlab"></i>
+		                            <span class="awesome-class">fa fa-gitlab</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-gittip"></i>
+		                            <span class="awesome-class">fa fa-gittip</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-glass"></i>
+		                            <span class="awesome-class">fa fa-glass</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-glide"></i>
+		                            <span class="awesome-class">fa fa-glide</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-glide-g"></i>
+		                            <span class="awesome-class">fa fa-glide-g</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-globe"></i>
+		                            <span class="awesome-class">fa fa-globe</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-google"></i>
+		                            <span class="awesome-class">fa fa-google</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-google-plus"></i>
+		                            <span class="awesome-class">fa fa-google-plus</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-google-plus-circle"></i>
+		                            <span class="awesome-class">fa fa-google-plus-circle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-google-plus-official"></i>
+		                            <span class="awesome-class">fa fa-google-plus-official</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-google-plus-square"></i>
+		                            <span class="awesome-class">fa fa-google-plus-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-google-wallet"></i>
+		                            <span class="awesome-class">fa fa-google-wallet</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-graduation-cap"></i>
+		                            <span class="awesome-class">fa fa-graduation-cap</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-group"></i>
+		                            <span class="awesome-class">fa fa-group</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-h-square"></i>
+		                            <span class="awesome-class">fa fa-h-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-hacker-news"></i>
+		                            <span class="awesome-class">fa fa-hacker-news</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-hand-grab-o"></i>
+		                            <span class="awesome-class">fa fa-hand-grab-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-hand-lizard-o"></i>
+		                            <span class="awesome-class">fa fa-hand-lizard-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-hand-o-down"></i>
+		                            <span class="awesome-class">fa fa-hand-o-down</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-hand-o-left"></i>
+		                            <span class="awesome-class">fa fa-hand-o-left</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-hand-o-right"></i>
+		                            <span class="awesome-class">fa fa-hand-o-right</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-hand-o-up"></i>
+		                            <span class="awesome-class">fa fa-hand-o-up</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-hand-stop-o"></i>
+		                            <span class="awesome-class">fa fa-hand-stop-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-hand-scissors-o"></i>
+		                            <span class="awesome-class">fa fa-hand-scissors-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-hand-spock-o"></i>
+		                            <span class="awesome-class">fa fa-hand-spock-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-hashtag"></i>
+		                            <span class="awesome-class">fa fa-hashtag</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-hdd-o"></i>
+		                            <span class="awesome-class">fa fa-hdd-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-header"></i>
+		                            <span class="awesome-class">fa fa-header</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-headphones"></i>
+		                            <span class="awesome-class">fa fa-headphones</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-heart"></i>
+		                            <span class="awesome-class">fa fa-heart</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-heart-o"></i>
+		                            <span class="awesome-class">fa fa-heart-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-heartbeat"></i>
+		                            <span class="awesome-class">fa fa-heartbeat</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-history"></i>
+		                            <span class="awesome-class">fa fa-history</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-home"></i>
+		                            <span class="awesome-class">fa fa-home</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-hospital-o"></i>
+		                            <span class="awesome-class">fa fa-hospital-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-hotel"></i>
+		                            <span class="awesome-class">fa fa-hotel</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-hourglass"></i>
+		                            <span class="awesome-class">fa fa-hourglass</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-hourglass-1"></i>
+		                            <span class="awesome-class">fa fa-hourglass-start</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-hourglass-half"></i>
+		                            <span class="awesome-class">fa fa-hourglass-half</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-hourglass-end"></i>
+		                            <span class="awesome-class">fa fa-hourglass-end</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-i-cursor"></i>
+		                            <span class="awesome-class">fa fa-i-cursor</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-html5"></i>
+		                            <span class="awesome-class">fa fa-html5</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-houzz"></i>
+		                            <span class="awesome-class">fa fa-houzz</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-ils"></i>
+		                            <span class="awesome-class">fa fa-ils</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-inbox"></i>
+		                            <span class="awesome-class">fa fa-inbox</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-indent"></i>
+		                            <span class="awesome-class">fa fa-indent</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-image"></i>
+		                            <span class="awesome-class">fa fa-image</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-inbox"></i>
+		                            <span class="awesome-class">fa fa-inbox</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-industry"></i>
+		                            <span class="awesome-class">fa fa-industry</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-info"></i>
+		                            <span class="awesome-class">fa fa-info</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-info-circle"></i>
+		                            <span class="awesome-class">fa fa-info-circle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-inr"></i>
+		                            <span class="awesome-class">fa fa-inr</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-instagram"></i>
+		                            <span class="awesome-class">fa fa-instagram</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-internet-explorer"></i>
+		                            <span class="awesome-class">fa fa-internet-explorer</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa a-intersex"></i>
+		                            <span class="awesome-class">fa fa-intersex</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-ioxhost"></i>
+		                            <span class="awesome-class">fa fa-ioxhost</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-italic"></i>
+		                            <span class="awesome-class">fa fa-italic</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-joomla"></i>
+		                            <span class="awesome-class">fa fa-joomla</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-jpy"></i>
+		                            <span class="awesome-class">fa fa-jpy</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-jsfiddle"></i>
+		                            <span class="awesome-class">fa fa-jsfiddle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-key"></i>
+		                            <span class="awesome-class">fa fa-key</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-keyboard-o"></i>
+		                            <span class="awesome-class">fa fa-keyboard-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-krw"></i>
+		                            <span class="awesome-class">fa fa-krw</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-language"></i>
+		                            <span class="awesome-class">fa fa-language</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-laptop"></i>
+		                            <span class="awesome-class">fa fa-laptop</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-lastfm"></i>
+		                            <span class="awesome-class">fa fa-lastfm</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-lastfm-square"></i>
+		                            <span class="awesome-class">fa fa-lastfm-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-level-down"></i>
+		                            <span class="awesome-class">fa fa-level-down</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-level-up"></i>
+		                            <span class="awesome-class">fa fa-level-up</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-life-bouy"></i>
+		                            <span class="awesome-class">fa fa-life-bouy</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-lightbulb-o"></i>
+		                            <span class="awesome-class">fa fa-lightbulb-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-line-chart"></i>
+		                            <span class="awesome-class">fa fa-line-chart</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-linkedin"></i>
+		                            <span class="awesome-class">fa fa-linkedin</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-linkedin-square"></i>
+		                            <span class="awesome-class">fa fa-linkedin-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-linux"></i>
+		                            <span class="awesome-class">fa fa-linux</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-list"></i>
+		                            <span class="awesome-class">fa fa-list</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-list-alt"></i>
+		                            <span class="awesome-class">fa fa-list-alt</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-list-ol"></i>
+		                            <span class="awesome-class">fa fa-list-ol</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-list-ul"></i>
+		                            <span class="awesome-class">fa fa-list-ul</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-location-arrow"></i>
+		                            <span class="awesome-class">fa fa-location-arrow</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-lock"></i>
+		                            <span class="awesome-class">fa fa-lock</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-long-arrow-down"></i>
+		                            <span class="awesome-class">fa fa-long-arrow-down</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-long-arrow-left"></i>
+		                            <span class="awesome-class">fa fa-long-arrow-left</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-long-arrow-right"></i>
+		                            <span class="awesome-class">fa fa-long-arrow-right</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-long-arrow-up"></i>
+		                            <span class="awesome-class">fa fa-long-arrow-up</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-low-vision"></i>
+		                            <span class="awesome-class">fa fa-low-vision</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-magic"></i>
+		                            <span class="awesome-class">fa fa-magic</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-magnet"></i>
+		                            <span class="awesome-class">fa fa-magnet</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-mail-forward"></i>
+		                            <span class="awesome-class">fa fa-mail-forward</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-mail-reply"></i>
+		                            <span class="awesome-class">fa fa-mail-reply</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-mail-reply-all"></i>
+		                            <span class="awesome-class">fa fa-mail-reply-all</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-male"></i>
+		                            <span class="awesome-class">fa fa-male</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-map"></i>
+		                            <span class="awesome-class">fa fa-map</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-map-marker"></i>
+		                            <span class="awesome-class">fa fa-map-marker</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa"></i>
+		                            <span class="awesome-class">fa fa-map-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-map-pin"></i>
+		                            <span class="awesome-class">fa fa-map-pin</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-mars"></i>
+		                            <span class="awesome-class">fa fa-mars</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-mars-double"></i>
+		                            <span class="awesome-class">fa fa-mars-double</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-mars-stroke"></i>
+		                            <span class="awesome-class">fa fa-mars-stroke</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-mars-stroke-h"></i>
+		                            <span class="awesome-class">fa fa-mars-stroke-h</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-mars-stroke-v"></i>
+		                            <span class="awesome-class">fa fa-mars-stroke-v</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-maxcdn"></i>
+		                            <span class="awesome-class">fa fa-maxcdn</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-meanpath"></i>
+		                            <span class="awesome-class">fa fa-meanpath</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-medium"></i>
+		                            <span class="awesome-class">fa fa-medium</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-medkit"></i>
+		                            <span class="awesome-class">fa fa-medkit</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-meh-o"></i>
+		                            <span class="awesome-class">fa fa-meh-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-mercury"></i>
+		                            <span class="awesome-class">fa fa-mercury</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-microphone"></i>
+		                            <span class="awesome-class">fa fa-microphone</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-microphone-slash"></i>
+		                            <span class="awesome-class">fa fa-microphone-slash</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-minus"></i>
+		                            <span class="awesome-class">fa fa-minus</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-minus-circle"></i>
+		                            <span class="awesome-class">fa fa-minus-circle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-minus-square"></i>
+		                            <span class="awesome-class">fa fa-minus-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-minus-square"></i>
+		                            <span class="awesome-class">fa fa-minus-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-mixcloud"></i>
+		                            <span class="awesome-class">fa fa-mixcloud</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-mobile"></i>
+		                            <span class="awesome-class">fa fa-mobile</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-modx"></i>
+		                            <span class="awesome-class">fa fa-modx</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-money"></i>
+		                            <span class="awesome-class">fa fa-money</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-moon-o"></i>
+		                            <span class="awesome-class">fa fa-moon-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-mortar-board"></i>
+		                            <span class="awesome-class">fa fa-mortar-board</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-motorcycle"></i>
+		                            <span class="awesome-class">fa fa-motorcycle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-mouse-pointer"></i>
+		                            <span class="awesome-class">fa fa-mouse-pointer</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-music"></i>
+		                            <span class="awesome-class">fa fa-music</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-navicon"></i>
+		                            <span class="awesome-class">fa fa-navicon</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-neuter"></i>
+		                            <span class="awesome-class">fa fa-neuter</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-newspaper-o"></i>
+		                            <span class="awesome-class">fa fa-newspaper-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-object-group"></i>
+		                            <span class="awesome-class">fa fa-object-group</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-object-ungroup"></i>
+		                            <span class="awesome-class">fa fa-object-ungroup</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-odnoklassniki"></i>
+		                            <span class="awesome-class">fa fa-odnoklassniki</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-odnoklassniki-square"></i>
+		                            <span class="awesome-class">fa fa-odnoklassniki-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-opencart"></i>
+		                            <span class="awesome-class">fa fa-opencart</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-openid"></i>
+		                            <span class="awesome-class">fa fa-openid</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-opera"></i>
+		                            <span class="awesome-class">fa fa-opera</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-optin-monster"></i>
+		                            <span class="awesome-class">fa fa-optin-monster</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-outdent"></i>
+		                            <span class="awesome-class">fa fa-outdent</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-pagelines"></i>
+		                            <span class="awesome-class">fa fa-pagelines</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-paint-brush"></i>
+		                            <span class="awesome-class">fa fa-paint-brush</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-paper-plane"></i>
+		                            <span class="awesome-class">fa fa-paper-plane</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-paper-plane-o"></i>
+		                            <span class="awesome-class">fa fa-paper-plane-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-paperclip"></i>
+		                            <span class="awesome-class">fa fa-paperclip</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-paragraph"></i>
+		                            <span class="awesome-class">fa fa-paragraph</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-paste"></i>
+		                            <span class="awesome-class">fa fa-paste</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-pause"></i>
+		                            <span class="awesome-class">fa fa-pause</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-pause-circle"></i>
+		                            <span class="awesome-class">fa fa-pause-circle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-pause-circle-o"></i>
+		                            <span class="awesome-class">fa fa-pause-circle-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-paw"></i>
+		                            <span class="awesome-class">fa fa-paw</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-paypal"></i>
+		                            <span class="awesome-class">fa fa-paypal</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-pencil"></i>
+		                            <span class="awesome-class">fa fa-pencil</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-pencil-square"></i>
+		                            <span class="awesome-class">fa  fa-pencil-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-pencil-square-o"></i>
+		                            <span class="awesome-class">fa fa-pencil-square-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-percent"></i>
+		                            <span class="awesome-class">fa fa-percent</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-phone"></i>
+		                            <span class="awesome-class">fa fa-phone</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-phone-square"></i>
+		                            <span class="awesome-class">fa fa-phone-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-photo"></i>
+		                            <span class="awesome-class">fa fa-photo</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-pie-chart"></i>
+		                            <span class="awesome-class">fa fa-pie-chart</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-pied-piper"></i>
+		                            <span class="awesome-class">fa fa-pied-piper</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-pied-piper-alt"></i>
+		                            <span class="awesome-class">fa fa-pied-piper-alt</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-pied-piper-pp"></i>
+		                            <span class="awesome-class">fa fa-pied-piper-pp</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-pinterest"></i>
+		                            <span class="awesome-class">fa fa-pinterest</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-pinterest-p"></i>
+		                            <span class="awesome-class">fa fa-pinterest-p</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-pinterest-square"></i>
+		                            <span class="awesome-class">fa fa-pinterest-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-plane"></i>
+		                            <span class="awesome-class">fa fa-plane</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-play"></i>
+		                            <span class="awesome-class">fa fa-play</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-play-circle"></i>
+		                            <span class="awesome-class">fa fa-play-circle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-play-circle-o"></i>
+		                            <span class="awesome-class">fa fa-play-circle-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-plug"></i>
+		                            <span class="awesome-class">fa fa-plug</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-plus"></i>
+		                            <span class="awesome-class">fa fa-plus</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-plus-circle"></i>
+		                            <span class="awesome-class">fa fa-plus-circle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-plus-square"></i>
+		                            <span class="awesome-class">fa fa-plus-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-plus-square-o"></i>
+		                            <span class="awesome-class">fa fa-plus-square-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-power-off"></i>
+		                            <span class="awesome-class">fa fa-power-off</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-print"></i>
+		                            <span class="awesome-class">fa fa-print</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-product-hunt"></i>
+		                            <span class="awesome-class">fa fa-product-hunt</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-puzzle-piece"></i>
+		                            <span class="awesome-class">fa fa-puzzle-piece</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-qq"></i>
+		                            <span class="awesome-class">fa fa-qq</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-qrcode"></i>
+		                            <span class="awesome-class">fa fa-qrcode</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-question"></i>
+		                            <span class="awesome-class">fa fa-question</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-question-circle"></i>
+		                            <span class="awesome-class">fa fa-question-circle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-question-circle-o"></i>
+		                            <span class="awesome-class">fa fa-question-circle-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-quote-left"></i>
+		                            <span class="awesome-class">fa fa-quote-left</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-quote-right"></i>
+		                            <span class="awesome-class">fa fa-quote-right</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-ra"></i>
+		                            <span class="awesome-class">fa fa-ra</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-random"></i>
+		                            <span class="awesome-class">fa fa-random</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-recycle"></i>
+		                            <span class="awesome-class">fa fa-recycle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-reddit"></i>
+		                            <span class="awesome-class">fa fa-reddit</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-reddit-alien"></i>
+		                            <span class="awesome-class">fa fa-reddit-alien</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-reddit-square"></i>
+		                            <span class="awesome-class">fa fa-reddit-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-refresh"></i>
+		                            <span class="awesome-class">fa fa-refresh</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-registered"></i>
+		                            <span class="awesome-class">fa fa-registered</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-remove"></i>
+		                            <span class="awesome-class">fa fa-remove</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-renren"></i>
+		                            <span class="awesome-class">fa fa-renren</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-reorder"></i>
+		                            <span class="awesome-class">fa fa-reorder</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-repeat"></i>
+		                            <span class="awesome-class">fa fa-repeat</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-retweet"></i>
+		                            <span class="awesome-class">fa fa-retweet</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-road"></i>
+		                            <span class="awesome-class">fa fa-road</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-rocket"></i>
+		                            <span class="awesome-class">fa fa-rocket</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-rotate-left"></i>
+		                            <span class="awesome-class">fa fa-rotate-left</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-rouble"></i>
+		                            <span class="awesome-class">fa fa-rouble</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-rss"></i>
+		                            <span class="awesome-class">fa fa-rss</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-rss-square"></i>
+		                            <span class="awesome-class">fa fa-rss-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-safari"></i>
+		                            <span class="awesome-class">fa fa-safari</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-rupee"></i>
+		                            <span class="awesome-class">fa fa-rupee</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-save"></i>
+		                            <span class="awesome-class">fa fa-save</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-scissors"></i>
+		                            <span class="awesome-class">fa fa-scissors</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-scribd"></i>
+		                            <span class="awesome-class">fa fa-scribd</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-search"></i>
+		                            <span class="awesome-class">fa fa-search</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-search-minus"></i>
+		                            <span class="awesome-class">fa fa-search-minus</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-search-plus"></i>
+		                            <span class="awesome-class">fa fa-search-plus</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-sellsy"></i>
+		                            <span class="awesome-class">fa fa-sellsy</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-server"></i>
+		                            <span class="awesome-class">fa fa-server</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-share-alt"></i>
+		                            <span class="awesome-class">fa fa-share-alt</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-share-alt-square"></i>
+		                            <span class="awesome-class">fa fa-share-alt-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-share-square"></i>
+		                            <span class="awesome-class">fa fa-share-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-share-square-o"></i>
+		                            <span class="awesome-class">fa fa-share-square-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-shekel"></i>
+		                            <span class="awesome-class">fa fa-shekel</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-shield"></i>
+		                            <span class="awesome-class">fa fa-shield</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-ship"></i>
+		                            <span class="awesome-class">fa fa-ship</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-shirtsinbulk"></i>
+		                            <span class="awesome-class">fa fa-shirtsinbulk</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-shopping-bag"></i>
+		                            <span class="awesome-class">fa fa-shopping-bag</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-shopping-basket"></i>
+		                            <span class="awesome-class">fa fa-shopping-basket</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-shopping-cart"></i>
+		                            <span class="awesome-class">fa fa-shopping-cart</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-sign-in"></i>
+		                            <span class="awesome-class">fa fa-sign-in</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-sign-language"></i>
+		                            <span class="awesome-class">fa fa-sign-language</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-sign-out"></i>
+		                            <span class="awesome-class">fa fa-sign-out</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-signal"></i>
+		                            <span class="awesome-class">fa fa-signal</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-simplybuilt"></i>
+		                            <span class="awesome-class">fa fa-simplybuilt</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-sitemap"></i>
+		                            <span class="awesome-class">fa fa-sitemap</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-skyatlas"></i>
+		                            <span class="awesome-class">fa fa-skyatlas</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-skype"></i>
+		                            <span class="awesome-class">fa fa-skype</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-slack"></i>
+		                            <span class="awesome-class">fa fa-slack</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-sliders"></i>
+		                            <span class="awesome-class">fa fa-sliders</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-slideshare"></i>
+		                            <span class="awesome-class">fa fa-slideshare</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-snapchat"></i>
+		                            <span class="awesome-class">fa fa-snapchat</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-snapchat-ghost"></i>
+		                            <span class="awesome-class">fa fa-snapchat-ghost</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-snapchat-square"></i>
+		                            <span class="awesome-class">fa fa-snapchat-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-sort"></i>
+		                            <span class="awesome-class">fa fa-sort</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-sort-alpha-asc"></i>
+		                            <span class="awesome-class">fa fa-sort-alpha-asc</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-sort-alpha-desc"></i>
+		                            <span class="awesome-class">fa fa-sort-alpha-desc</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-sort-amount-asc"></i>
+		                            <span class="awesome-class">fa fa-sort-amount-asc</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-sort-amount-desc"></i>
+		                            <span class="awesome-class">fa fa-sort-amount-desc</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-sort-up"></i>
+		                            <span class="awesome-class">fa fa-sort-up</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-sort-down"></i>
+		                            <span class="awesome-class">fa fa-sort-down</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-sort-numeric-asc"></i>
+		                            <span class="awesome-class">fa fa-sort-numeric-asc</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-sort-numeric-desc"></i>
+		                            <span class="awesome-class">fa fa-sort-numeric-desc</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-soundcloud"></i>
+		                            <span class="awesome-class">fa fa-soundcloud</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-space-shuttle"></i>
+		                            <span class="awesome-class">fa fa-space-shuttle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-spinner"></i>
+		                            <span class="awesome-class">fa fa-spinner</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-spoon"></i>
+		                            <span class="awesome-class">fa fa-spoon</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-spotify"></i>
+		                            <span class="awesome-class">fa fa-spotify</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-square"></i>
+		                            <span class="awesome-class">fa fa-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-square-o"></i>
+		                            <span class="awesome-class">fa fa-square-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-stack-exchange"></i>
+		                            <span class="awesome-class">fa fa-stack-exchange</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-stack-overflow"></i>
+		                            <span class="awesome-class">fa fa-stack-overflow</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-star"></i>
+		                            <span class="awesome-class">fa fa-star</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-star-half"></i>
+		                            <span class="awesome-class">fa fa-star-half</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-star-half-empty"></i>
+		                            <span class="awesome-class">fa fa-star-half-empty</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-star-o"></i>
+		                            <span class="awesome-class">fa fa-star-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-steam"></i>
+		                            <span class="awesome-class">fa fa-steam</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-steam-square"></i>
+		                            <span class="awesome-class">fa fa-steam-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-step-backward"></i>
+		                            <span class="awesome-class">fa fa-step-backward</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-step-forward"></i>
+		                            <span class="awesome-class">fa fa-step-forward</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-stethoscope"></i>
+		                            <span class="awesome-class">fa fa-stethoscope</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-sticky-note"></i>
+		                            <span class="awesome-class">fa fa-sticky-note</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-sticky-note-o"></i>
+		                            <span class="awesome-class">fa fa-sticky-note-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-stop"></i>
+		                            <span class="awesome-class">fa fa-stop</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-stop-circle"></i>
+		                            <span class="awesome-class">fa fa-stop-circle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-stop-circle-o"></i>
+		                            <span class="awesome-class">fa fa-stop-circle-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-street-view"></i>
+		                            <span class="awesome-class">fa fa-street-view</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-strikethrough"></i>
+		                            <span class="awesome-class">fa fa-strikethrough</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-stumbleupon"></i>
+		                            <span class="awesome-class">fa fa-stumbleupon</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-stumbleupon-circle"></i>
+		                            <span class="awesome-class">fa fa-stumbleupon-circle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-subscript"></i>
+		                            <span class="awesome-class">fa fa-subscript</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-subway"></i>
+		                            <span class="awesome-class">fa fa-subway</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-suitcase"></i>
+		                            <span class="awesome-class">fa fa-suitcase</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-sun-o"></i>
+		                            <span class="awesome-class">fa fa-sun-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-table"></i>
+		                            <span class="awesome-class">fa fa-table</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-tablet"></i>
+		                            <span class="awesome-class">fa fa-tablet</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-tachometer"></i>
+		                            <span class="awesome-class">fa fa-tachometer</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-tag"></i>
+		                            <span class="awesome-class">fa fa-tag</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-tags"></i>
+		                            <span class="awesome-class">fa fa-tags</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-tasks"></i>
+		                            <span class="awesome-class">fa fa-tasks</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-taxi"></i>
+		                            <span class="awesome-class">fa fa-taxi</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-television"></i>
+		                            <span class="awesome-class">fa fa-television</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-tencent-weibo"></i>
+		                            <span class="awesome-class">fa fa-tencent-weibo</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-terminal"></i>
+		                            <span class="awesome-class">fa fa-terminal</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-text-height"></i>
+		                            <span class="awesome-class">fa fa-text-height</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-text-width"></i>
+		                            <span class="awesome-class">fa fa-text-width</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-th"></i>
+		                            <span class="awesome-class">fa fa-th</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-th-large"></i>
+		                            <span class="awesome-class">fa fa-th-large</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-th-list"></i>
+		                            <span class="awesome-class">fa fa-th-list</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-themeisle"></i>
+		                            <span class="awesome-class">fa fa-themeisle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-thumb-tack"></i>
+		                            <span class="awesome-class">fa fa-thumb-tack</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-thumbs-down"></i>
+		                            <span class="awesome-class">fa fa-thumbs-down</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-thumbs-o-down"></i>
+		                            <span class="awesome-class">fa fa-thumbs-o-down</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-thumbs-o-up"></i>
+		                            <span class="awesome-class">fa fa-thumbs-o-up</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-thumbs-up"></i>
+		                            <span class="awesome-class">fa fa-thumbs-up</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-ticket"></i>
+		                            <span class="awesome-class">fa fa-ticket</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-times-circle"></i>
+		                            <span class="awesome-class">fa fa-times-circle</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-times-circle-o"></i>
+		                            <span class="awesome-class">fa fa-times-circle-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-times"></i>
+		                            <span class="awesome-class">fa fa-times</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-tint"></i>
+		                            <span class="awesome-class">fa fa-tint</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-toggle-down"></i>
+		                            <span class="awesome-class">fa fa-toggle-down</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-toggle-left"></i>
+		                            <span class="awesome-class">fa fa-toggle-left</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-toggle-off"></i>
+		                            <span class="awesome-class">fa fa-toggle-off</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-toggle-on"></i>
+		                            <span class="awesome-class">fa fa-toggle-on</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-toggle-right"></i>
+		                            <span class="awesome-class">fa fa-toggle-right</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-toggle-up"></i>
+		                            <span class="awesome-class">fa fa-toggle-up</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-trademark"></i>
+		                            <span class="awesome-class">fa fa-trademark</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-train"></i>
+		                            <span class="awesome-class">fa fa-train</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-transgender"></i>
+		                            <span class="awesome-class">fa fa-transgender</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-transgender-alt"></i>
+		                            <span class="awesome-class">fa fa-transgender-alt</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-trash"></i>
+		                            <span class="awesome-class">fa fa-trash</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-trash-o"></i>
+		                            <span class="awesome-class">fa fa-trash-o</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-tree"></i>
+		                            <span class="awesome-class">fa fa-tree</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-trello"></i>
+		                            <span class="awesome-class">fa fa-trello</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-tripadvisor"></i>
+		                            <span class="awesome-class">fa fa-tripadvisor</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-trophy"></i>
+		                            <span class="awesome-class">fa fa-trophy</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-truck"></i>
+		                            <span class="awesome-class">fa fa-truck</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-try"></i>
+		                            <span class="awesome-class">fa fa-try</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-tty"></i>
+		                            <span class="awesome-class">fa fa-tty</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-tumblr"></i>
+		                            <span class="awesome-class">fa fa-tumblr</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-tumblr-square"></i>
+		                            <span class="awesome-class">fa fa-tumblr-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-twitch"></i>
+		                            <span class="awesome-class">fa fa-twitch</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-twitter"></i>
+		                            <span class="awesome-class">fa fa-twitter</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-twitter-square"></i>
+		                            <span class="awesome-class">fa fa-twitter-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-umbrella"></i>
+		                            <span class="awesome-class">fa fa-umbrella</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-underline"></i>
+		                            <span class="awesome-class">fa fa-underline</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-universal-access"></i>
+		                            <span class="awesome-class">fa fa-universal-access</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-unlock"></i>
+		                            <span class="awesome-class">fa fa-unlock</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-unlock-alt"></i>
+		                            <span class="awesome-class">fa fa-unlock-alt</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-upload"></i>
+		                            <span class="awesome-class">fa fa-upload</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-usb"></i>
+		                            <span class="awesome-class">fa fa-usb</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-usd"></i>
+		                            <span class="awesome-class">fa fa-usd</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-user"></i>
+		                            <span class="awesome-class">fa fa-user</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-user-md"></i>
+		                            <span class="awesome-class">fa fa-user-md</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-user-plus"></i>
+		                            <span class="awesome-class">fa fa-user-plus</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-user-secret"></i>
+		                            <span class="awesome-class">fa fa-user-secret</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-user-times"></i>
+		                            <span class="awesome-class">fa fa-user-times</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-venus"></i>
+		                            <span class="awesome-class">fa fa-venus</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-venus-double"></i>
+		                            <span class="awesome-class">fa fa-venus-double</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-venus-mars"></i>
+		                            <span class="awesome-class">fa fa-venus-mars</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-viacoin"></i>
+		                            <span class="awesome-class">fa fa-viacoin</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-viadeo"></i>
+		                            <span class="awesome-class">fa fa-viadeo</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-viadeo-square"></i>
+		                            <span class="awesome-class">fa fa-viadeo-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-video-camera"></i>
+		                            <span class="awesome-class">fa fa-video-camera</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-vimeo"></i>
+		                            <span class="awesome-class">fa fa-vimeo</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-vimeo-square"></i>
+		                            <span class="awesome-class">fa fa-vimeo-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-vine"></i>
+		                            <span class="awesome-class">fa fa-vine</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-vk"></i>
+		                            <span class="awesome-class">fa fa-vk</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-volume-control-phone"></i>
+		                            <span class="awesome-class">fa fa-volume-control-phone</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-volume-down"></i>
+		                            <span class="awesome-class">fa fa-volume-down</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-volume-off"></i>
+		                            <span class="awesome-class">fa fa-volume-off</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-volume-up"></i>
+		                            <span class="awesome-class">fa fa-volume-up</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-warning"></i>
+		                            <span class="awesome-class">fa fa-warning</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-wechat"></i>
+		                            <span class="awesome-class">fa fa-wechat</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-weibo"></i>
+		                            <span class="awesome-class">fa fa-weibo</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-whatsapp"></i>
+		                            <span class="awesome-class">fa fa-whatsapp</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-wheelchair"></i>
+		                            <span class="awesome-class">fa fa-wheelchair</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-wheelchair-alt"></i>
+		                            <span class="awesome-class">fa fa-wheelchair-alt</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-wifi"></i>
+		                            <span class="awesome-class">fa fa-wifi</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-wikipedia-w"></i>
+		                            <span class="awesome-class">fa fa-wikipedia-w</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-windows"></i>
+		                            <span class="awesome-class">fa fa-windows</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-won"></i>
+		                            <span class="awesome-class">fa fa-won</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-wordpress"></i>
+		                            <span class="awesome-class">fa fa-wordpress</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-wpbeginner"></i>
+		                            <span class="awesome-class">fa fa-wpbeginner</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-wpforms"></i>
+		                            <span class="awesome-class">fa fa-wpforms</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-wrench"></i>
+		                            <span class="awesome-class">fa fa-wrench</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-xing"></i>
+		                            <span class="awesome-class">fa fa-xing</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-xing-square"></i>
+		                            <span class="awesome-class">fa fa-xing-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-y-combinator"></i>
+		                            <span class="awesome-class">fa fa-y-combinator</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-y-combinator-square"></i>
+		                            <span class="awesome-class">fa fa-y-combinator-square</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-yahoo"></i>
+		                            <span class="awesome-class">fa fa-yahoo</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-yelp"></i>
+		                            <span class="awesome-class">fa fa-yelp</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-yoast"></i>
+		                            <span class="awesome-class">fa fa-yoast</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-youtube"></i>
+		                            <span class="awesome-class">fa fa-youtube</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-youtube-play"></i>
+		                            <span class="awesome-class">fa fa-youtube-play</span>
+		                        </li>
+		                        <li>
+		                            <i class="fa fa-youtube-square"></i>
+		                            <span class="awesome-class">fa fa-youtube-square</span>
+		                        </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- / .panel -->
+			</div>
+			<!-- / #page-wrapper -->
+		</div>
+		<!-- / #wrapper -->
+	</body>
+	
+	<!-- Plugin Js -->
+    <script src="../../../plugins/jquery/jquery-2.2.4.min.js"></script>
+    <script src="../../../plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../../plugins/angular/angular.min.js"></script>
+    <script src="../../../plugins/ocLazyLoad/ocLazyLoad.min.js"></script>
+    <script src="../../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="../../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="../../../plugins/bootstrap-notify/bootstrap-notify.js"></script>
+    <script src="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="../../../plugins/node-waves/waves.js"></script>
+    <script src="../../../plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="../../../js/ui/dialogs.js"></script>
+    <script src="../../../js/ui/modals.js"></script>
+    <script src="../../../js/ui/notifications.js"></script>
+    <script src="../../../js/ui/tooltips-popovers.js"></script>
+    <script src="../../../js/ui/load_resize.js"></script>
+     <script src="../../../plugins/angular/angular-translate.min.js"> </script>
+	<script src="../../../plugins/angular/angular-translate-loader-static-files.min.js"> </script>
+    <!-- Custom JS -->
+    <script src="../../../js/server/server.js" type="text/javascript"></script>
+	<script src="../../../js/cookie.js" type="text/javascript"></script>
+	<script src="../../../js/skin.js" type="text/javascript"></script>
+	<script src="../../../js/config/config_skin.js" type="text/javascript"></script>
+	<script src="../../../js/App.js" type="text/javascript"></script>
+	
+	<!-- Home JS -->
+	<script src="../../../js/home.js" type="text/javascript"></script>
+</html>

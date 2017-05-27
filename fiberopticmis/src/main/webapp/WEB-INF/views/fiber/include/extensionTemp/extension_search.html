@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+	<div class="ds-table">
+		<div class="ds-cell-addon addr">{{'SEARCH_TITLE.TITLE_PHONENUMBER'|translate}}</div>
+		<div class="ds-cell-control">
+			<div class="ds-table">
+				<div class="ds-cell-addon select" style="width:50%;">
+			      <select class="form-control show-tick" style="margin-bottom:0;" ng-model="numberObj.countryNum" ng-options="x.countryNum as x.firstNum for x in telOptions"></select>
+				</div>
+				<div class="ds-cell-control p-l-10"><input type="text" class="form-control" ng-model="numberObj.number" id="searchNumber"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 p-t-8 p-l-10">
+	<button type="button"  class="btn btn-primary waves-effect"  ng-click="query();">{{'BUTTON_NAME.BTN_SEARCH'|translate}}</button>
+</div>
+<!-- /.col-1 -->
+<script type="text/javascript">
+//获取所有的edit，并且Data-type是number
+ $("#searchNumber").on("keydown",function(e){
+	 var _this=$(this);
+	return digitInputInt($(this), e);  
+ });
+ 
+//获取所有的edit，并且Data-type是int
+ $("#IDNO").on("keydown",function(e){
+	 var _this=$(this);
+	return digitInputInt($(this), e);  
+ });
+</script>

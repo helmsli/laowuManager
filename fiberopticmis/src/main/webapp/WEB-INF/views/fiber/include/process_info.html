@@ -1,0 +1,25 @@
+<meta charset="UTF-8" ng-controller="projectModel">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-l-50">
+	<div class="table-responsive notBorder">
+		<table class="table">
+	        <thead>
+	        	<tr>
+	        		<th width="20%">{{'EXTENSION_TITLE.TASK_PROCESS_TITLE.PROCESS_PERSONLIABLE'|translate}}</th>
+	        		<th width="20%">{{'EXTENSION_TITLE.TASK_PROCESS_TITLE.PROCESS_HANDLEMODE'|translate}}</th>
+	        		<th width="20%">{{'EXTENSION_TITLE.TASK_PROCESS_TITLE.PROCESS_HANDLETIMES'|translate}}</th>
+	        		<th width="40%">{{'EXTENSION_TITLE.TASK_PROCESS_TITLE.PROCESS_REMARKS'|translate}}</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	        	<tr ng-repeat="data in commonList">
+	            	<td ng-bind="data.createPersonName"></td>
+	            	<td ng-bind="data.serviceType"></td>
+	            	<td ng-bind="data.createTime"></td>
+	            	<td ng-bind="data.reviewResult"></td>
+				</tr>
+				
+	        </tbody>
+	    </table>
+	</div>
+</div>
+<!-- /.col-12 -->

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="App">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Manager system</title>
+		<!-- Plugin Css -->
+    	<link href="../../../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    	<link href="../../../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    	<link href="../../../plugins/material-design-preloader/md-preloader.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    	<link href="../../../plugins/node-waves/waves.min.css" rel="stylesheet" />
+   	 	<link href="../../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    	<link href="../../../plugins/animate-css/animate.css" rel="stylesheet" />
+    	
+	    <!-- Custom Css -->
+    	<link href="../../../css/custom.css" rel="stylesheet">
+	    <link href="../../../css/themes/default/skin.css" rel="stylesheet" type="text/css" title="default"/>
+	</head>
+	<body ng-controller="app">
+		<div class="page-loader-wrapper">
+		    <div class="loader">
+		        <div class="md-preloader pl-size-md">
+		            <svg viewbox="0 0 75 75">
+		                <circle cx="37.5" cy="37.5" r="33.5" class="pl-red" stroke-width="4" />
+		            </svg>
+		        </div>
+		        <p>加载中，请稍后...</p>
+		    </div>
+		</div>
+		<div class="overlay"></div>
+		<!-- Page Loader -->
+		<div id="wrapper">
+			<div class="header" ng-include="'../../include/header.html'"></div>
+			<div class="menus" ng-include="'../../include/leftMenu.html'"></div>
+			<div id="page-wrapper">
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							基础警告框
+							<small>包装任何文本和一个可选的"关闭"按钮<code>.alert</code>和四个上下文类（例如，<code>.alert-success</code>）用于基本的警报消息。</small>
+						</h2>
+						<div class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-ellipsis-v"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+							    <li><a href="javascript:void(0);">编辑</a></li>
+							    <li><a href="javascript:void(0);">查看详细</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="alert alert-success">
+                            <strong>做得好!</strong>你成功地阅读这个重要的警告消息。
+                        </div>
+                        <div class="alert alert-info">
+                        	<strong>小心!</strong>这个警报需要你的注意,但它不是非常重要的。
+                        </div>
+                        <div class="alert alert-warning">
+                        	<strong>警告！</strong>更好的检查自己,你不是太好了。
+                        </div>
+                        <div class="alert alert-danger">
+                            <strong>哦,急!</strong>改变一些事情,尝试再次提交。
+                        </div>
+					</div>
+				</div>
+				<!-- / .panel -->
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							素材设计警告
+							<small>您可以使用素材设计颜色。<code>bg-red。bg-pink</code>类</small>
+						</h2>
+						<div class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-ellipsis-v"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+							    <li><a href="javascript:void(0);">编辑</a></li>
+							    <li><a href="javascript:void(0);">查看详细</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="alert bg-pink">
+                                                                                    电影节是为了推动电影艺术，提高电影艺术水准的一项活动。
+                        </div>
+                        <div class="alert bg-orange">
+                         	电影节是为了推动电影艺术，提高电影艺术水准的一项活动。
+                        </div>
+                        <div class="alert bg-teal">
+                        	电影节是为了推动电影艺术，提高电影艺术水准的一项活动。
+                        </div>
+                        <div class="alert bg-green">
+                         	电影节是为了推动电影艺术，提高电影艺术水准的一项活动。
+                        </div>
+                        <div class="alert bg-red">
+                        	电影节是为了推动电影艺术，提高电影艺术水准的一项活动。
+                        </div>
+					</div>
+				</div>
+				<!-- / .panel -->
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							关闭的警告
+							<small>通过添加一个可选的构建在任何警报。<code>alert-dismissible</code>和关闭按钮。</small>
+						</h2>
+						<div class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-ellipsis-v"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+							    <li><a href="javascript:void(0);">编辑</a></li>
+							    <li><a href="javascript:void(0);">查看详细</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="alert alert-warning alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        	电影节是为了推动电影艺术，提高电影艺术水准的一项活动。
+                        </div>
+                        <div class="alert bg-pink alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        	 电影节是为了推动电影艺术，提高电影艺术水准的一项活动。
+                        </div>
+                        <div class="alert bg-teal alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                         	电影节是为了推动电影艺术，提高电影艺术水准的一项活动。
+                        </div>
+                        <div class="alert bg-green alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        	电影节是为了推动电影艺术，提高电影艺术水准的一项活动。
+                        </div>
+					</div>
+				</div>
+				<!-- / .panel -->
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							带有链接的警告
+							<small>通过添加一个可选的构建在任何警报。<code>alert-link</code>类。</small>
+						</h2>
+						<div class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-ellipsis-v"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+							    <li><a href="javascript:void(0);">编辑</a></li>
+							    <li><a href="javascript:void(0);">查看详细</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="alert alert-success">
+                        	<strong>做得好！</strong>您成功地阅读了<a href="javascript:void(0);" class="alert-link">这个重要的警报消息</a>。
+                        </div>
+                        <div class="alert alert-info">
+                        	<strong>小心！</strong>这个警报<a href="javascript:void(0);" class="alert-link">需要你的注意</a>,但它不是非常重要的。
+                        </div>
+                        <div class="alert alert-warning">
+                         	<strong>警告！</strong>更好的检查自己,你<a href="javascript:void(0);" class="alert-link">不是太好了</a>。
+                        </div>
+                        <div class="alert alert-danger">
+                        	<strong>哦,急！</strong>改变一些事情,尝试<a href="javascript:void(0);" class="alert-link">再次提交</a>。
+                        </div>
+					</div>
+				</div>
+				<!-- / .panel -->
+				
+			</div>
+			<!-- / #page-wrapper -->
+		</div>
+		<!-- / #wrapper -->
+	</body>
+	<!-- Plugin Js -->
+    <script src="../../../plugins/jquery/jquery-2.2.4.min.js"></script>
+    <script src="../../../plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../../plugins/angular/angular.min.js"></script>
+    <script src="../../../plugins/ocLazyLoad/ocLazyLoad.min.js"></script>
+    <script src="../../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="../../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="../../../plugins/bootstrap-notify/bootstrap-notify.js"></script>
+    <script src="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="../../../plugins/node-waves/waves.js"></script>
+    <script src="../../../plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="../../../js/ui/dialogs.js"></script>
+    <script src="../../../js/ui/modals.js"></script>
+    <script src="../../../js/ui/notifications.js"></script>
+    <script src="../../../js/ui/tooltips-popovers.js"></script>
+    <script src="../../../js/ui/load_resize.js"></script>
+    <script src="../../../plugins/angular/angular-translate.min.js"> </script>
+	<script src="../../../plugins/angular/angular-translate-loader-static-files.min.js"> </script>
+    <!-- Custom JS -->
+    <script src="../../../js/server/server.js" type="text/javascript"></script>
+	<script src="../../../js/cookie.js" type="text/javascript"></script>
+	<script src="../../../js/skin.js" type="text/javascript"></script>
+	<script src="../../../js/config/config_skin.js" type="text/javascript"></script>
+	<script src="../../../js/App.js" type="text/javascript"></script>
+	
+	<!-- Home JS-->
+	<script src="../../../js/home.js" type="text/javascript"></script>
+</html>

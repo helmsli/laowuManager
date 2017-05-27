@@ -1,0 +1,211 @@
+<meta charset="UTF-8">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_AUDITRESULT'|translate}}</div>
+				<div class="ds-cell-control grayColor" ng-bind="customerInfo.reviewResultShow"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_CUSTOMERNAME'|translate}}</div>
+				<div class="ds-cell-control grayColor" ng-bind="customerInfo.customerName"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.RUC_NO'|translate}}</div>
+				<div class="ds-cell-control grayColor" ng-bind="customerInfo.RCNNo"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_COMPANYTYPE'|translate}}</div>
+				<div class="ds-cell-control grayColor" ng-bind="customerInfo.companyTypeShow"></div>
+			</div>
+		</div>
+		<!-- 当选择Non-IVA时，显示一下代码，默认时不显示 -->
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 hide">
+			<div class="ds-table p-t p-b">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_RUCNO'|translate}}</div>
+				<div class="ds-cell-control grayColor" ng-bind="customerInfo.companyType"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-t-5">
+	<div class="row clearfix">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title top">{{'TASK_CUSTOMER_TITLE.CUSTOMER_INVOICEADDRESS'|translate}}</div>
+				<div class="ds-cell-control grayColor" ng-bind="customerInfo.invoiceAddress"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="ds-table">
+		<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_INVOICEPERIOD'|translate}}</div>
+		<div class="ds-cell-control grayColor">
+		<span class="p-l-5" ng-bind="customerInfo.invoicePeriodShow"></span>
+		<span class="p-l-5">{{'RADIO_TITLE.RADIO_MONTHS'|translate}}</span>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="ds-table">
+		<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_CONTRACTPERIOD'|translate}}</div>
+		<div class="ds-cell-control grayColor">
+		<span class="p-l-5" ng-bind="customerInfo.contractPeriodShow"></span>
+		<span class="p-l-5">{{'RADIO_TITLE.RADIO_MONTHS'|translate}}</span>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-t-5">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_CONTACTNAME'|translate}}</div>
+				<div class="ds-cell-control grayColor" ng-bind="customerInfo.contactName"></div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_CONTACTTELNO'|translate}}</div>
+				<div class="ds-cell-control grayColor" ng-bind="customerInfo.contactTelNo"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-t-5">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_FIBREOPTICASBANDWIDTH'|translate}}</div>
+				<div class="ds-cell-control grayColor">
+					<span ng-bind="customerInfo.fibreOpticsBandwidth"></span>
+					<span class="p-l-5">{{'RADIO_TITLE.RADIO_MBPS'|translate}}</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_PRICECHARGE'|translate}}</div>
+				<div class="ds-cell-control grayColor">
+					<span ng-bind="customerInfo.priceCharge"></span>
+					<span class="p-l-5">{{'RADIO_TITLE.RADIO_DOLLARMONTH'|translate}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-t-5">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_IPADDRESS'|translate}}</div>
+				<div class="ds-cell-control grayColor" ng-bind="customerInfo.iPAddressResult"></div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_IPADDRESSFEE'|translate}}</div>
+				<div class="ds-cell-control grayColor" >
+					<span ng-bind="customerInfo.iPAddressFee"></span>
+					<span class="p-l-5">{{'RADIO_TITLE.RADIO_DOLLARMONTH'|translate}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-t-5">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_CUSTOMERTYPE'|translate}}</div>
+				<div class="ds-cell-control grayColor" ng-bind="customerInfo.customerTypeResult"></div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_INSTALLATIONFEE'|translate}}</div>
+				<div class="ds-cell-control grayColor">
+				   <span   ng-bind="customerInfo.installationFeeShow"></span>
+			      <span class="p-l-5">{{'RADIO_TITLE.RADIO_DOLLAR'|translate}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-t-5">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_COOTELTOPUP'|translate}}</div>
+				<div class="ds-cell-control grayColor" ng-bind="customerInfo.cooTelTopupPhoneNo"></div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_INSTALLATIONAREA'|translate}}</div>
+				<div class="ds-cell-control grayColor" ng-bind="customerInfo.installationArea"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="ds-table">
+		<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_ATTATCHMENT'|translate}}</div>
+		<div class="ds-cell-control grayColor" ng-repeat="attatchmentLsitObj in customerInfo.attachmentList track by $index">
+			<u><a class="chosen m-r-5" style="cursor:pointer;color:#00F" ng-click="fileDownLoad(attatchmentLsitObj.attachmentName);" ng-bind="attatchmentLsitObj.originalFilename"></a><u/>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title top">{{'TASK_CUSTOMER_TITLE.CUSTOMER_REMARK'|translate}}</div>
+				<div class="ds-cell-control grayColor text-word"  ng-bind="customerInfo.notes"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_CUSTOMER_TITLE.CUSTOMER_TOTALAMOUNT'|translate}}</div>
+				<div class="ds-cell-control font-bold"  ng-bind="customerInfo.totalAmount"></div>
+			</div>
+		</div>
+	</div>
+</div> -->
+<!-- /.col-12 -->

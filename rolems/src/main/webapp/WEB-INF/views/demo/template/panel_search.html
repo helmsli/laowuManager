@@ -1,0 +1,103 @@
+<meta charset="UTF-8">
+<div class="row clearfix panel-search collapse" id="collapseExample">
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+		<div class="row clearfix">
+			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 form-control-label">
+	            <label for="email_address_2">用户名:</label>
+	        </div>
+	        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+	            <div class="form-group">
+	                <div class="form-line">
+	                    <input type="text" class="form-control" ng-model="searchWord" placeholder="请输入用户名称" />
+	                </div>
+	            </div>
+	        </div>
+		</div>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+		<div class="row clearfix">
+			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 form-control-label">
+	            <label for="email_address_2">真实姓名:</label>
+	        </div>
+	        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+	            <div class="form-group">
+	                <div class="form-line">
+	                    <input type="text" class="form-control" ng-model="searchWord" placeholder="请输入真是姓名" />
+	                </div>
+	            </div>
+	        </div>
+		</div>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+		<div class="row clearfix">
+			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 form-control-label">
+	            <label for="email_address_2">类型:</label>
+	        </div>
+	        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+	            <div class="form-group">
+	                <div class="form-line">
+	                    <select class="form-control show-tick" id="userType">
+	                        <option value="">请选择类型</option>
+	                        <option value="单板音" ng-click="chooseType(0)">单板音</option>
+	                        <option value="双板音" ng-click="chooseType(1)">双板音</option>
+	                    </select>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+		<div class="row clearfix">
+			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 form-control-label">
+	            <label for="email_address_2">开始时间:</label>
+	        </div>
+	        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+	            <div class="form-group">
+	                <div class="form-line">
+	                    <div id="datetimepicker1" class="input-append date">
+					        <input type="text" class="form-control" readonly="readonly" data-format="dd/MM/yyyy" placeholder="请选择开始时间" />
+					        <span class="add-on">
+					          <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="fa fa-calendar"></i>
+					        </span>
+				      	</div>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+		<div class="row clearfix">
+			<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 form-control-label">
+	            <label for="email_address_2">结束时间:</label>
+	        </div>
+	        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+	            <div class="form-group">
+	                <div class="form-line">
+	                    <div id="datetimepicker2" class="input-append date">
+					        <input type="text" class="form-control" readonly="readonly" data-format="dd/MM/yyyy" placeholder="请选择结束时间" />
+					        <span class="add-on">
+					          <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="fa fa-calendar"></i>
+					        </span>
+				      	</div>
+	                </div>
+	            </div>
+	        </div>
+		</div>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 align-center">
+		<button type="button" class="btn btn-warning waves-effect m-b-15 m-w-80" ng-click="search(searchWord)">查询</button>
+	</div>
+	<!-- / .col-md-4 -->
+</div>
+
+<!-- Script -->
+<script type="text/javascript">
+  	$(function() {
+	    $('#datetimepicker1').datetimepicker({
+	    	collapse: true
+	    });
+	    $('#datetimepicker2').datetimepicker({
+	    	collapse: true
+	    });
+	});
+</script>

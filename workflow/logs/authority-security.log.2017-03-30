@@ -1,0 +1,21 @@
+2017-03-30 19:54:33,103 [main] INFO  [org.springframework.context.support.FileSystemXmlApplicationContext] - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@71f993c: startup date [Thu Mar 30 19:54:33 CST 2017]; root of context hierarchy
+2017-03-30 19:54:33,159 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-03-30 19:54:33,780 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_database.xml]
+2017-03-30 19:54:33,955 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_activiti.xml]
+2017-03-30 19:54:34,280 [main] INFO  [org.springframework.context.support.PropertySourcesPlaceholderConfigurer] - Loading properties file from file [E:\eclipseWorkspace\workflow\target\classes\config\db.properties]
+2017-03-30 19:54:37,285 [main] INFO  [org.activiti.engine.impl.db.DbSqlSession] - performing create on engine with resource org/activiti/db/create/activiti.mysql.create.engine.sql
+2017-03-30 19:54:37,296 [main] INFO  [org.activiti.engine.impl.db.DbSqlSession] - Found MySQL: majorVersion=5 minorVersion=5
+2017-03-30 19:54:43,922 [main] INFO  [org.activiti.engine.impl.db.DbSqlSession] - performing create on history with resource org/activiti/db/create/activiti.mysql.create.history.sql
+2017-03-30 19:54:43,922 [main] INFO  [org.activiti.engine.impl.db.DbSqlSession] - Found MySQL: majorVersion=5 minorVersion=5
+2017-03-30 19:54:46,994 [main] INFO  [org.activiti.engine.impl.db.DbSqlSession] - performing create on identity with resource org/activiti/db/create/activiti.mysql.create.identity.sql
+2017-03-30 19:54:46,994 [main] INFO  [org.activiti.engine.impl.db.DbSqlSession] - Found MySQL: majorVersion=5 minorVersion=5
+2017-03-30 19:54:47,951 [main] INFO  [org.activiti.engine.impl.ProcessEngineImpl] - ProcessEngine default created
+2017-03-30 19:54:47,954 [main] INFO  [org.activiti.engine.impl.jobexecutor.JobExecutor] - Starting up the JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor].
+2017-03-30 19:54:47,962 [Thread-3] INFO  [org.activiti.engine.impl.jobexecutor.AcquireJobsRunnableImpl] - JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor] starting to acquire jobs
+2017-03-30 19:54:48,326 [main] INFO  [org.activiti.engine.impl.bpmn.deployer.BpmnDeployer] - Processing resource E:\eclipseWorkspace\workflow\target\classes\deployments\fiberextension.bpmn20.xml
+2017-03-30 19:54:54,821 [main] DEBUG [com.xinwei.workflow.dao.CustomActivityNameMapper.insert] - ooo Using Connection [jdbc:mysql://localhost:3306/db_activiti?useUnicode=true&characterEncoding=utf-8, UserName=root@localhost, MySQL-AB JDBC Driver]
+2017-03-30 19:54:54,832 [main] DEBUG [com.xinwei.workflow.dao.CustomActivityNameMapper.insert] - ==>  Preparing: insert into custom_activity_name (process_def_key, activity_id, language, name) values (?, ?, ?, ?) 
+2017-03-30 19:54:54,862 [main] DEBUG [com.xinwei.workflow.dao.CustomActivityNameMapper.insert] - ==> Parameters: fiberextension(String), fiberExtensionStart(String), zh(String), 光纤延期申请开始(String)
+2017-03-30 19:54:54,890 [main] DEBUG [com.xinwei.workflow.dao.CustomActivityNameMapper.selectName] - ooo Using Connection [jdbc:mysql://localhost:3306/db_activiti?useUnicode=true&characterEncoding=utf-8, UserName=root@localhost, MySQL-AB JDBC Driver]
+2017-03-30 19:54:54,890 [main] DEBUG [com.xinwei.workflow.dao.CustomActivityNameMapper.selectName] - ==>  Preparing: select name from custom_activity_name where process_def_key = ? and activity_id = ? and language = ? 
+2017-03-30 19:54:54,890 [main] DEBUG [com.xinwei.workflow.dao.CustomActivityNameMapper.selectName] - ==> Parameters: fiberextension(String), fiberExtensionStart(String), zh(String)

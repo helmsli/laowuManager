@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html data-ng-app="App">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Manager system</title>
+		<!-- Plugin Css -->
+    	<link href="../../../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    	<link href="../../../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    	<link href="../../../plugins/material-design-preloader/md-preloader.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    	<link href="../../../plugins/node-waves/waves.min.css" rel="stylesheet" />
+   	 	<link href="../../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    	<link href="../../../plugins/animate-css/animate.css" rel="stylesheet" />
+    	
+	    <!-- Custom Css -->
+    	<link href="../../../css/custom.css" rel="stylesheet">
+	    <link href="../../../css/themes/default/skin.css" rel="stylesheet" type="text/css" title="default"/>
+
+	</head>
+	<body ng-controller="app">
+		<div class="page-loader-wrapper">
+		    <div class="loader">
+		        <div class="md-preloader pl-size-md">
+		            <svg viewbox="0 0 75 75">
+		                <circle cx="37.5" cy="37.5" r="33.5" class="pl-red" stroke-width="4" />
+		            </svg>
+		        </div>
+		        <p>加载中，请稍后...</p>
+		    </div>
+		</div>
+		<div class="overlay"></div>
+		<!-- Page Loader -->
+		<div id="wrapper">
+			<div class="header" ng-include="'../../include/header.html'"></div>
+			<div class="menus" ng-include="'../../include/leftMenu.html'"></div>
+			<div id="page-wrapper">
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							颜色设计
+							<small>由谷歌的材料设计彩色页面链接
+                                    <a href="https://material.google.com/style/color.html#color-color-palette" target="_blank" title="Google's Material Design Color">material.google.com/style/color.html#color-color-palette</a>
+                                </small>
+						</h2>
+						<div class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-ellipsis-v"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+							    <li><a href="javascript:void(0);">编辑</a></li>
+							    <li><a href="javascript:void(0);">查看详细</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="row clearfix">
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="demo-color-box bg-red">
+                                    <div class="color-name">红色</div>
+                                    <div class="color-code">#F44336</div>
+                                    <div class="color-class-name">bg-red</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="demo-color-box bg-pink">
+                                    <div class="color-name">粉红色</div>
+                                    <div class="color-code">#E91E63</div>
+                                    <div class="color-class-name">bg-pink</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="demo-color-box bg-purple">
+                                    <div class="color-name">紫色</div>
+                                    <div class="color-code">#9C27B0</div>
+                                    <div class="color-class-name">bg-purple</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="demo-color-box bg-deep-purple">
+                                    <div class="color-name">深紫色</div>
+                                    <div class="color-code">#673AB7</div>
+                                    <div class="color-class-name">bg-deep-purple</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="demo-color-box bg-indigo">
+                                    <div class="color-name">靛蓝色</div>
+                                    <div class="color-code">#3F51B5</div>
+                                    <div class="color-class-name">bg-indigo</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="demo-color-box bg-blue">
+                                    <div class="color-name">绿色</div>
+                                    <div class="color-code">#2196F3</div>
+                                    <div class="color-class-name">bg-blue</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="demo-color-box bg-light-blue">
+                                    <div class="color-name">浅绿色</div>
+                                    <div class="color-code">#03A9F4</div>
+                                    <div class="color-class-name">bg-light-blue</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="demo-color-box bg-cyan">
+                                    <div class="color-name">青蓝色</div>
+                                    <div class="color-code">#00BCD4</div>
+                                    <div class="color-class-name">bg-cyan</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="demo-color-box bg-teal">
+                                    <div class="color-name">青色</div>
+                                    <div class="color-code">#009688</div>
+                                    <div class="color-class-name">bg-teal</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="demo-color-box bg-green">
+                                    <div class="color-name">绿色</div>
+                                    <div class="color-code">#4CAF50</div>
+                                    <div class="color-class-name">bg-green</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="demo-color-box bg-light-green">
+                                    <div class="color-name">浅绿色</div>
+                                    <div class="color-code">#8BC34A</div>
+                                    <div class="color-class-name">bg-light-green</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="demo-color-box bg-lime">
+                                    <div class="color-name">青柠色</div>
+                                    <div class="color-code">#CDDC39</div>
+                                    <div class="color-class-name">bg-lime</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="demo-color-box bg-yellow">
+                                    <div class="color-name">黄色</div>
+                                    <div class="color-code">#FFEB3B</div>
+                                    <div class="color-class-name">bg-yellow</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="demo-color-box bg-amber">
+                                    <div class="color-name">琥珀色</div>
+                                    <div class="color-code">#FFC107</div>
+                                    <div class="color-class-name">bg-amber</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="demo-color-box bg-orange">
+                                    <div class="color-name">橙色</div>
+                                    <div class="color-code">#FF9800</div>
+                                    <div class="color-class-name">bg-orange</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="demo-color-box bg-deep-orange">
+                                    <div class="color-name">深橙色</div>
+                                    <div class="color-code">#FF5722</div>
+                                    <div class="color-class-name">bg-deep-orange</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="demo-color-box bg-brown">
+                                    <div class="color-name">咖啡色</div>
+                                    <div class="color-code">#795548</div>
+                                    <div class="color-class-name">bg-brown</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="demo-color-box bg-grey">
+                                    <div class="color-name">灰色</div>
+                                    <div class="color-code">#9E9E9E</div>
+                                    <div class="color-class-name">bg-grey</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="demo-color-box bg-blue-grey">
+                                    <div class="color-name">蓝灰色</div>
+                                    <div class="color-code">#607D8B</div>
+                                    <div class="color-class-name">bg-blue-grey</div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="demo-color-box bg-black">
+                                    <div class="color-name">黑色</div>
+                                    <div class="color-code">#000000</div>
+                                    <div class="color-class-name">bg-black</div>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+				<!-- / .panel -->
+			</div>
+			<!-- / #page-wrapper -->
+		</div>
+		<!-- / #wrapper -->
+	</body>
+	
+	<!-- Plugin Js -->
+    <script src="../../../plugins/jquery/jquery-2.2.4.min.js"></script>
+    <script src="../../../plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../../plugins/angular/angular.min.js"></script>
+    <script src="../../../plugins/ocLazyLoad/ocLazyLoad.min.js"></script>
+    <script src="../../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="../../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="../../../plugins/bootstrap-notify/bootstrap-notify.js"></script>
+    <script src="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="../../../plugins/node-waves/waves.js"></script>
+    <script src="../../../plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="../../../js/ui/dialogs.js"></script>
+    <script src="../../../js/ui/modals.js"></script>
+    <script src="../../../js/ui/notifications.js"></script>
+    <script src="../../../js/ui/tooltips-popovers.js"></script>
+    <script src="../../../js/ui/load_resize.js"></script>
+     <script src="../../../plugins/angular/angular-translate.min.js"> </script>
+	<script src="../../../plugins/angular/angular-translate-loader-static-files.min.js"> </script>
+    <!-- Custom JS -->
+    <script src="../../../js/server/server.js" type="text/javascript"></script>
+	<script src="../../../js/cookie.js" type="text/javascript"></script>
+	<script src="../../../js/skin.js" type="text/javascript"></script>
+	<script src="../../../js/config/config_skin.js" type="text/javascript"></script>
+	<script src="../../../js/App.js" type="text/javascript"></script>
+	
+	<!-- Home JS -->
+	<script src="../../../js/home.js" type="text/javascript"></script>
+</html>

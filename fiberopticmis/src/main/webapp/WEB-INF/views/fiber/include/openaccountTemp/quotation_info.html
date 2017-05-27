@@ -1,0 +1,168 @@
+<meta charset="UTF-8">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 panel-inside-title" style="font-weight:700 !important">{{'TASK_QUOTATION_TITLE.QUOTATION_QUOTATIONINFO'|translate}}</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<!-- /.col-4 -->
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_QUOTATION_TITLE.QUOTATION_CONTACTSNAME'|translate}}</div>
+				<div class="ds-cell-control"><input type="text" class="form-control" ng-model="applicantInfo.contactName"></div>
+			</div>
+		</div>
+		<!-- /.col-4 -->
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_QUOTATION_TITLE.QUOTATION_CONTACTNUMBER'|translate}}</div>
+				<div class="ds-cell-control"><input id="contactNumber" type="text" class="form-control" ng-model="applicantInfo.contactNumber"></div>
+			</div>
+		</div>
+		<!-- /.col-4 -->
+	</div>
+	
+	<div class="row clearfix">
+		<!-- /.col-4 -->
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_QUOTATION_TITLE.QUOTATION_CUSTOMERNAME'|translate}}</div>
+				<div class="ds-cell-control"><input type="text" class="form-control" ng-model="applicantInfo.customerName" ></div>
+			</div>
+		</div>
+		<!-- /.col-4 -->
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_QUOTATION_TITLE.QUOTATION_CONTACTID'|translate}}</div>
+				<div class="ds-cell-control"><input id="IDNO" type="text" class="form-control" ng-model="applicantInfo.IDNO"></div>
+			</div>
+		</div>
+		<!-- /.col-4 -->
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="ds-table">
+		<div class="ds-cell-addon title">{{'TASK_QUOTATION_TITLE.QUOTATION_EXPECTEDBANDWIDTH'|translate}}</div>
+		<div class="ds-cell-control">
+			<div class="radio-inline">
+				<input type="radio" class="with-gap radio-col-blue" name="group1" id="radio_1" value="2"  ng-model="applicantInfo.expectedBandwidth">
+				<label for="radio_1">2Mbps</label>
+			</div>
+			<div class="radio-inline">
+				<input type="radio" class="with-gap radio-col-blue" name="group1" id="radio_2" value="4"  ng-model="applicantInfo.expectedBandwidth">
+				<label for="radio_2">4Mbps</label>
+			</div>
+			<div class="radio-inline">
+				<input type="radio" class="with-gap radio-col-blue" name="group1" id="radio_3" value="6"  ng-model="applicantInfo.expectedBandwidth">
+				<label for="radio_3">6Mbps</label>
+			</div>
+			<div class="radio-inline">
+				<input type="radio" class="with-gap radio-col-blue" name="group1" id="radio_4"value="8"  ng-model="applicantInfo.expectedBandwidth">
+				<label for="radio_4">8Mbps</label>
+			</div>
+			<div class="radio-inline">
+				<input type="radio" class="with-gap radio-col-blue" name="group1" id="radio_5" value="10"  ng-model="applicantInfo.expectedBandwidth">
+				<label for="radio_5">10Mbps</label>
+			</div>
+			<div class="radio-inline">
+				<input type="radio" class="with-gap radio-col-blue" name="group1" id="radio_6" value="Corpate Customer"  ng-model="applicantInfo.expectedBandwidth">
+				<label for="radio_6">Other</label>
+			</div>
+			<div class="radio-inline-input">
+				<div class="input-group max140" ng-show="otherBandwidthFlag">
+	               	<input type="tel" class="form-control"  ng-model="applicantInfo.expectedBandwidthByself">
+	               	<div class="input-group-addon">Mbps</div>
+                </div>
+             </div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title top">{{'TASK_QUOTATION_TITLE.QUOTATION_INSTALLADD'|translate}}</div>
+				<div class="ds-cell-control"><textarea style="margin-bottom:0;" class="form-control no-resize"  ng-model="applicantInfo.installationAddress"></textarea></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_QUOTATION_TITLE.QUOTATION_CUSTOMERTYPE'|translate}}</div>
+				<div class="ds-cell-control">
+					<select class="form-control show-tick"  ng-model="applicantInfo.customerType" ng-options="customerType for customerType in customerTypeOptions">
+					</select>
+				</div>
+			</div>
+		</div>
+		<!-- /.col-4 -->
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_QUOTATION_TITLE.QUOTATION_INSTALLAREA'|translate}}</div>
+				<div class="ds-cell-control">
+					<select class="form-control show-tick"  ng-model="applicantInfo.installationArea" ng-options="installationArea for installationArea in installationAreaOptions">
+					</select>
+				</div>
+			</div>
+		</div>
+		<!-- /.col-4 -->
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_QUOTATION_TITLE.QUOTATION_FIBRETYPE'|translate}}</div>
+				<div class="ds-cell-control">
+					<select class="form-control show-tick"  ng-model="applicantInfo.fibreType" ng-options="fibreType for fibreType in fibreTypeOptions">
+					</select>
+				</div>
+			</div>
+		</div>
+		<!-- /.col-4 -->
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title top">{{'TASK_QUOTATION_TITLE.QUOTATION_REMARKS'|translate}}</div>
+				<div class="ds-cell-control"><textarea style="margin-bottom:0;" class="form-control no-resize"  ng-model="applicantInfo.notes"></textarea></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<script type="text/javascript">
+//当点击最后的radio时弹出来一个input
+
+$(function(){
+	$("input[name='group1']").on('change',function(){
+		var checkFlag=$("#radio_6").is(':checked');
+		var scope=getAngularScope("projectManagerModel");
+		if(checkFlag){
+		    scope.$apply(function(){
+		    	 scope.otherBandwidthFlag=true;	
+		    });
+		}else{
+			 scope.$apply(function(){
+				 scope.otherBandwidthFlag=false;	
+		    });
+		}
+	});
+ 	//获取所有的edit，并且Data-type是number
+ 	 $("#contactNumber").on("keydown",function(e){
+ 		 var _this=$(this);
+ 		return digitInputInt($(this), e);  
+ 	 });
+ 	 
+ 	//获取所有的edit，并且Data-type是int
+ 	 $("#IDNO").on("keydown",function(e){
+ 		 var _this=$(this);
+ 		return digitInputInt($(this), e);  
+ 	 });
+})
+
+
+
+</script>

@@ -1,0 +1,123 @@
+<meta charset="UTF-8">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_INVOICENUMBER'|translate}}</div>
+				<div class="ds-cell-control grayColor" ng-bind="financeInfo.invoiceNumber"></div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_INVOICEAMOUNT'|translate}}</div>
+				<div class="ds-cell-control grayColor">
+					<span ng-bind="financeInfo.invoiceAmount"></span>
+					<span class="p-l-5">{{'RADIO_TITLE.RADIO_USD'|translate}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_INVOICEPERIOD'|translate}}</div>
+				<div class="ds-cell-control grayColor" ng-bind="financeInfo.invoicePeriodStartTime"></div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_To'|translate}}</div>
+				<div class="ds-cell-control grayColor" ng-bind="financeInfo.invoicePeriodEndTime"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_RECEIVEDDATE'|translate}}</div>
+				<div class="ds-cell-control grayColor" ng-bind="financeInfo.receivedDate" ></div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_RECEIVED'|translate}}</div>
+				<div class="ds-cell-control grayColor" ng-bind="financeInfo.receivedShow"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_IR'|translate}}</div>
+				<div class="ds-cell-control grayColor">
+					<span ng-bind="financeInfo.IR"></span>
+					<span class="p-l-5">{{'RADIO_TITLE.RADIO_USD'|translate}}</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_IMI'|translate}}</div>
+				<div class="ds-cell-control grayColor" >
+					<span  ng-bind="financeInfo.IMI"></span>
+					<span class="p-l-5">{{'RADIO_TITLE.RADIO_USD'|translate}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_RECEIVEDAMOUNT'|translate}}</div>
+				<div class="ds-cell-control grayColor" >
+					<span  ng-bind="financeInfo.receivedAmount"></span>
+					<span class="p-l-5">{{'RADIO_TITLE.RADIO_USD'|translate}}</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_RECEIVEDMETHOD'|translate}}</div>
+				<div class="ds-cell-control grayColor"  ng-bind="financeInfo.receivedMethodShow"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_DEPOSITAMOUNT'|translate}}</div>
+				<div class="ds-cell-control grayColor" >
+					<span  ng-bind="financeInfo.depositAmount"></span>
+					<span class="p-l-5">{{'RADIO_TITLE.RADIO_USD'|translate}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title top">{{'TASK_FINANCE_TITLE.FINANCE_REMARKS'|translate}}</div>
+				<div class="ds-cell-control grayColor text-word"  ng-bind="financeInfo.notes"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->

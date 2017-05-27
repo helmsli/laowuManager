@@ -1,0 +1,55 @@
+<meta charset="UTF-8">
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="ds-table">
+		<div class="ds-cell-addon title">{{'TASK_CONTRACTREVIEW_TITLE.CONTRACTREVIEW_AUDITRESULT'|translate}}</div>
+		<div class="ds-cell-control grayColor" ng-bind="designReport.reviewResultShow"></div>
+	</div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="ds-table">
+		<div class="ds-cell-addon title">{{'TASK_DESIGN_TITLE.DESIGN_ACCESSBTSNO'|translate}}</div>
+		<div class="ds-cell-control grayColor" ng-bind="designReport.accessBTSNo"></div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="ds-table">
+		<div class="ds-cell-addon title">{{'TASK_DESIGN_TITLE.DESIGN_DISTANCE'|translate}}</div>
+		<div class="ds-cell-control grayColor">
+			<span  ng-bind="designReport.distance"></span>
+			<span class="p-l-5">{{'TASK_DESIGN_TITLE.DESIGN_DISTANCEMETER'|translate}}</span>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="ds-table">
+		<div class="ds-cell-addon title">{{'TASK_DESIGN_TITLE.DESIGN_FIBRENO'|translate}}</div>
+		<div class="ds-cell-control grayColor"  ng-bind="designReport.fibreNo"></div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="ds-table">
+		<div class="ds-cell-addon title">{{'TASK_DESIGN_TITLE.DESIGN_INSTALLATIONCOSTESTIMATED'|translate}}</div>
+		<div class="ds-cell-control grayColor"  ng-bind="designReport.installationCostEstimated"></div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="ds-table" >
+		<div   class="ds-cell-addon title">{{'TASK_DESIGN_TITLE.DESIGN_ATTATCHMENT'|translate}}</div>
+		<div  class="ds-cell-control grayColor" ng-repeat="attatchmentObj in designReport.attachmentList track by $index">
+			<u><a  class="chosen m-r-5" style="cursor:pointer;color:#00F" ng-click="fileDownLoad(attatchmentObj.attachmentName);" ng-bind="attatchmentObj.originalFilename"></a></u>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="ds-table">
+		<div class="ds-cell-addon title top">{{'TASK_DESIGN_TITLE.DESIGN_REMARKS'|translate}}</div>
+		<div class="ds-cell-control grayColor text-word"  ng-bind="designReport.notes"></div>
+	</div>
+</div>
+<!-- /.col-12 -->

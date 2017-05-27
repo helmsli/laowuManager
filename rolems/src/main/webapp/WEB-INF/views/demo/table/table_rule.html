@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html data-ng-app="App">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Manager system</title>
+		
+		<!-- Plugin Css -->
+    	<link href="../../../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    	<link href="../../../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    	<link href="../../../plugins/material-design-preloader/md-preloader.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    	<link href="../../../plugins/node-waves/waves.min.css" rel="stylesheet" />
+   	 	<link href="../../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    	<link href="../../../plugins/animate-css/animate.css" rel="stylesheet" />
+    	
+	    <!-- Custom Css -->
+    	<link href="../../../css/custom.css" rel="stylesheet">
+	    <link href="../../../css/themes/default/skin.css" rel="stylesheet" type="text/css" title="default"/>
+		<script src="../../../js/server/server.js" type="text/javascript"></script>
+	</head>
+	<body ng-controller="app">
+		<div class="page-loader-wrapper">
+		    <div class="loader">
+		        <div class="md-preloader pl-size-md">
+		            <svg viewbox="0 0 75 75">
+		                <circle cx="37.5" cy="37.5" r="33.5" class="pl-red" stroke-width="4" />
+		            </svg>
+		        </div>
+		        <p>加载中，请稍后...</p>
+		    </div>
+		</div>
+		<div class="overlay"></div>
+		<!-- Page Loader -->
+		<div id="wrapper">
+			<div class="header" ng-include="'../../include/header.html'"></div>
+			<div class="menus" ng-include="'../../include/leftMenu.html'"></div>
+			<div id="page-wrapper">
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">数据列表</h2>
+						<div class="search-group">
+							<button id="save" type="button" class="btn btn-primary">保存</button>
+							<button id="edit" type="button" class="btn btn-primary">编辑</button>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="table-responsive m-b-0 min-height-500">
+							<table id="table" class="table table-bordered table-striped m-b-0"  data-row-number="5">
+			                    <thead>
+			                        <tr>
+			                            <th width="50px"></th>
+			                            <th width="10%" data-columnType="edit" data-columnName="userName">姓名</th>
+			                            <th width="15%" data-columnType="select" data-columnDateName='01' data-columnName="role">角色</th>
+			                            <th width="10%" data-columnType="edit" data-columnName="taskName">任务名称</th>
+			                            <th width="16%" data-columnType="radio" data-columnDateName='01' data-columnName="taskPeriod">任务周期</th>
+			                            <th width="16%" data-columnType="checkbox" data-columnDateName='01' data-columnName="taskType">任务类别</th>
+			                            <th width="15%" data-columnType="datetimepicker" data-columnName="startTime">任务开始时间</th>
+			                            <th width="15%" data-columnType="datetimepicker" data-columnName="endTime">任务结束时间</th>
+			                            <th width="10%" data-columnType="operate" >编辑</th>
+			                        </tr>
+			                    </thead>
+			                </table>
+            			</div>
+            			<!-- / .table-responsive -->
+					</div>
+				</div>
+				<!-- / .panel -->
+			</div>
+			<!-- / #page-wrapper -->
+		</div>
+		<!-- / #wrapper --> 
+	</body>
+	<!-- Plugin Js -->
+    <script src="../../../plugins/jquery/jquery-2.2.4.min.js"></script>
+    <script src="../../../plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../../plugins/angular/angular.min.js"></script>
+    <script src="../../../plugins/ocLazyLoad/ocLazyLoad.min.js"></script>
+    <script src="../../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="../../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="../../../plugins/bootstrap-notify/bootstrap-notify.js"></script>
+    <script src="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="../../../plugins/node-waves/waves.js"></script>
+    <script src="../../../plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="../../../js/ui/dialogs.js"></script>
+    <script src="../../../js/ui/modals.js"></script>
+    <script src="../../../js/ui/notifications.js"></script>
+    <script src="../../../js/ui/tooltips-popovers.js"></script>
+    <script src="../../../js/ui/load_resize.js"></script>
+    <script src="../../../plugins/angular/angular-translate.min.js"> </script>
+	<script src="../../../plugins/angular/angular-translate-loader-static-files.min.js"> </script>
+    <!-- Custom JS -->
+    <script src="../../../js/server/server.js" type="text/javascript"></script>
+	<script src="../../../js/cookie.js" type="text/javascript"></script>
+	<script src="../../../js/skin.js" type="text/javascript"></script>
+	<script src="../../../js/config/config_skin.js" type="text/javascript"></script>
+	<script src="../../../js/App.js" type="text/javascript"></script>
+	<script src="../../../js/home.js" type="text/javascript"></script>
+	
+	<script>
+	    /*初始化表格数据源*/
+	    var dataList={
+	        select:{},
+	        radio:{},
+	        checkbox:{}
+	    };
+
+		/*table行数*/
+	    /*var rowNum=$("#table").attr("data-row-number");*/
+		$("#save").show();
+	    $("#edit").hide();
+	    
+	    /*定义组件select、checkbox、radio数据模型*/
+	    var dataModel={
+	        selectArr:{
+	            "01":["开发","测试","产品"],
+	            "02":["sfdsafd","测试","产品"]
+	        },
+	        chooseArr:{
+	            "01": [{text:"1年",value:"1"},
+	                {text:"2年",value:"2"},
+	                {text:"3年",value:"3"}],
+	            "02": [{text:"5年",value:"1"},
+	                {text:"2年",value:"2"},
+	                {text:"3年",value:"3"}]
+	        }
+	    };
+	    
+	    var rowNumArr=[];
+	
+	    $(function () {
+	        /*初始化列属性*/
+	        initColumn();
+	        /*初始化函数*/
+	        init(dataModel,0);
+	        rowNumArr.push(0);
+	    });
+
+		/*初始化增加行*/
+	    function initColumn(){
+	        $("#table").append("<tbody></tbody>");
+	        var inner = initRow(0,0);
+            $("#table tbody tr").eq(0).append(inner);
+	    }
+
+		/*初始化行属性*/
+	    function initRow(rowNumber,row) {
+			var innerRow="";
+			if(rowNumber == 0){
+				$("#table tbody").append("<tr data-group="+rowNumber+"></tr>");
+			}else{
+				$("#table tbody tr").eq(row-1).after("<tr data-group="+rowNumber+"></tr>");
+			}
+	        $("#table").find('th').each(function (thindex, thitem) {
+	            var columnType=$(this).attr("data-columnType");
+	            var columnName=$(this).attr("data-columnName");
+				var columnDateName=$(this).attr("data-columnDateName");
+	            if(columnType == "select"){
+	                innerRow +="<td data-editableType='select' data-datename='"+columnDateName+"' data-columnName='"+columnName+"' data-group="+ rowNumber +"></td>";
+	            }else if(columnType == "edit"){
+	                innerRow +="<td data-editableType='edit' data-datename='"+columnName+"' data-group="+ rowNumber +"></td>";
+	            }else if(columnType == "radio"){
+	                innerRow +="<td data-editableType='radio' data-datename='"+columnDateName+"' data-columnName='"+columnName+"' data-group="+ rowNumber +"></td>";
+	            }else if(columnType == "checkbox"){
+	                innerRow +="<td data-editableType='checkbox' data-datename='"+columnDateName+"' data-columnName='"+columnName+"' data-group="+ rowNumber +"></td>";
+	            }else if(columnType == "datetimepicker"){
+	                innerRow +="<td data-editableType='datetimepicker' data-datename='"+columnName+"' data-group="+ rowNumber +" ></td>";
+	            }else if(columnType == "operate"){
+	                innerRow +="<td onClick='get(event)' style='cursor: pointer'>增加</td>";
+	            }else{
+	            	var rowNum=rowNumber+1;
+	                innerRow +="<td class='align-center'>"+rowNum+"</td>";
+	            }
+	        });
+	        return innerRow; 
+	    }
+	
+		/*动态增加行*/
+		function get(event){
+			var rowInsert="";
+			var row=event.currentTarget.parentNode.rowIndex;
+			for(var i in rowNumArr){
+				if(row == i){
+					rowInsert = rowNumArr.length;
+					break;
+				}else{
+					rowInsert = row;
+				}
+			}  
+			var inner = initRow(rowInsert,row);
+			$("#table tbody tr").eq(row).append(inner);
+			init(dataModel,row);
+			rowNumArr.push(row);
+			
+			$("#save").show();
+	        $("#edit").hide();
+			
+	        editTrue(dataLists);
+			
+		}
+		
+	    function init(data,row) {
+	        /*组件初始化*/
+	        componentsInit(data,row);
+	    }
+	
+	    /*定义表格需加入的组件并初始化组件*/
+	    function componentsInit(data,row) {
+	        /*初始化组件select、radio、checkbox、datePicker*/
+	        initSelect(data.selectArr,row);
+	        initRadio(data.chooseArr,row);
+	        initCheckbox(data.chooseArr,row);
+	        initDatePicker('yyyy-MM-dd',row);
+	
+	        /*可编辑输入框*/
+	        initEditable();
+	    }
+	
+	    function initEditable(){
+	    	$("table.table tr td[data-editableType='edit']").each(function(){
+	    		var _self=$(this);
+	    		_self.attr("contentEditable",true);
+	    	});
+	    }
+	    
+	    /**
+	     * 初始化select组件
+	     * @param selectArr：定义组件数据模型
+	     * */
+	    function initSelect(selectArr,row)
+	    {
+	        initCommon("select",selectArr,selectTemplate,"",row);
+	    }
+	
+	    /**
+	     * 初始化radio组件
+	     * @param chooseArr：定义组件数据模型
+	     * */
+	    function initRadio(chooseArr,row)
+	    {
+	        initCommon("radio",chooseArr,radioTemplate,"",row);
+	    }
+	
+	    /**
+	     * 初始化checkbox组件
+	     * @param chooseArr：定义组件数据模型
+	     * */
+	    function initCheckbox(chooseArr,row)
+	    {
+	        initCommon("checkbox",chooseArr,checkboxTemplate,"",row);
+	    }
+
+	    /**
+	     * 初始化时间组件
+	     * @param format：定义时间格式
+	     * */
+	    function initDatePicker(format,row)
+	    {
+	        initCommon("datetimepicker","","",format,row);
+	    }
+	
+	    /**
+	     * 加载组件
+	     * @param dataType:自定义组件属性data-editableType
+	     *         arr:组件数据模型[]
+	     *         template:组件模板selectTemplate、radioTemplate、checkboxTemplate、dateTemplate
+	     *         format:日期格式
+	     * */
+	    function initCommon(dataType,arr,template,format,row)
+	    {
+	        $("table.table tr").eq(row+1).children("td[data-editableType="+dataType+"]").each(function(){
+	            var _self=$(this);
+	            var dataName=_self.attr("data-datename");
+	            var dataGroup=_self.attr("data-group");
+				var dataColumnName=_self.attr("data-columnName");
+	            if(dataType=="datetimepicker")
+	            {
+	                _self.attr("id",dataName);
+	                var _thisId=dataName;
+	                _self.append(dateTemplate(dataName,dataGroup));
+	                $('#'+_thisId+dataGroup).datetimepicker({
+	                    format: format
+	                });
+	            }else{
+	                var myData=arr[dataName];
+	                var html=template(myData,dataName,dataGroup,dataColumnName);
+	                initModel(dataName,myData,dataType);
+	                _self.append(html);
+	            }
+	        });
+	    }
+	
+	    /**
+	     * 初始化数据模型
+	     * @param dataType:组件类型名称select、checkbox、radio
+	     *         name:单个组件标识字段名称
+	     *         data:单个组件对应的数据模型[]
+	     * */
+	    function initModel(name,data,dataType)
+	    {
+	        dataList[dataType][name]=data;
+	    }
+	
+	    //鼠标移出时存储对象
+	    function dataSave(e) {
+	        var _self=e.currentTarget.id;
+	        dataList[id]=$("#"+id).text().replace(/\s/g, "");
+	    }
+	
+	    /*保存表格数据*/
+	    var dataLists=[];
+	    
+	    $("#save").click(function () {
+	        for(var i=0;i<rowNumArr.length;i++){
+				dataLists[i]={};
+	            getCheckedVal('select','select',dataList,i);
+	            getCheckedVal('checkbox','checkbox',dataList,i);
+	            getCheckedVal('radio','radio',dataList,i);
+				getCheckedVal('datetimepicker','datetimepicker',dataList,i);
+				getCheckedVal('edit','edit',dataList,i);
+				addData(dataLists[i],"selected");
+				addData(dataLists[i],"radioed");
+				addData(dataLists[i],"checkboxed");
+				addData(dataLists[i],"time");
+				addData(dataLists[i],"edit");
+	        }
+			console.log("表单数据");
+	        console.log(dataLists);
+			console.log("模型数据");
+			console.log(dataList);
+	        alert(JSON.stringify(dataLists));
+	        
+	        /*编辑与不可编辑状态切换*/
+	        /*editFalse(dataLists);*/
+	        $("#save").hide();
+	        $("#edit").show();
+	        
+	        /*将表格数据存储至数据库 */
+	        var obj={
+	        		"request.type":"table",
+	        		"request.data1":JSON.stringify(dataLists),
+	        }
+	        
+	        var id ="";
+	        
+	        create(obj,function(data){
+	        	console.log(data.responseInfo.entity.id);
+	        	id=data.responseInfo.entity.id;	
+	        	getData(id);
+	        });
+	        
+	    });
+	    
+	    function getData(id){
+	    	var getObj={
+	        		"request.id":id	
+	        }
+	        getBusiness(getObj,function(data){
+	        	console.log(data)
+	        	var dataTable=data.responseInfo.entity.data1;
+	        	var obj=JSON.parse(dataTable)
+	        	console.log(obj);
+	        	editFalse(obj);
+	        });
+	    }
+	    
+	    /*编辑与不可编辑状态切换*/
+	    function editFalse(data){
+	    	$("table.table tr").each(function(){
+	            var _selfTr=$(this);
+	            var dataGroupNum=_selfTr.attr("data-group");
+	            _selfTr.children("td").each(function(){
+	            	var _self=$(this);
+	            	var type=_self.attr("data-editabletype");
+	 	            var dataName=_self.attr("data-columnname");
+	 	            var timeName=_self.attr("data-datename");
+	 	            /* if(!_self.is(":has(span[data-text='list'])")){
+	 	            	
+	 	            }else{
+	 	            	_self.children().hide(); 
+	 	            	_self.children("span[data-text='list']").show();
+	 	            } */
+	 	           if(type == "edit"){
+	 	            	_self.removeAttr("contenteditable");
+	 	            }else if(type == "datetimepicker"){
+	 	            	_self.children().hide(); 
+	 	            	_self.append("<span data-text='list'>"+data[dataGroupNum][timeName]+"</span>");
+	 	            }else{
+	 	            	_self.children().hide();
+	 	            	if(data[dataGroupNum][dataName] == undefined){
+	 	            		_self.append("<span data-text='list'>"+""+"</span>");
+	 	            	}else{
+	 	            		_self.append("<span data-text='list'>"+data[dataGroupNum][dataName]+"</span>");
+	 	            	}
+	 	            }
+	            });
+		    });
+	    }
+	    
+	    
+	    $("#edit").click(function (){
+	    	 $("#save").show();
+		     $("#edit").hide();
+	    	 editTrue(dataLists);
+	         var obj={
+	        		"request.type":"table",
+	        		"request.data1":JSON.stringify(dataLists),
+	         }
+	        
+	         var id ="";
+	        
+	         update(obj,function(data){
+	        	console.log(data);
+	         });
+	    	 
+	    });
+	    
+	    
+	    
+	   function editTrue(data){
+	    	$("table.table tr").each(function(){
+	            var _selfTr=$(this);
+	            var dataGroupNum=_selfTr.attr("data-group");
+	            _selfTr.children("td").each(function(){
+	            	var _self=$(this);
+	            	var type=_self.attr("data-editabletype");
+	 	            var dataName=_self.attr("data-columnname");
+	 	            var timeName=_self.attr("data-datename");
+	 	            if(type == "edit"){
+	 	            	_self.attr("contenteditable",true);
+	 	            }else if(type == "datetimepicker"){
+	 	            	_self.children().show(); 
+	 	            	_self.children("span[data-text='list']").hide();
+	 	            }else{
+	 	            	_self.children().show(); 
+	 	            	_self.children("span[data-text='list']").hide();
+	 	            }
+	            });
+		    });
+	    }
+	    
+
+		function addData(dataLists,type) {
+			var data="";
+			var dataName="";
+			var dataValue="";
+			if(type=="selected" || type=="radioed" || type=="checkboxed"){
+				for(var m in dataList[type]){
+					for(var n in dataList[type][m]){
+						data=dataList[type][m][n].split(":");
+						dataName=data[0];
+						dataValue=data[1];
+						dataLists[dataName]=dataValue;
+					}
+				}
+			}else{
+				for(var j in dataList[type]){
+					data=dataList[type][j].split(":");
+					dataName=data[0];
+					dataValue=data[1];
+					dataLists[dataName]=dataValue;
+				}
+			}
+		}
+	
+	
+	    /**
+	     * 定义表格组件模板
+	     *selectTemplate：下拉选项模板
+	     *dateTemplate：日期模板
+	     *radioTemplate：单选框模板
+	     *checkboxTemplate：复选框模板
+	     * */
+	    /**
+	     * 下拉选项模板
+	     * @param arr:组件数据模型[]
+	     *        name：自定义组件属性data-editableType
+	     * return selectTemplate组件
+	     * */
+	    function selectTemplate(arr,name,rowNum) {
+	        var selectList="";
+	        for(var i in arr){
+	            var selectLi= '<option value='+arr[i]+'>'+arr[i]+'</option>';
+	            selectList += selectLi;
+	        }
+	        return '<div class="form-line">'+
+	                '<select class="form-control show-tick" id='+rowNum+name+ ' name='+name+'>'+
+	                '<option value="">请选择类型</option>'+selectList+
+	                '</select>'+
+	                '</div>'
+	    }
+	
+	    /**
+	     * 日期模板
+	     * @param id:单个日期组件名称data-datename
+	     * return dateTemplate日期组件
+	     * */
+	    function dateTemplate(id,rowNum) {
+	        return 	'<div id="'+id+rowNum+'" class="input-append date">'+
+	                '<input  type="text" class="form-control" data-format="dd/MM/yyyy"/>'+
+	                '<span class="add-on">'+
+	                '<i data-time-icon="icon-time" data-date-icon="fa fa-calendar icon-calendar"> </i>'+
+	                '</span>'+
+	                '</div>';
+	    }
+	
+	    /**
+	     * 单选框模板
+	     * @param arr:组件数据模型[]
+	     *        name：自定义组件属性data-editableType
+	     * return radioList组件
+	     * */
+	    function radioTemplate(arr,name,rowNum,columnName) {
+	        var radioList="";
+	        for(var i in arr){
+	            var radio='<div class="radio-inline">'+
+		                  '<input type="radio" class="with-gap radio-col-blue" id="'+i+rowNum+'" name="'+name+rowNum+'" columnName="'+columnName+'"  value="'+arr[i].text+'">'+
+		                  '<label for="'+i+rowNum+'">'+arr[i].text+'</label>'+
+		                  '</div>';
+	            radioList += radio;
+	        }
+	        return radioList;
+	    }
+	
+	    /**
+	     * 复选框模板
+	     * @param arr:组件数据模型[]
+	     *        name：自定义组件属性data-editableType
+	     * return checkboxList组件
+	     * */
+	    function checkboxTemplate(arr,name,rowNum,columnName) {
+	        var checkboxList="";
+	        for(var i in arr){
+	            var checkbox='<div class="checkbox-inline">'+
+	                    '<input type="checkbox" class="filled-in chk-col-blue" id="#'+i+rowNum+'" name="'+name+rowNum+'" columnName="'+columnName+'" value="'+arr[i].text+'">'+
+	                    '<label for="#'+i+rowNum+'">'+arr[i].text+'</label>'+
+	                    '</div>';
+	            checkboxList += checkbox;
+	        }
+	        return checkboxList;
+	    }
+
+		/**
+		 * 获取select、checkbox、radio选中项
+		 * @param dataName：自定义组件属性data-editableType
+		 *         type：组件类型名称select、checkbox、radio
+		 *         data：多组件下，select、checkbox、radio的所有数据模型
+		 * return data：{"01":["1","2"]}
+		 * **/
+		function getCheckedVal(dataName,type,data,rowNum)
+		{
+			//select,radio,checkbox
+			var myList=data[dataName];
+			var checkedList=[];
+			var checkedArr=[];
+			var columnName="";
+			for(var key in  myList)
+			{
+				if(type=="select")
+				{
+					$("#table td[data-editableType='"+dataName+"']").each(function(){
+						var _self=$(this);
+						if(_self.attr("data-group") == rowNum){
+							var _selfVal=_self.find("select").val();
+							columnName=_self.attr("data-columnName");
+							checkedArr.push(columnName+":"+_selfVal);
+						}
+					});
+				}else if(type=="checkbox" || type=="radio"){
+					var checkValue="";
+					$("#table input[type='"+dataName+"'][name='"+key+rowNum+"']").each(function(){
+						var _self=$(this);
+						var _selfVal=_self.val();
+						var _selfRowNum=_self.attr("name").split(key)[1];
+						if(_selfRowNum == rowNum){
+							var checkFlag=_self.prop("checked");
+							columnName=_self.attr("columnName");
+							if(checkFlag)
+							{
+								checkValue += (_selfVal+",");
+							}
+						}
+					});
+					var checked=checkValue.substr(0,checkValue.length-1); 
+					checkedArr.push(columnName+":"+checked);
+				}
+				checkedList[key]=checkedArr;
+			}
+
+			if(type == "datetimepicker"){
+				$("#table td[data-editableType='"+dataName+"']").each(function(){
+					var _self=$(this);
+					if(_self.attr("data-group") == rowNum){
+						var _selfName=_self.attr("data-datename");
+						var _selfVal=_self.find("input").val();
+						checkedArr.push(_selfName+":"+_selfVal);
+					}
+				});
+			}
+			if(type == "edit"){
+				$("#table td[data-editableType='"+dataName+"']").each(function(){
+					var _self=$(this);
+					if(_self.attr("data-group") == rowNum){
+						var _selfName=_self.attr("data-datename");
+						var _selfVal=_self.text();
+						checkedArr.push(_selfName+":"+_selfVal);
+					}
+				});
+			}
+			switch (type)
+			{
+				case "checkbox":
+					data["checkboxed"]=checkedList;
+					break;
+				case "radio":
+					data["radioed"]=checkedList;
+					break;
+				case "select":
+					data["selected"]=checkedList;
+					break;
+				case "datetimepicker":
+					data["time"]=checkedArr;
+					break;
+				case "edit":
+					data["edit"]=checkedArr;
+					break;
+			}
+			return data;
+		}
+
+	</script>
+</html>

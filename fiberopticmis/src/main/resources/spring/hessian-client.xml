@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"
+	default-lazy-init="false">
+
+	<!-- Hessian Client -->
+	<!-- workflow service begin -->
+	<bean id="syncUserGroupToActivitiService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceInterface" value="com.xinwei.workflow.hessianservice.SyncUserGroupToActivitiService"/>
+    	<property name="serviceUrl" value="${workflow.url}/SyncUserGroupToActivitiService"/>
+    </bean>
+    <bean id="processHessianService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceInterface" value="com.xinwei.workflow.hessianservice.ProcessHessianService"/>
+    	<property name="serviceUrl" value="${workflow.url}/ProcessHessianService"/>
+    </bean>
+    <bean id="userTaskHessianService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceInterface" value="com.xinwei.workflow.hessianservice.UserTaskHessianService"/>
+    	<property name="serviceUrl" value="${workflow.url}/UserTaskHessianService"/>
+    </bean>
+	<!-- workflow service end -->
+	
+	<!-- role service begin -->
+	<bean id="commonBizService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceInterface" value="com.xinwei.rbac.service.CommonBizService"/>
+    	<property name="serviceUrl" value="${rolems.url}/commonBiz"/>
+    </bean>
+    <bean id="dataCreateTimeService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceInterface" value="com.xinwei.rbac.service.DataCreateTimeService"/>
+    	<property name="serviceUrl" value="${rolems.url}/dataCreateTime"/>
+    </bean>
+    <bean id="dataCategoryUrlService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceInterface" value="com.xinwei.rbac.service.DataCategoryUrlService"/>
+    	<property name="serviceUrl" value="${rolems.url}/dataCategoryUrl"/>
+    </bean>
+    <bean id="dataPrivilegeService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceInterface" value="com.xinwei.rbac.service.DataPrivilegeService"/>
+    	<property name="serviceUrl" value="${rolems.url}/dataPrivilege"/>
+    </bean>
+	<!-- role service end -->
+	
+	<!-- fiber center service begin -->
+	  
+	<bean id="fiberUserInfoService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceInterface" value="com.xinwei.newcrm.fiber.service.FiberUserInfoService"/>
+    	<property name="serviceUrl" value="${fibercenter.url}/FiberUserInfoService"/>
+    </bean>
+    
+	<bean id="fiberOpenService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceInterface" value="com.xinwei.newcrm.fiber.service.FiberOpenService"/>
+    	<property name="serviceUrl" value="${fibercenter.url}/FiberOpenService"/>
+    </bean>
+    
+    <bean id="fiberOrderService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceInterface" value="com.xinwei.newcrm.fiber.service.FiberOrderService"/>
+    	<property name="serviceUrl" value="${fibercenter.url}/FiberOrderService"/>
+    </bean>
+   
+	<!-- fiber center service end -->
+	
+	<!-- boss productInfo service begin -->
+	<bean id="planProductInfoService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="overloadEnabled" value="true"></property>
+		<property name="serviceInterface" value="com.xinwei.crm.product.service.PlanProductInfoService" />
+		<property name="serviceUrl" value="${xboss2.crmuser.service.url}/PlanProductInfoService" />
+	</bean>
+	<!-- boss productInfo service end -->
+</beans>

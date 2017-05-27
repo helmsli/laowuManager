@@ -1,0 +1,233 @@
+<meta charset="UTF-8">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_INVOICENUMBER'|translate}}</div>
+				<div class="ds-cell-control"><input id="invoiceNumber" type="text" class="form-control" ng-model="taskFinanceObj.invoiceNumber" /></div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_INVOICEAMOUNT'|translate}}</div>
+				<div class="ds-cell-control">
+					<div class="ds-table">
+						<div class="ds-cell-control"><input id="invoiceAmount" type="text" class="form-control" ng-model="taskFinanceObj.invoiceAmount" /></div>
+						<div class="ds-cell-addon p-l-10">{{'RADIO_TITLE.RADIO_USD'|translate}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_INVOICEPERIOD'|translate}}</div>
+				<div class="ds-cell-control">
+					<div id="datetimepicker1" class="input-append date">
+						<input type="text"  class="form-control" readonly="readonly" id="invoicePeriodStartTime" placeholder="{{'PLACEHOLDER_TITLE.PLACE_SELECTTIME'|translate}}" ng-model="taskFinanceObj.invoicePeriodStartTime"/>
+				        <span class="add-on">
+				          <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="fa fa-calendar"></i>
+				        </span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_To'|translate}}</div>
+				<div class="ds-cell-control">
+					<div id="datetimepicker2" class="input-append date">
+						<input type="text" class="form-control" readonly="readonly" id="invoicePeriodEndTime" placeholder="{{'PLACEHOLDER_TITLE.PLACE_SELECTTIME'|translate}}" ng-model="taskFinanceObj.invoicePeriodEndTime" />
+				        <span class="add-on">
+				          <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="fa fa-calendar"></i>
+				        </span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_RECEIVEDDATE'|translate}}</div>
+				<div class="ds-cell-control">
+					<div id="datetimepicker3" class="input-append date">
+						<input type="text" class="form-control" readonly="readonly" id="receivedDate"  placeholder="{{'PLACEHOLDER_TITLE.PLACE_SELECTTIME'|translate}}" ng-model="taskFinanceObj.receivedDate"/>
+				        <span class="add-on">
+				          <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="fa fa-calendar"></i>
+				        </span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 p-t-5">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_RECEIVED'|translate}}</div>
+				<div class="ds-cell-control">
+					<span class="radio-inline top--4">
+		         		<input type="radio" class="with-gap radio-col-blue" id="whetherpay_01" name="whetherpay" value="0" ng-model="taskFinanceObj.received">
+		          		<label for="whetherpay_01" class="ng-binding">{{'BUTTON_NAME.BTN_YES'|translate}}</label>
+		         	</span>
+					<span class="radio-inline top--4">
+		         		<input type="radio" class="with-gap radio-col-blue" id="whetherpay_02" name="whetherpay" value="1" ng-model="taskFinanceObj.received">
+		          		<label for="whetherpay_02" class="ng-binding">{{'BUTTON_NAME.BTN_NO'|translate}}</label>
+		         	</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_IR'|translate}}</div>
+				<div class="ds-cell-control">
+					<div class="ds-table">
+						<div class="ds-cell-control"><input  id ="IR" type="text" class="form-control" ng-model="taskFinanceObj.IR"/></div>
+						<div class="ds-cell-addon p-l-10">{{'RADIO_TITLE.RADIO_USD'|translate}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_IMI'|translate}}</div>
+				<div class="ds-cell-control">
+					<div class="ds-table">
+						<div class="ds-cell-control"><input id="IMI" type="text" class="form-control" ng-model="taskFinanceObj.IMI" /></div>
+						<div class="ds-cell-addon p-l-10">{{'RADIO_TITLE.RADIO_USD'|translate}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_RECEIVEDAMOUNT'|translate}}</div>
+				<div class="ds-cell-control">
+					<div class="ds-table">
+						<div class="ds-cell-control"><input id="receivedAmount" type="text" class="form-control" ng-model="taskFinanceObj.receivedAmount" /></div>
+						<div class="ds-cell-addon p-l-10">{{'RADIO_TITLE.RADIO_USD'|translate}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12  p-t-7">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_RECEIVEDMETHOD'|translate}}</div>
+				<div class="ds-cell-control">
+					<span class="checkbox-inline"> 
+           				<input type="checkbox" class="filled-in chk-col-blue" name="Received" id="Received_01"  ng-model="taskFinanceObj.receivedMethodCash" ng-true-value="'Cash'" ng-false-value=""  />
+            			<label for="Received_01">{{'CHECKBOX_TITLE.CHECKBOX_CASH'|translate}}</label>
+           			</span>
+					<span class="checkbox-inline"> 
+           				<input type="checkbox" class="filled-in chk-col-blue" name="Received" id="Received_02"   ng-model="taskFinanceObj.receivedMethodBasic" ng-true-value="'basicTopUp'"  ng-false-value="" />
+            			<label for="Received_02">{{'CHECKBOX_TITLE.CHECKBOX_TOPUP'|translate}}</label>
+           			</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title">{{'TASK_FINANCE_TITLE.FINANCE_DEPOSITAMOUNT'|translate}}</div>
+				<div class="ds-cell-control">
+					<div class="ds-table">
+						<div class="ds-cell-control"><input id="depositAmount" type="text" class="form-control" ng-model="taskFinanceObj.depositAmount"/></div>
+						<div class="ds-cell-addon p-l-10">{{'RADIO_TITLE.RADIO_USD'|translate}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /.col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="row clearfix">
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+			<div class="ds-table">
+				<div class="ds-cell-addon title top">{{'TASK_FINANCE_TITLE.FINANCE_REMARKS'|translate}}</div>
+				<div class="ds-cell-control"><textarea style="margin-bottom:0;" class="form-control no-resize" ng-model="taskFinanceObj.notes"></textarea></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-t-20 align-center">
+	<button type="button" id="submitButtonFlag" class="btn btn-primary waves-effect m-r-8" onclick="submitApproval();">{{'BUTTON_NAME.BTN_SUBMIT'|translate}}</button>
+	<button type="button"  class="btn btn-primary waves-effect"    onclick="history.go(-1);">{{'BUTTON_NAME.BTN_BACK'|translate}}</button>
+</div>
+<!-- /.col-12 -->
+
+<script type="text/javascript">
+	//时间控件
+  	$(function() {
+  		var startDate=new Date();
+	    $("#datetimepicker1").datetimepicker({
+	        autoclose: true,
+	        todayBtn: true,
+	    }).on('changeDate',function(){
+	    	var startDateValue=$("#invoicePeriodStartTime").val();
+	    	startDateValue=new Date(startDateValue);
+	    	startDateValue.setDate(startDateValue.getDate()+2);
+	        $("#datetimepicker2").datetimepicker("setStartDate",startDateValue)
+	    });
+	    $("#datetimepicker2").datetimepicker({
+	        autoclose: true,
+	        todayBtn: true,
+	    }).on('changeDate',function(){
+	    	var endDateValue=$("#invoicePeriodEndTime").val();
+	    	endDateValue=new Date(endDateValue);
+	        $("#datetimepicker1").datetimepicker("setEndDate",endDateValue)
+	    });
+	    $("#datetimepicker3").datetimepicker({
+	        autoclose: true,
+	        todayBtn: true,
+	    })
+	});
+  	var scope=getAngularScope("projectModel");
+  	globalRegisterHtml(scope.gloablParm.state);
+  	 $("#invoiceNumber").on("keydown",function(e){
+  		 var _this=$(this);
+  		return digitInputInt($(this), e);  
+  	 });
+  	
+	 $("#invoiceAmount").on("keydown",function(e){
+  		 var _this=$(this);
+  		return digitInputNumber($(this), e);  
+  	 });
+	 
+	 
+	 $("#IR").on("keydown",function(e){
+  		 var _this=$(this);
+  		return digitInputNumber($(this), e);  
+  	 });
+	 $("#IMI").on("keydown",function(e){
+  		 var _this=$(this);
+  		return digitInputNumber($(this), e);  
+  	 });
+	 $("#receivedAmount").on("keydown",function(e){
+  		 var _this=$(this);
+  		return digitInputNumber($(this), e);  
+  	 });
+	 $("#depositAmount").on("keydown",function(e){
+  		 var _this=$(this);
+  		return digitInputNumber($(this), e);  
+  	 });
+</script>

@@ -1,0 +1,49 @@
+<meta charset="UTF-8">
+
+<!-- / .col-12 -->
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  id="decisionCommittee" >
+	<div class="row p-t-5 p-b-5 clearfix" >
+	<div >
+    	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 p-r-5 align-right xs-aling-left">审批：</div>
+    	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 p-l-5">
+      		<div class="form-group" >
+				<div class="form-line">
+					<div class="radio">
+	              		<div class="radio-inline">
+	              			<input name="group1" type="radio" class="with-gap radio-col-blue" value="0" id="radio_1" ng-model="suggestion.result"/>
+	                  		<label for="radio_1">同意</label>
+	              		</div>
+	             		<div class="radio-inline">
+	             			<input name="group1" type="radio" class="with-gap radio-col-blue" value="1"  id="radio_2" ng-model="suggestion.result"/>
+	                 		<label for="radio_2">驳回</label>
+	             		</div>
+	             		<div class="radio-inline">
+	             			<input name="group1" type="radio" class="with-gap radio-col-blue" value="2"  id="radio_3" ng-model="suggestion.result"/>
+	                 		<label for="radio_3">转网管</label>
+	             		</div>
+	             		<span class="radio-inline">
+		         		   <i class="show" ng-show="suggestion.networkFlag"data-toggle="modal"  data-target="#selectedModal">+</i>
+		         	   </span>
+	               </div>
+				</div>
+			</div>
+  			<div class="form-group m-b-0" style="padding-bottom:10px;">
+            	<div class="form-line">
+                     <textarea rows="4" id="caucus" class="form-control no-resize" placeholder="请输入您的评审意见..." ng-model="suggestion.comment"></textarea>
+                 </div>
+            </div>
+    	</div>
+    </div>
+    	<!-- / #wrapper -->
+        <!-- 指定决策委员会结束 -->
+  </div>
+</div>
+<!-- 指定网管相关审核人员 -->
+<div class="modal fade" id="selectedModal"  data-backdrop="static">
+   	<div class="modal-dialog" ng-include="'include/extensionTemp/approveTemp/appoint_auditor.html'"></div>
+</div>
+<script>
+//g_state由系统定义，确定办理的步骤
+/*   var scope=getAngularScope("projectModel");
+ globalRegisterHtml(scope.gloablParm.state);    */
+</script>

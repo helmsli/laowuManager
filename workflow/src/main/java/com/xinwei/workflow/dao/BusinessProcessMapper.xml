@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xinwei.workflow.dao.BusinessProcessMapper" >
+  <resultMap id="BaseResultMap" type="com.xinwei.workflow.entity.BusinessProcess" >
+    <result column="tenant_id" property="tenantId" jdbcType="INTEGER" />
+    <result column="data_id" property="dataId" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+   <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+    <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
+    <result column="state_info" property="stateInfo" jdbcType="VARCHAR" />
+    <result column="proc_inst_id" property="procInstId" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+  </resultMap>
+   <insert id="insert" parameterType="com.xinwei.workflow.entity.BusinessProcess" >
+    insert into business_process (tenant_id, data_id, user_id, 
+      start_time, end_time, state_info, 
+      proc_inst_id, status)
+    values (#{tenantId,jdbcType=INTEGER}, #{dataId,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT}, 
+      #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{stateInfo,jdbcType=VARCHAR}, 
+      #{procInstId,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select tenant_id, data_id, user_id, start_time, end_time, state_info, proc_inst_id, 
+    status
+    from business_process
+  </select>
+ 
+  <delete id="deleteByConditions" >
+    delete from business_process
+    where 1=1 <include refid="queryConditions" />
+  </delete>
+  
+  <update id="updateProcInstIdByTenantAndDataId"  >
+    update business_process
+    set proc_inst_id = #{procInstId,jdbcType=VARCHAR}
+    where tenant_id = #{tenantId,jdbcType=INTEGER}
+    and data_id = #{dataId,jdbcType=VARCHAR}
+  </update>
+  
+  <update id="updateStateInfoByTenantAndDataId"  >
+    update business_process
+    set state_info = #{stateInfo,jdbcType=VARCHAR}
+    where tenant_id = #{tenantId,jdbcType=INTEGER}
+    and data_id = #{dataId,jdbcType=VARCHAR}
+  </update>
+  
+  <update id="updateStatusByTenantAndDataId"  >
+    update business_process
+    set status = #{status,jdbcType=VARCHAR}
+    where tenant_id = #{tenantId,jdbcType=INTEGER}
+    and data_id = #{dataId,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="selectByProcInstId" resultMap="BaseResultMap" >
+    select tenant_id, data_id, user_id, start_time, end_time, state_info, proc_inst_id, 
+    status
+    from business_process
+    where proc_inst_id = #{procInstId,jdbcType=VARCHAR}
+  </select>
+  <select id="countByConditions" resultType="java.lang.Long" >
+    select count(1) 
+    from business_process
+     where 1=1 <include refid="queryConditions" />
+  </select>
+  
+  <select id="selectByConditions" resultMap="BaseResultMap" >
+    select tenant_id, data_id, user_id, start_time, end_time, state_info, proc_inst_id, status
+    from business_process
+    where 1=1 <include refid="queryConditions" />
+  </select>
+  
+  <select id="selectByConditionsAndPage" resultMap="BaseResultMap" >
+    select tenant_id, data_id, user_id, start_time, end_time, state_info, proc_inst_id, status
+    from business_process
+    where 1=1 <include refid="queryConditions" />
+    limit #{startRow},#{pageSize}
+  </select>
+  
+  <sql id="queryConditions">
+   	     <if test="tenantId != null and tenantId !=0">
+			 	and tenant_id = #{tenantId,jdbcType=INTEGER}  
+	 	 </if> 
+	 	 <if test="dataId != null and dataId !=''">
+			 	 and data_id = #{dataId,jdbcType=VARCHAR}
+	 	 </if> 
+	 	 <if test="userId != null and userId !=0">
+			 	 and user_id = #{userId,jdbcType=BIGINT}
+	 	 </if> 
+	 	 <if test="procInstId != null and procInstId !=''">
+			 	and proc_inst_id = #{procInstId,jdbcType=VARCHAR}
+	 	 </if>
+	 	 <if test="status != null and status !=''">
+			 	and status = #{status,jdbcType=VARCHAR}
+	 	 </if>
+  	</sql>
+</mapper>

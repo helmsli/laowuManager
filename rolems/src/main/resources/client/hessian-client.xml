@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!-- 客户端Hessian代理工厂Bean -->
+	<bean id="commBizClient" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<!-- 请求代理Servlet路径 -->		
+		<property name="serviceUrl">
+			<value>http://localhost:8080/rolems/hessian/commonBiz</value>
+		</property>
+		
+		<property name="serviceInterface">
+			<value>com.xinwei.rbac.service.CommonBizService</value>
+		</property>
+	</bean>
+	
+	
+	<bean id="dataCreateTimeClient" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<!-- 请求代理Servlet路径 -->		
+		<property name="serviceUrl">
+			<value>http://localhost:8080/rolems/hessian/dataCreateTime</value>
+		</property>
+	
+		<property name="serviceInterface">
+			<value>com.xinwei.rbac.service.DataCreateTimeService</value>
+		</property>
+	</bean>
+	
+	<bean id="dataCategoryUrlClient" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<!-- 请求代理Servlet路径 -->		
+		<property name="serviceUrl">
+			<value>http://localhost:8080/rolems/hessian/dataCategoryUrl</value>
+		</property>
+	
+		<property name="serviceInterface">
+			<value>com.xinwei.rbac.service.DataCategoryUrlService</value>
+		</property>
+	</bean>
+	
+	<bean id="dataPrivilegeClient" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<!-- 请求代理Servlet路径 -->		
+		<property name="serviceUrl">
+			<value>http://localhost:8080/rolems/hessian/dataPrivilege</value>
+		</property>
+	
+		<property name="serviceInterface">
+			<value>com.xinwei.rbac.service.DataPrivilegeService</value>
+		</property>
+	</bean>
+	
+</beans>

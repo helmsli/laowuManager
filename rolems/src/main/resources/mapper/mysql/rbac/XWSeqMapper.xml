@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xinwei.rbac.dao.XWSeqMapper" >
+  <resultMap id="BaseResultMap" type="com.xinwei.rbac.entity.XWSeq" >
+    <id column="SEQ_NAME" property="seqName" jdbcType="VARCHAR" />
+    <result column="INIT_VALUE" property="initValue" jdbcType="DECIMAL" />
+    <result column="MAX_VALUE" property="maxValue" jdbcType="DECIMAL" />
+    <result column="CURRENT_VALUE" property="currentValue" jdbcType="DECIMAL" />
+    <result column="SEQ_STEP" property="seqStep" jdbcType="DECIMAL" />
+    <result column="TABLE_CIRCLE_SIZE" property="tableCircleSize" jdbcType="DECIMAL" />
+  </resultMap>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from xw_sequence
+    where SEQ_NAME = #{seqName,jdbcType=VARCHAR}
+  </delete>
+  
+  <insert id="insert" parameterType="com.xinwei.rbac.entity.XWSeq" >
+    insert into xw_sequence (SEQ_NAME, INIT_VALUE, MAX_VALUE, 
+      CURRENT_VALUE, SEQ_STEP, TABLE_CIRCLE_SIZE
+      )
+    values (#{seqName,jdbcType=VARCHAR}, #{initValue,jdbcType=DECIMAL}, #{maxValue,jdbcType=DECIMAL}, 
+      #{currentValue,jdbcType=DECIMAL}, #{seqStep,jdbcType=DECIMAL}, #{tableCircleSize,jdbcType=DECIMAL}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.xinwei.rbac.entity.XWSeq" >
+    update xw_sequence
+    set INIT_VALUE = #{initValue,jdbcType=DECIMAL},
+      MAX_VALUE = #{maxValue,jdbcType=DECIMAL},
+      CURRENT_VALUE = #{currentValue,jdbcType=DECIMAL},
+      SEQ_STEP = #{seqStep,jdbcType=DECIMAL},
+      TABLE_CIRCLE_SIZE = #{tableCircleSize,jdbcType=DECIMAL}
+    where SEQ_NAME = #{seqName,jdbcType=VARCHAR}
+  </update>
+  
+  <update id="updateCurrentValueBySeqName" parameterType="com.xinwei.rbac.entity.XWSeq" >
+    update xw_sequence
+    set 
+    CURRENT_VALUE = 1
+    where SEQ_NAME = #{seqName,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select SEQ_NAME, INIT_VALUE, MAX_VALUE, CURRENT_VALUE, SEQ_STEP, TABLE_CIRCLE_SIZE
+    from xw_sequence
+    where SEQ_NAME = #{seqName,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select SEQ_NAME, INIT_VALUE, MAX_VALUE, CURRENT_VALUE, SEQ_STEP, TABLE_CIRCLE_SIZE
+    from xw_sequence
+  </select>
+</mapper>

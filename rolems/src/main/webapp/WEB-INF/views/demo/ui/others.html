@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="App">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Manager system</title>
+		<!-- Plugin Css -->
+    	<link href="../../../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    	<link href="../../../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    	<link href="../../../plugins/material-design-preloader/md-preloader.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    	<link href="../../../plugins/node-waves/waves.min.css" rel="stylesheet" />
+   	 	<link href="../../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    	<link href="../../../plugins/animate-css/animate.css" rel="stylesheet" />
+    	
+	    <!-- Custom Css -->
+    	<link href="../../../css/custom.css" rel="stylesheet">
+	    <link href="../../../css/themes/default/skin.css" rel="stylesheet" type="text/css" title="default"/>
+	</head>
+	<body ng-controller="app">
+		<div class="page-loader-wrapper">
+		    <div class="loader">
+		        <div class="md-preloader pl-size-md">
+		            <svg viewbox="0 0 75 75">
+		                <circle cx="37.5" cy="37.5" r="33.5" class="pl-red" stroke-width="4" />
+		            </svg>
+		        </div>
+		        <p>加载中，请稍后...</p>
+		    </div>
+		</div>
+		<div class="overlay"></div>
+		<!-- Page Loader -->
+		<div id="wrapper">
+			<div class="header" ng-include="'../../include/header.html'"></div>
+			<div class="menus" ng-include="'../../include/leftMenu.html'"></div>
+			<div id="page-wrapper">
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							文本样式
+							<small>您可以使用类名<code>.font-bold, .font-italic, .font-underline, .font-line-through, .font-overline</code></small>
+						</h2>
+						<div class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-ellipsis-v"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+							    <li><a href="javascript:void(0);">编辑</a></li>
+							    <li><a href="javascript:void(0);">查看详细</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="row clearfix">
+	                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+	                            <p>
+	                                <b><font><font>正常</font></font></b>
+	                            </p>
+	                            <p><font><font>默认文本</font></font></p>
+	                            <p class="col-pink"><font><font>文本粉红色</font></font></p>
+	                            <p class="col-cyan"><font><font>文字青色</font></font></p>
+	                            <p class="col-teal"><font><font>文字颜色凫</font></font></p>
+	                            <p class="col-orange"><font><font>文字橙色</font></font></p>
+	                            <p class="col-blue-grey"><font><font>文青灰色</font></font></p>
+	                        </div>
+	                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+	                            <p>
+	                                <b><font><font>胆大</font></font></b>
+	                            </p>
+	                            <p class="font-bold"><font><font>默认文本</font></font></p>
+	                            <p class="font-bold col-pink"><font><font>文本粉红色</font></font></p>
+	                            <p class="font-bold col-cyan"><font><font>文字青色</font></font></p>
+	                            <p class="font-bold col-teal"><font><font>文字颜色凫</font></font></p>
+	                            <p class="font-bold col-orange"><font><font>文字橙色</font></font></p>
+	                            <p class="font-bold col-blue-grey"><font><font>文青灰色</font></font></p>
+	                        </div>
+	                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+	                            <p>
+	                                <b><font><font>斜体</font></font></b>
+	                            </p>
+	                            <p class="font-italic"><font><font>默认文本</font></font></p>
+	                            <p class="font-italic col-pink"><font><font>文本粉红色</font></font></p>
+	                            <p class="font-italic col-cyan"><font><font>文字青色</font></font></p>
+	                            <p class="font-italic col-teal"><font><font>文字颜色凫</font></font></p>
+	                            <p class="font-italic col-orange"><font><font>文字橙色</font></font></p>
+	                            <p class="font-italic col-blue-grey"><font><font>文青灰色</font></font></p>
+	                        </div>
+	                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+	                            <p>
+	                                <b><font><font>强调</font></font></b>
+	                            </p>
+	                            <p class="font-underline"><font><font>默认文本</font></font></p>
+	                            <p class="font-underline col-pink"><font><font>文本粉红色</font></font></p>
+	                            <p class="font-underline col-cyan"><font><font>文字青色</font></font></p>
+	                            <p class="font-underline col-teal"><font><font>文字颜色凫</font></font></p>
+	                            <p class="font-underline col-orange"><font><font>文字橙色</font></font></p>
+	                            <p class="font-underline col-blue-grey"><font><font>文青灰色</font></font></p>
+	                        </div>
+	                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+	                            <p>
+	                                <b><font><font>通过线</font></font></b>
+	                            </p>
+	                            <p class="font-line-through"><font><font>默认文本</font></font></p>
+	                            <p class="font-line-through col-pink"><font><font>文本粉红色</font></font></p>
+	                            <p class="font-line-through col-cyan"><font><font>文字青色</font></font></p>
+	                            <p class="font-line-through col-teal"><font><font>文字颜色凫</font></font></p>
+	                            <p class="font-line-through col-orange"><font><font>文字橙色</font></font></p>
+	                            <p class="font-line-through col-blue-grey"><font><font>文青灰色</font></font></p>
+	                        </div>
+	                        <div class="col-lg-2 col-md-2 col-sm-6 col-xs-6">
+	                            <p>
+	                                <b><font><font>上划线</font></font></b>
+	                            </p>
+	                            <p class="font-overline"><font><font>默认文本</font></font></p>
+	                            <p class="font-overline col-pink"><font><font>文本粉红色</font></font></p>
+	                            <p class="font-overline col-cyan"><font><font>文字青色</font></font></p>
+	                            <p class="font-overline col-teal"><font><font>文字颜色凫</font></font></p>
+	                            <p class="font-overline col-orange"><font><font>文字橙色</font></font></p>
+	                            <p class="font-overline col-blue-grey"><font><font>文青灰色</font></font></p>
+	                        </div>
+	                    </div>
+					</div>
+				</div>
+				<!-- / .panel -->
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							字体大小
+							<small>可以使用哪些样本的类<code>.font-6, .font-10, .font-24</code>都可以使用6间数- 50像素之间.font-</small>
+						</h2>
+						<div class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-ellipsis-v"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+							    <li><a href="javascript:void(0);">编辑</a></li>
+							    <li><a href="javascript:void(0);">查看详细</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="row clearfix">
+	                        <div class="col-md-2">
+	                            <div class="font-6"><font><font>字体6</font></font></div>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <div class="font-10"><font><font>字体-10</font></font></div>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <div class="font-12"><font><font>字体-12</font></font></div>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <div class="font-15"><font><font>字体-15</font></font></div>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <div class="font-20"><font><font>字体-20</font></font></div>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <div class="font-24"><font><font>字体-24</font></font></div>
+	                        </div>
+	                    </div>
+	                    <div class="row clearfix">
+	                        <div class="col-md-2">
+	                            <div class="font-32"><font><font>字体-32</font></font></div>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <div class="font-40"><font><font>字体-40</font></font></div>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <div class="font-42"><font><font>字体-42</font></font></div>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <div class="font-45"><font><font>字体-45</font></font></div>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <div class="font-48"><font><font>字体-48</font></font></div>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <div class="font-50"><font><font>字体-50</font></font></div>
+	                        </div>
+	                    </div>
+					</div>
+				</div>
+				<!-- / .panel -->
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							文本对齐
+							<small>您可以使用类这名<code>.align-left, .align-center, .align-right, .align-justify</code></small>
+						</h2>
+						<div class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-ellipsis-v"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+							    <li><a href="javascript:void(0);">编辑</a></li>
+							    <li><a href="javascript:void(0);">查看详细</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="row clearfix">
+	                        <div class="col-md-3">
+	                            <p class="align-left">
+	                                <b><font><font>左对齐</font></font></b>
+	                            </p>
+	                            <div class="align-left"><font><font>
+	                                Lorem存有悲坐阿梅德，consectetur adipisicing ELIT，sed的根本eiusmod tempor incididunt UT labore等dolore麦格纳aliqua。</font><font>UT enim广告微量veniam，QUIS nostrud实习ullamco laboris暂准UT aliquip前EA commodo consequat。</font><font>DUIS奥特irure悲在reprehenderit在voluptate velit埃塞cillum dolore欧盟fugiat法无pariatur。</font><font>Excepteur SINT occaecat cupidatat非proident，必须遵守的过失魁正式开通了deserunt mollit阿尼姆ID EST laborum。
+	                            </font></font></div>
+	                        </div>
+	                        <div class="col-md-3">
+	                            <p class="align-center">
+	                                <b><font><font>居中</font></font></b>
+	                            </p>
+	                            <div class="align-center"><font><font>
+	                                Lorem存有悲坐阿梅德，consectetur adipisicing ELIT，sed的根本eiusmod tempor incididunt UT labore等dolore麦格纳aliqua。</font><font>UT enim广告微量veniam，QUIS nostrud实习ullamco laboris暂准UT aliquip前EA commodo consequat。</font><font>DUIS奥特irure悲在reprehenderit在voluptate velit埃塞cillum dolore欧盟fugiat法无pariatur。</font><font>Excepteur SINT occaecat cupidatat非proident，必须遵守的过失魁正式开通了deserunt mollit阿尼姆ID EST laborum。
+	                            </font></font></div>
+	                        </div>
+	                        <div class="col-md-3">
+	                            <p class="align-right">
+	                                <b><font><font>右对齐</font></font></b>
+	                            </p>
+	                            <div class="align-right"><font><font class="">
+	                                Lorem存有悲坐阿梅德，consectetur adipisicing ELIT，sed的根本eiusmod tempor incididunt UT labore等dolore麦格纳aliqua。</font><font>UT enim广告微量veniam，QUIS nostrud实习ullamco laboris暂准UT aliquip前EA commodo consequat。</font><font>DUIS奥特irure悲在reprehenderit在voluptate velit埃塞cillum dolore欧盟fugiat法无pariatur。</font><font>Excepteur SINT occaecat cupidatat非proident，必须遵守的过失魁正式开通了deserunt mollit阿尼姆ID EST laborum。
+	                            </font></font></div>
+	                        </div>
+	                        <div class="col-md-3">
+	                            <p class="align-justify">
+	                                <b><font><font>对齐对齐</font></font></b>
+	                            </p>
+	                            <div class="align-justify"><font><font>
+	                                Lorem存有悲坐阿梅德，consectetur adipisicing ELIT，sed的根本eiusmod tempor incididunt UT labore等dolore麦格纳aliqua。</font><font>UT enim广告微量veniam，QUIS nostrud实习ullamco laboris暂准UT aliquip前EA commodo consequat。</font><font>DUIS奥特irure悲在reprehenderit在voluptate velit埃塞cillum dolore欧盟fugiat法无pariatur。</font><font>Excepteur SINT occaecat cupidatat非proident，必须遵守的过失魁正式开通了deserunt mollit阿尼姆ID EST laborum。
+	                            </font></font></div>
+	                        </div>
+	                    </div>
+					</div>
+				</div>
+				<!-- / .panel -->
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							外边距与内边距
+							<small>您可以使用类这名<code>.m-t-10, .m-t--10, .m-r-5, .p-t-10, .p-b-5</code></small>
+						</h2>
+						<div class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+								<i class="fa fa-ellipsis-v"></i>
+							</a>
+							<ul class="dropdown-menu pull-right" role="menu">
+							    <li><a href="javascript:void(0);">编辑</a></li>
+							    <li><a href="javascript:void(0);">查看详细</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="panel-body">
+						<div class="panel-inside-title">外边距</div>
+						<div class="row clearfix">
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">M</span>argin <span class="col-red font-bold">T</span>op <span class="col-red font-bold">10</span>px → <code>.m-t-10</code>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">M</span>argin <span class="col-red font-bold">T</span>op <span class="col-red font-bold">0</span>px → <code>.m-t-0</code>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">M</span>argin <span class="col-red font-bold">T</span>op <span class="col-red font-bold">-10</span>px → <code>.m-t--10</code>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">M</span>argin <span class="col-red font-bold">L</span>eft <span class="col-red font-bold">35</span>px → <code>.m-l-35</code>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">M</span>argin <span class="col-red font-bold">L</span>eft <span class="col-red font-bold">0</span>px → <code>.m-l-0</code>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">M</span>argin <span class="col-red font-bold">L</span>eft <span class="col-red font-bold">-35</span>px → <code>.m-l--35</code>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">M</span>argin <span class="col-red font-bold">B</span>ottom <span class="col-red font-bold">15</span>px → <code>.m-b-15</code>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">M</span>argin <span class="col-red font-bold">B</span>ottom <span class="col-red font-bold">0</span>px → <code>.m-b-0</code>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">M</span>argin <span class="col-red font-bold">B</span>ottom <span class="col-red font-bold">-20</span>px → <code>.m-b--20</code>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">M</span>argin <span class="col-red font-bold">R</span>ight <span class="col-red font-bold">30</span>px → <code>.m-r-30</code>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">M</span>argin <span class="col-red font-bold">R</span>ight <span class="col-red font-bold">0</span>px → <code>.m-r-0</code>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">M</span>argin <span class="col-red font-bold">R</span>ight <span class="col-red font-bold">-30</span>px → <code>.m-r--30</code>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">ALL M</span>argin <span class="col-red font-bold">0</span>px → <code>.margin-0</code>
+	                        </div>
+	                    </div>
+	                    <div class="panel-inside-title">内边距</div>
+	                    <div class="row clearfix">
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">P</span>adding <span class="col-red font-bold">T</span>op <span class="col-red font-bold">10</span>px → <code>.p-t-10</code>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">P</span>adding <span class="col-red font-bold">T</span>op <span class="col-red font-bold">0</span>px → <code>.p-t-0</code>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">P</span>adding <span class="col-red font-bold">L</span>eft <span class="col-red font-bold">35</span>px → <code>.p-l-35</code>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">P</span>adding <span class="col-red font-bold">L</span>eft <span class="col-red font-bold">0</span>px → <code>.p-l-0</code>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">P</span>adding <span class="col-red font-bold">B</span>ottom <span class="col-red font-bold">15</span>px → <code>.p-b-15</code>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">P</span>adding <span class="col-red font-bold">B</span>ottom <span class="col-red font-bold">0</span>px → <code>.p-b-0</code>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">P</span>adding <span class="col-red font-bold">R</span>ight <span class="col-red font-bold">30</span>px → <code>.p-r-30</code>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">P</span>adding <span class="col-red font-bold">R</span>ight <span class="col-red font-bold">0</span>px → <code>.p-r-0</code>
+	                        </div>
+	                        <div class="col-md-2">
+	                            <span class="col-red font-bold">ALL P</span>adding <span class="col-red font-bold">0</span>px → <code>.padding-0</code>
+	                        </div>
+	                    </div>
+					</div>
+				</div>
+				<!-- / .panel -->
+			</div>
+			<!-- / #page-wrapper -->
+		</div>
+		<!-- / #wrapper -->
+	</body>
+	<!-- Plugin Js -->
+    <script src="../../../plugins/jquery/jquery-2.2.4.min.js"></script>
+    <script src="../../../plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../../plugins/angular/angular.min.js"></script>
+    <script src="../../../plugins/ocLazyLoad/ocLazyLoad.min.js"></script>
+    <script src="../../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="../../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="../../../plugins/bootstrap-notify/bootstrap-notify.js"></script>
+    <script src="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="../../../plugins/node-waves/waves.js"></script>
+    <script src="../../../plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="../../../js/ui/dialogs.js"></script>
+    <script src="../../../js/ui/modals.js"></script>
+    <script src="../../../js/ui/notifications.js"></script>
+    <script src="../../../js/ui/tooltips-popovers.js"></script>
+    <script src="../../../js/ui/load_resize.js"></script>
+    <script src="../../../plugins/angular/angular-translate.min.js"> </script>
+	<script src="../../../plugins/angular/angular-translate-loader-static-files.min.js"> </script>
+    <!-- Custom JS -->
+    <script src="../../../js/server/server.js" type="text/javascript"></script>
+	<script src="../../../js/cookie.js" type="text/javascript"></script>
+	<script src="../../../js/skin.js" type="text/javascript"></script>
+	<script src="../../../js/config/config_skin.js" type="text/javascript"></script>
+	<script src="../../../js/App.js" type="text/javascript"></script>
+	
+	<!-- Home JS-->
+	<script src="../../../js/home.js" type="text/javascript"></script>
+</html>

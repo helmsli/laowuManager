@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xinwei.fiber.dao.AttachmentMapper" >
+  <resultMap id="BaseResultMap" type="com.xinwei.fiber.entity.Attachment" >
+    <id column="attachment_id" property="attachmentId" jdbcType="BIGINT" />
+    <result column="attachment_name" property="attachmentName" jdbcType="VARCHAR" />
+    <result column="original_filename" property="originalFilename" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="path" property="path" jdbcType="VARCHAR" />
+    <result column="create_person" property="createPerson" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="data_id" property="dataId" jdbcType="VARCHAR" />
+    <result column="group_id" property="groupId" jdbcType="VARCHAR" />
+    <result column="notes" property="notes" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from attachment
+    where attachment_id = #{attachmentId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.xinwei.fiber.entity.Attachment" >
+    insert into attachment (attachment_id, attachment_name, original_filename, 
+      type, path, create_person, 
+      create_time, data_id, group_id, 
+      notes)
+    values (#{attachmentId,jdbcType=BIGINT}, #{attachmentName,jdbcType=VARCHAR}, #{originalFilename,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{path,jdbcType=VARCHAR}, #{createPerson,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{dataId,jdbcType=VARCHAR}, #{groupId,jdbcType=VARCHAR}, 
+      #{notes,jdbcType=VARCHAR})
+  </insert>
+  <update id="update" parameterType="com.xinwei.fiber.entity.Attachment" >
+    update attachment
+    set attachment_name = #{attachmentName,jdbcType=VARCHAR},
+      original_filename = #{originalFilename,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      path = #{path,jdbcType=VARCHAR},
+      create_person = #{createPerson,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      data_id = #{dataId,jdbcType=VARCHAR},
+      group_id = #{groupId,jdbcType=VARCHAR},
+      notes = #{notes,jdbcType=VARCHAR}
+    where attachment_id = #{attachmentId,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select attachment_id, attachment_name, original_filename, type, path, create_person, 
+    create_time, data_id, group_id, notes
+    from attachment
+    where attachment_id = #{attachmentId,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select attachment_id, attachment_name, original_filename, type, path, create_person, 
+    create_time, data_id, group_id, notes
+    from attachment
+  </select>
+  <select id="selectByAttachmentName" resultMap="BaseResultMap" >
+    select attachment_id, attachment_name, original_filename, type, path, create_person, 
+    create_time, data_id, group_id, notes
+    from attachment
+    where attachment_name = #{attachmentName,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByDataId" resultMap="BaseResultMap" >
+    select attachment_id, attachment_name, original_filename, type, path, create_person, 
+    create_time, data_id, group_id, notes
+    from attachment
+    where data_id = #{dataId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByGroupIdAndTypeId" resultMap="BaseResultMap" >
+    select attachment_id, attachment_name, original_filename, type, path, create_person, 
+    create_time, data_id, group_id, notes
+    from attachment
+    where group_id = #{groupId,jdbcType=VARCHAR}
+    and type = #{type,jdbcType=VARCHAR} 
+  </select>
+</mapper>

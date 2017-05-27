@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="App">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta  name="description" content="采用angularjs双向数据绑定获取表单数据及提交表单的示例"  />
+		<title>表单提交示例</title>
+		
+		<!-- Plugin Css -->
+    	<link href="../../../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    	<link href="../../../plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    	<link href="../../../plugins/material-design-preloader/md-preloader.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    	<link href="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    	<link href="../../../plugins/node-waves/waves.min.css" rel="stylesheet" />
+   	 	<link href="../../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    	<link href="../../../plugins/animate-css/animate.css" rel="stylesheet" />
+    	
+	    <!-- Custom Css -->
+    	<link href="../../../css/custom.css" rel="stylesheet">
+	    <link href="../../../css/themes/default/skin.css" rel="stylesheet" type="text/css" title="default"/>
+	</head>
+	<body ng-controller="app">
+		<div class="page-loader-wrapper">
+		    <div class="loader">
+		        <div class="md-preloader pl-size-md">
+		            <svg viewbox="0 0 75 75">
+		                <circle cx="37.5" cy="37.5" r="33.5" class="pl-red" stroke-width="4" />
+		            </svg>
+		        </div>
+		        <p>加载中，请稍后...</p>
+		    </div>
+		</div>
+		<div class="overlay"></div>
+		<!-- Page Loader -->
+		<div id="wrapper">
+			<div class="header" ng-include="'../../include/header.html'"></div>
+			<div class="menus" ng-include="'../../include/leftMenu.html'"></div>
+			<div id="page-wrapper">
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">采用Angualar双向数据绑定机制编辑并提交表单</h2>
+					</div>
+					<div class="panel-body min-height-500">
+						<div class="row clearfix">
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 m-t-15 text-center" id="showImg" />
+								<img ng-src="../../../images/picture.jpg" id="showImg" class="img-thumbnail" />
+								<input type="file" ng-show="edit" name="filefield" id="uploadFile" class="abs abs-pull-opacity"  onchange="angular.element(this).scope().uploadFile('uploadFile','showImg')" />
+							</div>
+							<!-- / .coml-md-3 -->
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 m-t-15 form-column">
+								<div class="row clearfix">
+							        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 form-control-label r-chk-rad">
+							            <label >用户姓名:</label>
+							        </div>
+							        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
+							            <div class="form-group">
+							                <div class="form-line">
+							                   <input type="text"   ng-model="submitObj.request.name" class="form-control" />
+							                </div>
+							            </div>
+							        </div>
+							    </div>
+							    
+							    <div class="row clearfix">
+							        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 form-control-label r-chk-rad">
+							            <label >性别:</label>
+							        </div>
+							        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
+							            <div class="form-group">
+							                <div class="form-line">
+							                	
+							                	<div class="radio" >
+							                		<div class="radio-inline">
+							                			<input class="with-gap radio-col-blue" name="sex" id="man" ng-model="submitObj.request.sex" value="0" type="radio" >
+							                        	<label for="man">男</label>
+							                		</div>
+							                		<div class="radio-inline">
+							                			<input class="with-gap radio-col-blue" name="sex" id="woman" ng-model="submitObj.request.sex" value="1" type="radio">
+							                        	<label for="woman">女</label>
+							                		</div>
+							                    </div>
+							                </div>
+							            </div>
+							        </div>
+							    </div>
+							    
+							    <div class="row clearfix">
+							        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 form-control-label r-chk-rad">
+							            <label >部门:</label>
+							        </div>
+							        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
+							            <div class="form-group">
+							                <div class="form-line">
+							                    <input type="text" ng-model="submitObj.request.depart" class="form-control" />
+							                </div>
+							            </div>
+							        </div>
+							    </div>
+							    
+							    <div class="row clearfix">
+							        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 form-control-label r-chk-rad">
+							            <label >电话:</label>
+							        </div>
+							        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
+							            <div class="form-group">
+							                <div class="form-line">
+							                	<input type="number" ng-model="submitObj.request.telPhone" class="form-control" />
+							                </div>
+							            </div>
+							        </div>
+							    </div>
+							    
+							    
+							    
+							    <div class="row clearfix">
+							        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 form-control-label r-chk-rad">
+							            <label >邮箱:</label>
+							        </div>
+							        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
+							            <div class="form-group">
+							                <div class="form-line">
+							                	<input type="email"ng-model="submitObj.request.email"  class="form-control" />
+							                </div>
+							            </div>
+							        </div>
+							    </div>
+							    
+							  
+										            
+							    <div class="row clearfix">
+							        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 form-control-label r-chk-rad">
+							            <label >生日:</label>
+							        </div>
+							        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
+							            <div class="form-group">
+							                <div class="form-line">
+							                	<div id="datetimepicker" class="input-append date" >
+											        <input id="datetimepicker_input" type="text" data-format="yyyy-MM-dd" class="form-control" readonly="readonly"  ng-model="submitObj.request.birthday" >
+											        <span class="add-on">
+											          <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="fa fa-calendar"></i>
+											        </span>
+										      	</div>
+							                </div>
+							            </div>
+							        </div>
+							    </div>
+							    
+							    <div class="row clearfix">
+							        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 form-control-label r-chk-rad">
+							            <label >证件类型:</label>
+							        </div>
+							        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
+							            <div class="form-group">
+							                <div class="form-line">
+		                        					<select  id="idType"  ng-model="submitObj.request.cardtype"  class="selectpicker show-tick form-control" data-live-search="false">
+												          <option value="0" selected="selected">身份证</option>
+									                      <option value="1">护照</option>
+										            </select>
+							                </div>
+							            </div>
+							        </div>
+							    </div>
+							    
+							    <div class="row clearfix">
+							        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 form-control-label r-chk-rad">
+							            <label for="email_address_2">证件号码:</label>
+							        </div>
+							        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8">
+							            <div class="form-group">
+							                <div class="form-line">
+							                	<input type="text" ng-model="submitObj.request.cardno"  class="form-control" />
+							                </div>
+							            </div>
+							        </div>
+							    </div>
+							    
+							</div>
+							<!-- / .col md-9 -->
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+								<hr />
+								<div class="row clearfix">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+										<button class="btn btn-success m-r-8 m-w-80 waves-effect" ng-click="saveUserInfo()">保存</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- / .row -->
+					</div>
+				</div>
+			</div>
+			<!-- / #page-wrapper -->
+		</div>
+		<!-- / #wrapper -->
+	</body>
+	<!-- Plugin Js -->
+    <script src="../../../plugins/jquery/jquery-2.2.4.min.js"></script>
+    <script src="../../../plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../../plugins/angular/angular.min.js"></script>
+    <script src="../../../plugins/ocLazyLoad/ocLazyLoad.min.js"></script>
+    <script src="../../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="../../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="../../../plugins/bootstrap-notify/bootstrap-notify.js"></script>
+    <script src="../../../plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="../../../plugins/node-waves/waves.js"></script>
+    <script src="../../../plugins/sweetalert/sweetalert.min.js"></script>
+    <script src="../../../plugins/jQuery-Smart-Wizard/jquery.smartWizard.js"></script>
+    <script src="../../../js/ui/dialogs.js"></script>
+    <script src="../../../js/ui/modals.js"></script>
+    <script src="../../../js/ui/notifications.js"></script>
+    <script src="../../../js/ui/tooltips-popovers.js"></script>
+    <script src="../../../js/ui/load_resize.js"></script>
+     <script src="../../../plugins/angular/angular-translate.min.js"> </script>
+	<script src="../../../plugins/angular/angular-translate-loader-static-files.min.js"> </script>
+    <!-- Custom JS -->
+    <script src="../../../js/server/server.js" type="text/javascript"></script>
+	<script src="../../../js/cookie.js" type="text/javascript"></script>
+	<script src="../../../js/skin.js" type="text/javascript"></script>
+	<script src="../../../js/config/config_skin.js" type="text/javascript"></script>
+	<script src="../../../js/App.js" type="text/javascript"></script>
+	<script src="../../../js/home.js" type="text/javascript"></script>
+	
+	<!--Forms JS -->
+	<script src="../../../js/formValidata/formValid_Inf.js" type="text/javascript"></script>
+	<script src="../../../js/formValidata/formValid_Rule.js" type="text/javascript"></script>
+	<script src="../../../js/formValidata/formValid.js" type="text/javascript"></script>
+
+	<!--业务代码-->
+	<script src="formSubmit/submit.js" type="text/javascript"></script>
+	
+</html>

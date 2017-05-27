@@ -1,0 +1,46 @@
+2017-03-31 13:13:47,273 [main] INFO  [org.springframework.context.support.FileSystemXmlApplicationContext] - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@758f3dae: startup date [Fri Mar 31 13:13:47 CST 2017]; root of context hierarchy
+2017-03-31 13:13:47,314 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-03-31 13:13:47,610 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_database.xml]
+2017-03-31 13:13:47,668 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_activiti.xml]
+2017-03-31 13:13:47,810 [main] INFO  [org.springframework.context.support.PropertySourcesPlaceholderConfigurer] - Loading properties file from file [E:\eclipseWorkspace\workflow\target\classes\config\db.properties]
+2017-03-31 13:13:50,240 [main] INFO  [org.activiti.engine.impl.ProcessEngineImpl] - ProcessEngine default created
+2017-03-31 13:13:50,243 [main] INFO  [org.activiti.engine.impl.jobexecutor.JobExecutor] - Starting up the JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor].
+2017-03-31 13:13:50,253 [Thread-3] INFO  [org.activiti.engine.impl.jobexecutor.AcquireJobsRunnableImpl] - JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor] starting to acquire jobs
+2017-03-31 13:30:11,888 [main] INFO  [org.springframework.context.support.FileSystemXmlApplicationContext] - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@6e7e4042: startup date [Fri Mar 31 13:30:11 CST 2017]; root of context hierarchy
+2017-03-31 13:30:11,933 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-03-31 13:30:12,113 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_database.xml]
+2017-03-31 13:30:12,180 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_activiti.xml]
+2017-03-31 13:30:12,326 [main] INFO  [org.springframework.context.support.PropertySourcesPlaceholderConfigurer] - Loading properties file from file [E:\eclipseWorkspace\workflow\target\classes\config\db.properties]
+2017-03-31 13:30:14,352 [main] INFO  [org.activiti.engine.impl.ProcessEngineImpl] - ProcessEngine default created
+2017-03-31 13:30:14,353 [main] INFO  [org.activiti.engine.impl.jobexecutor.JobExecutor] - Starting up the JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor].
+2017-03-31 13:30:14,355 [Thread-3] INFO  [org.activiti.engine.impl.jobexecutor.AcquireJobsRunnableImpl] - JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor] starting to acquire jobs
+2017-03-31 13:32:12,768 [main] INFO  [org.springframework.context.support.FileSystemXmlApplicationContext] - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@6e7e4042: startup date [Fri Mar 31 13:32:12 CST 2017]; root of context hierarchy
+2017-03-31 13:32:12,807 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-03-31 13:32:12,996 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_database.xml]
+2017-03-31 13:32:13,051 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_activiti.xml]
+2017-03-31 13:32:13,190 [main] INFO  [org.springframework.context.support.PropertySourcesPlaceholderConfigurer] - Loading properties file from file [E:\eclipseWorkspace\workflow\target\classes\config\db.properties]
+2017-03-31 13:32:14,954 [main] INFO  [org.activiti.engine.impl.ProcessEngineImpl] - ProcessEngine default created
+2017-03-31 13:32:14,955 [main] INFO  [org.activiti.engine.impl.jobexecutor.JobExecutor] - Starting up the JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor].
+2017-03-31 13:32:14,957 [Thread-3] INFO  [org.activiti.engine.impl.jobexecutor.AcquireJobsRunnableImpl] - JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor] starting to acquire jobs
+2017-03-31 13:55:26,364 [main] INFO  [org.springframework.context.support.FileSystemXmlApplicationContext] - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@22ace5ba: startup date [Fri Mar 31 13:55:26 CST 2017]; root of context hierarchy
+2017-03-31 13:55:26,422 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-03-31 13:55:26,607 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_database.xml]
+2017-03-31 13:55:26,662 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_activiti.xml]
+2017-03-31 13:55:26,802 [main] INFO  [org.springframework.context.support.PropertySourcesPlaceholderConfigurer] - Loading properties file from file [E:\eclipseWorkspace\workflow\target\classes\config\db.properties]
+2017-03-31 13:55:28,616 [main] INFO  [org.activiti.engine.impl.ProcessEngineImpl] - ProcessEngine default created
+2017-03-31 13:55:28,617 [main] INFO  [org.activiti.engine.impl.jobexecutor.JobExecutor] - Starting up the JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor].
+2017-03-31 13:55:28,620 [Thread-3] INFO  [org.activiti.engine.impl.jobexecutor.AcquireJobsRunnableImpl] - JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor] starting to acquire jobs
+2017-03-31 13:55:28,882 [main] INFO  [org.activiti.engine.impl.bpmn.deployer.BpmnDeployer] - Processing resource fiberextension.fiberextension.png
+2017-03-31 13:55:28,882 [main] INFO  [org.activiti.engine.impl.bpmn.deployer.BpmnDeployer] - Processing resource fiberextension.bpmn20.xml
+2017-03-31 14:02:43,989 [main] INFO  [org.springframework.context.support.FileSystemXmlApplicationContext] - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@761b1eb9: startup date [Fri Mar 31 14:02:43 CST 2017]; root of context hierarchy
+2017-03-31 14:02:44,033 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-03-31 14:02:44,214 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_database.xml]
+2017-03-31 14:02:44,265 [main] INFO  [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] - Loading XML bean definitions from class path resource [spring/spring_activiti.xml]
+2017-03-31 14:02:44,404 [main] INFO  [org.springframework.context.support.PropertySourcesPlaceholderConfigurer] - Loading properties file from file [E:\eclipseWorkspace\workflow\target\classes\config\db.properties]
+2017-03-31 14:02:46,197 [main] INFO  [org.activiti.engine.impl.ProcessEngineImpl] - ProcessEngine default created
+2017-03-31 14:02:46,198 [main] INFO  [org.activiti.engine.impl.jobexecutor.JobExecutor] - Starting up the JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor].
+2017-03-31 14:02:46,200 [Thread-3] INFO  [org.activiti.engine.impl.jobexecutor.AcquireJobsRunnableImpl] - JobExecutor[org.activiti.engine.impl.jobexecutor.DefaultJobExecutor] starting to acquire jobs
+2017-03-31 14:02:46,440 [main] INFO  [org.activiti.engine.impl.bpmn.deployer.BpmnDeployer] - Processing resource fiberextension.fiberextension.png
+2017-03-31 14:02:46,440 [main] INFO  [org.activiti.engine.impl.bpmn.deployer.BpmnDeployer] - Processing resource fiberextension.bpmn20.xml
+2017-03-31 14:02:46,985 [main] INFO  [org.activiti.engine.impl.bpmn.deployer.BpmnDeployer] - Processing resource fiberextension.fiberextension.png
+2017-03-31 14:02:46,985 [main] INFO  [org.activiti.engine.impl.bpmn.deployer.BpmnDeployer] - Processing resource fiberextension.bpmn20.xml

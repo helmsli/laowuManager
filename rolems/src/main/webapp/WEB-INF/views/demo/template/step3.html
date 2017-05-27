@@ -1,0 +1,73 @@
+<meta charset="UTF-8">
+<div class="col-lg-5 col-sm-8 col-lg-offset-3 col-sm-offset-2">
+	<div class="row clearfix">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="search-group">
+				<div class="search-block">
+		    		<input type="search" class="form-control" placeholder="请输入要查询的类型...">
+		        	<span class="btn-group"><button type="button" class="btn btn-primary waves-effect">查询</button></span>
+		    	</div>
+			</div>
+		</div>
+		
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="form-group">
+				<div class="form-line">
+					<div class="radio">
+						<div class="radio-inline">
+							<input name="group1" type="radio" class="with-gap radio-col-blue" id="radio_3">
+				    		<label for="radio_3">男</label>
+						</div>
+						<div class="radio-inline">
+							<input name="group1" type="radio" class="with-gap radio-col-blue" id="radio_4">
+				    		<label for="radio_4">女</label>
+						</div>
+					</div>
+				</div>
+		   </div>
+		</div>
+		
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="row clearfix">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="form-group">
+                        <div class="form-line">
+                            <div id="datetimepicker1" class="input-append date">
+						        <input type="text" class="form-control" readonly="readonly" data-format="dd/MM/yyyy hh:mm:ss" placeholder="请选择开始时间">
+						        <span class="add-on">
+						          <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="fa fa-calendar icon-calendar"></i>
+						        </span>
+					      	</div>
+                        </div>
+                    </div>
+				</div>
+				
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="form-group">
+	                    <div class="form-line">
+	                        <div id="datetimepicker2" class="input-append date">
+						        <input type="text" class="form-control" readonly="readonly" data-format="dd/MM/yyyy hh:mm:ss" placeholder="请选择结束时间">
+						        <span class="add-on">
+						          <i data-time-icon="icon-time" data-date-icon="icon-calendar" class="fa fa-calendar icon-calendar"></i>
+						        </span>
+					      	</div>
+	                    </div>
+	                </div>
+				</div>
+				
+			</div>
+		</div>
+		
+	</div>
+</div>
+<!-- Script -->
+<script type="text/javascript">
+  	$(function() {
+	    $('#datetimepicker1').datetimepicker({
+	    	collapse: true
+	    });
+	    $('#datetimepicker2').datetimepicker({
+	    	collapse: true
+	    });
+	});
+</script>
